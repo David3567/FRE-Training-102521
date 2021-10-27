@@ -1,0 +1,110 @@
+h1{
+    font-family: sans-serif;
+    display: flex; 
+  
+    align-items: center;
+    justify-content: center;
+    
+}
+
+form{
+    width:500px;
+    margin: 0;
+    
+}
+input {
+    height: 30px;
+    padding-left:10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+   
+    outline: none;
+    
+}
+
+input:focus {
+    
+    box-shadow: 0 0 5px grey;
+    border-radius: 5px;
+    border: 1px solid rgba(61, 178, 255, 0.966);
+    
+}
+
+.FirstName {
+    width: 225px;
+    margin-right: 20px;
+    margin-bottom:30px;
+
+}
+.LastName {
+    width: 215px;
+}
+.MobileNumber {
+    width: 480px;
+    margin-bottom:30px;
+
+}
+
+.Email {
+    width: 480px;
+    margin-bottom:30px;
+}
+
+.Password {
+    width: 225px;
+    margin-right: 20px;
+    margin-bottom:20px;
+}
+
+.Confirm {
+    width: 215px;
+}
+
+.checkbox {
+    max-height: 10px;
+}
+
+.clicking {
+    padding-left: 100px;
+}
+
+.Register {
+    border: 1px solid blue;
+    background-color: blue;
+    border-radius: 3px;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight: bold;
+}
+
+
+a {
+    color: blue
+}
+
+.Agree {
+    width: 200px;
+}
+
+.btnRegister {
+    width: 225px;
+    background-color: rgba(61, 178, 255, 0.966);
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    border:0px;
+}
+.btnSign {
+    width: 225px;
+    background-color: green;
+    height: 30px;
+    margin-left: 40px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    border:0px;
+}
