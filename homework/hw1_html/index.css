@@ -1,0 +1,167 @@
+/* Sign Up Heading Title */
+h1 {
+  font-family: sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sign Up Form */
+form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* Input elements */
+input {
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  transition: box-shadow 300ms ease-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+  border: 1px solid #dddddd;
+}
+
+/* Blue Box Shadow Highlight on Input Field Active */
+input:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+/* First Name Input Field */
+.firstName {
+  width: 220px;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+/* Last Name Input Field */
+.lastName {
+  width: 215px;
+}
+
+/* Mobile Number Input Field */
+.mobileNumber {
+  width: 483px;
+  margin-bottom: 15px;
+}
+
+/* Email Address Input Field */
+.email {
+  width: 483px;
+  margin-bottom: 15px;
+}
+
+/* Password Input Field */
+.password {
+  width: 220px;
+  margin-right: 30px;
+}
+
+/* Confirm Password Input Field */
+.confirmPassword {
+  width: 215px;
+}
+
+/* Agreement */
+.agreement {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  align-items: center;
+}
+
+/* Left Side of Agreement */
+.leftSide {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 250px;
+}
+
+/* Right Side of Agreement */
+.rightSide {
+  display: flex;
+  justify-content: flex-end;
+  width: 645px;
+  position: relative;
+  /* padding-left: 150px; */
+}
+
+/* I Agree Label */
+.label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Checkbox */
+.checkbox {
+  cursor: pointer;
+  max-height: 15px;
+}
+
+/* Agreement Description */
+.agreementDesc {
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* Mini Register Button Icon*/
+.Register {
+  border: 1px solid rgb(52, 152, 235);
+  background-color: rgb(52, 152, 235);
+  border-radius: 3px;
+  color: #ffffff;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* a tag - Hyperlink */
+a:link {
+  text-decoration: none;
+}
+
+/* a tag */
+a {
+  color: rgb(52, 152, 235);
+}
+
+/* Register and Sign In Elements */
+.register,
+.signin {
+  width: 210px;
+  height: 40px;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+/* register button */
+.register {
+  cursor: pointer;
+  margin-top: 10px;
+  width: 235px;
+  border: 1px solid rgb(52, 152, 235);
+  background-color: rgb(52, 152, 235);
+  margin-right: 25px;
+}
+
+/* signin button */
+.signin {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 0px;
+  width: 235px;
+  border: 1px solid rgb(93, 171, 41);
+  background-color: rgb(93, 171, 41);
+}
