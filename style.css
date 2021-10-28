@@ -124,8 +124,7 @@ input:not(:first-child) {
     width: 50%;
   }
 
-  .input-password-container,
-  .input-name-container {
+  .flex-row {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -135,8 +134,7 @@ input:not(:first-child) {
     margin-top: 0;
   }
 
-  .input-password-container input,
-  .input-name-container input {
+  .flex-row input {
     width: 47%;
   }
 
