@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+.container {
+    width: 30%;
+    margin:auto; 
+} 
+
+.signup {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+h1 {
+    position:relative;
+    left:35%;
+    margin:10px;
+}
+
+.row {
+    width:100%;
+    padding:5px;
+}
+
+input:focus {
+    outline:none;
+    box-shadow:0 0 10px lightskyblue;
+}
+
+.textbox { 
+    font-size: 16px;
+    border-radius: 5px;
+    border:1px groove rgba(109, 109, 110, 0.349);
+    width:45%;
+    height:35px;
+    padding:10px;
+    margin:0 2%;
+}
+
+#phone {width:95%;}
+
+#email {width:95%;}
+#checkbox {
+    position: relative;
+    top: 20px;
+}
+.block {
+    float:right;
+    width:65%;
+}
+
+label {font-weight: bold;}
+
+.highlight {
+    background-color:cornflowerblue;
+    color:white;
+}
+
+a {color:lightskyblue;}
+
+.message {font-size: 14px;}
+
+#rb {
+    padding:0px;
+    color:white;
+    background-color: cornflowerblue;
+}
+
+#sub {
+    padding:0px;
+    color:white;
+    background-color:lightgreen;
+}
