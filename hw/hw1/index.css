@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input {
+    height: 40px;
+    margin-top: 15px;
+    border-radius: 3px;
+    border-color: rgb(214, 214, 214);
+    border-width: 1px;
+    padding-left: 10px;
+}
+button {
+    margin-top: 15px;
+    height: 40px;
+}
+.flex-container {
+    position: absolute;
+    left: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+  }
+.signup {
+    padding: 35%;
+    font-size: 30px;
+    width: 125px;
+}
+.name {
+    margin-left: 3%;
+    width: 45%;
+}
+.mobile {
+    margin-left: 3%;
+    width: 94%;
+}
+.email {
+    margin-left: 3%;
+    width: 94%;
+}
+.pwd {
+    margin-left: 3%;
+    width: 45%;
+}
+.check {
+    margin-top: 1%;
+    float: left;
+    align-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    width: 20%;
+}
+.term {
+    margin-top: 5%;
+    float: right;
+    width: 75%;
+    font-size: 13px;
+}
+.btn {
+    margin-left: 3%;
+    width: 45%;
+    color: white;
+    border:1px
+}
+
+input:focus {
+    outline: none !important;
+}
+input:focus { 
+    outline: none !important;
+    border-color: rgb(119, 183, 232);
+    box-shadow: 0 0 10px rgb(119, 183, 232);
+}
+#register {
+    background-color: rgb(59, 130, 192);
+}
+#signin {
+    background-color: rgb(84, 174, 88)
+}
+#checkbox {
+    height: 30px;
+    width: 13px;
+}
+#reg {
+    background-color: rgb(59, 130, 192);
+    color: white;
+}
+#condition {
+    color: rgb(99, 157, 206);
+}
