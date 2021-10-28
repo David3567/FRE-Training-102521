@@ -60,7 +60,11 @@ li.list-item a {
 }
 
 .first-section .title p {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+}
+
+.know-more {
+  color: blue;
 }
 
 .second-section {
