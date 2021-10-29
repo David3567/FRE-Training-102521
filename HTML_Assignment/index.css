@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  padding: 5px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.name,
+.password,
+.btn {
+  flex: 10;
+}
+.btn {
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+}
+.btn1 {
+  background-color: #428bca;
+}
+.btn2 {
+  background-color: #5cb85c;
+}
+
+.blank {
+  flex: 1;
+}
+
+.check {
+  flex: 2;
+  font-weight: bold;
+}
+[type="checkbox"] {
+  vertical-align: middle;
+}
+
+.text {
+  flex: 10;
+}
+
+.signupContainer {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.register {
+  border-radius: 5px;
+  background: #428bca;
+  height: 20px;
+  width: 70px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: #478fcb;
+}
+
+/* [class^="col-"] {
+  border: 1px solid rgba(53, 47, 47, 0.322);
+  border-radius: 5px;
+  min-height: 30px;
+  padding: 5px;
+} */
+
+input {
+  border: 1px solid rgba(53, 47, 47, 0.322);
+  border-radius: 5px;
+  min-height: 30px;
+  padding: 10px;
+}
+input:focus {
+  outline: 0;
+  border: 1px solid #478fcb;
+  box-shadow: 0px 0px 5px 0px #478fcb;
+}
+
+.col-12 {
+  width: calc(100%);
+}
+.col-11 {
+  width: calc(100% / 12 * 11);
+}
+.col-10 {
+  width: calc(100% / 12 * 10);
+}
+.col-9 {
+  width: calc(100% / 12 * 9);
+}
+.col-8 {
+  width: calc(100% / 12 * 8);
+}
+.col-7 {
+  width: calc(100% / 12 * 7);
+}
+.col-6 {
+  width: calc(100% / 12 * 6);
+}
+.col-5 {
+  width: calc(100% / 12 * 5);
+}
+.col-4 {
+  width: calc(100% / 12 * 4);
+}
+.col-3 {
+  width: calc(100% / 12 * 3);
+}
+.col-2 {
+  width: calc(100% / 12 * 2);
+}
+.col-1 {
+  width: calc(100% / 12 * 1);
+}
+
+@media (min-width: 600px) {
+  .col-md-12 {
+    width: calc(100%);
+  }
+  .col-md-11 {
+    width: calc(100% / 12 * 11);
+  }
+  .col-md-10 {
+    width: calc(100% / 12 * 10);
+  }
+  .col-md-9 {
+    width: calc(100% / 12 * 9);
+  }
+  .col-md-8 {
+    width: calc(100% / 12 * 8);
+  }
+  .col-md-7 {
+    width: calc(100% / 12 * 7);
+  }
+  .col-md-6 {
+    width: calc(100% / 12 * 6);
+  }
+  .col-md-5 {
+    width: calc(100% / 12 * 5);
+  }
+  .col-md-4 {
+    width: calc(100% / 12 * 4);
+  }
+  .col-md-3 {
+    width: calc(100% / 12 * 3);
+  }
+  .col-md-2 {
+    width: calc(100% / 12 * 2);
+  }
+  .col-md-1 {
+    width: calc(100% / 12 * 1);
+  }
+}
