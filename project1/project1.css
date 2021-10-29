@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+}
+header p {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  color: #999;
+}
+header img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5%;
+  top: 30%;
+}
+main {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+  padding: 40px;
+}
+.grid-item {
+  width: 100%;
+  border: 5px solid rgb(206, 206, 206);
+  padding: 30px;
+}
+p {
+}
