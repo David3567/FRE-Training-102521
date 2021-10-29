@@ -11,7 +11,9 @@ body {
 .form-group {
   margin-top: 10px;
   display: grid;
+/*   the width of each grid */
   grid-template-columns: 15% 15% 15% 15%;
+/*   1fr is 1 part of the available space */
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 15px;
   justify-content: center;
