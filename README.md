@@ -6,7 +6,7 @@ This is a repo to record the FRE-TRAINING assignments and notes.
 
 ### Clone this repo:
 
-open your teminal
+open your    teminal
 
 ```bash
 cd your_work_dir
