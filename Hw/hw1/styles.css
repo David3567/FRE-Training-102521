@@ -1,0 +1,103 @@
+* {
+   margin: 0;
+   padding: 0;
+   font-family: "Arial, Helvetica, sans-serif";
+}
+.agree a{
+   text-decoration: none;
+}
+input[type="text"], input[type="password"]{
+   padding-left: 6px;
+   font-size: large;
+   height: 2em;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   border: 1.5px lightgray solid;
+   border-radius: 5px; 
+}
+input:focus{
+   outline: none !important;
+   border: 1.5px lightblue solid;
+   box-shadow: 0 0 10px #719ECE;
+
+}
+.split{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+} 
+.fullLine{
+   display: flex;
+   flex-direction: column;
+}
+.split input{
+   width: 45%;
+}
+.container{
+   margin-top: 10%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+}
+form{
+   margin-top: 1em;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.agree{
+   margin: 3px;
+   display: flex;
+   flex-direction: row;
+}
+.ticker{
+   margin-top: 1em;
+   width: 20%;
+}
+.submit_group{
+   margin-top: 2px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.register{
+   background-color: hsl(197, 62%, 47%);
+   border: none;
+   border-radius: 5px;
+   width:40%;
+   height: 2.5em;
+   color: white;
+   font-size: 100%;
+}
+.sign_in{
+   border: none;
+   background-color: mediumseagreen;
+   border-radius: 5px;
+   width: 40%;
+   height:2.5em;
+   color: white;
+   font-size: 100%;
+}
+b{
+   background-color: hsl(197, 62%, 47%);
+   border-radius: 2px;
+   padding: 2px 6px;
+   color: white;
+}
+input[type="submit"]:hover, input[type="button"]:hover{
+   border: 1.5px white solid ; 
+}
+@media (max-width:800px){
+   .container{
+      margin-top: 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 85%;
+      margin: auto;
+      padding: 2em;
+   }
+}
