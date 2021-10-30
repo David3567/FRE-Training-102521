@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+}
+
+/* Menu Bar */
+.menu {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  background-color: #000;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 130px;
+}
+
+/* List Items */
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Unordered Lists */
+ul {
+  list-style: none;
+}
+
+/* Unordered Lists span element */
+ul a {
+  text-decoration: none;
+  color: white;
+}
+
+.list1 {
+  padding-right: 30px;
+}
+
+.list2 {
+  padding-right: 30px;
+}
+
+.list3 {
+  padding-right: 30px;
+}
+
+/* Header */
+.header {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #c6bfbf;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 125px;
+  padding-right: 125px;
+  background-color: #c6bfbf;
+}
+
+/* h1 Title */
+h1 {
+  padding-bottom: 25px;
+}
+
+/* Description */
+.description {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 5px;
+  padding-left: 130px;
+  padding-right: 130px;
+}
+
+/* A Tags */
+a:link {
+  color: #166aca;
+}
+
+a {
+  color: #166aca;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b4d14;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: white;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+/* Left Side Footer */
+.footerLeft {
+  display: flex;
+  padding-right: 1000px;
+  flex-direction: row;
+}
+
+/* Right Side Footer */
+.footerRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
