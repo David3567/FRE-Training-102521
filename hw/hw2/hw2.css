@@ -8,9 +8,11 @@
     float: left;
     display: block;
     color: white;
-    padding: 16px 40px;
+    padding: 16px 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+    position: relative;
+    left: 100px;
 }
 
 .content {
@@ -26,7 +28,7 @@
     height: 400px;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 20px;
+    padding: 2%;
 }
 
 .row {
@@ -42,13 +44,26 @@
     background-color: #0b4d14;
 }
 
-.footer a {
+.fleft {
     float: left;
     display: block;
     color: white;
     padding: 16px 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+    position: relative;
+    left: 100px;
+}
+
+.fright {
+    float: right;
+    display: block;
+    color: white;
+    padding: 16px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    position: relative;
+    right: 100px;
 }
 
 
