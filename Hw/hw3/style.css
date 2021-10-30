@@ -1,0 +1,75 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.header{
+   text-align: center; 
+   margin: 1px auto;
+}
+.header h2{
+    text-align: center; 
+    margin: 1px auto;
+    font-size: 40px;
+    margin-bottom: 8px;
+    text-decoration: underline;
+ }
+
+.cards{
+    margin: 0px auto 10px;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    font-family: sans-serif;
+   
+}
+.cards .card-left-blog, .cards .card-right-title{
+  background-color:#fff;
+  padding:12px;
+  margin: 4px 2px;
+  border-radius: 5px;
+  border: 2px solid silver;
+  border-width: 5px;
+  text-align: left;
+ 
+}
+.card-left-blog:nth-child(1){
+  border: 2px solid silver;
+}
+.card-left-blog .world{
+  color:#34baeb;
+  font-weight:bold;
+  text-transform: capitalize;
+}
+.card-right-title .design{
+  color:#24c912;
+  font-weight:bold;
+  text-transform: capitalize;
+}
+.card-left-blog h2, .card-right-title h2{
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: 'PT Serif', serif;
+  margin-top: 2px; 
+}
+.card-left-blog p, .card-right-title p{
+  padding-bottom: 20px;
+  font-size: 15px
+}
+.card-left-blog a, .card-right-title a{
+  color:#34baeb ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
