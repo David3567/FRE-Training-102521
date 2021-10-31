@@ -14,6 +14,12 @@ input[type="text"], input[type="password"]{
    margin-bottom: 5px;
    border: 1.5px lightgray solid;
    border-radius: 5px; 
+   font-weight: 550;
+}
+input[type="text"]::placeholder, input[type="password"]::placeholder{
+   color: rgba(121, 121, 121, .6);
+   font-weight: 600;
+
 }
 input:focus{
    outline: none !important;
