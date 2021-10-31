@@ -419,14 +419,27 @@ console.log();
 //26. Write a JavaScript function to find longest substring in a given a string without repeating characters.
 
 //iterative
-// const longestSubstring = (s) =>{
-//   s = s.toLowerCase();
-//   let str = "";
-//   for(let i =0; i <s.length; i++){
-//     if(s)
-//   }
-// }
-// console.log("Q26. ",longestSubstring("australia"));
+const longestSubstring = (s) => {
+  let count = 0;
+  let max = 0;
+  let map = {};
+  let j = 0;
+  s = s.toLowerCase();
+  for (let i = 0; i < s.length; i++) {
+    if (!map[s[i]]) {
+      count++;
+      map[s[i]] = count;
+      max = Math.max(max, count);
+    } else {
+      j++;
+      i = j - 1;
+      count = 0;
+      map = {};
+    }
+  }
+  return max;
+};
+console.log("Q26. ", longestSubstring("australia"));
 console.log();
 
 //27. Write a JavaScript function that returns the longest palindrome in a given string.
