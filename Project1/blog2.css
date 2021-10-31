@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.9em;
+  line-height: 1.2;
+}
+header {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+}
+header p {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  color: #999;
+}
+
+
+.left-post {
+  width: 66.66%;
+  float: left;
+  padding: 5%;
+}
+.date-heading {
+  color: #999;
+}
+.left-post p {
+  padding: 10px 0;
+}
+article p:first-child {
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+section {
+  margin-left: 20px;
+}
+
+.applyBorder {
+  border: 1px solid rgb(214, 214, 214);
+}
+ul.sub-heading {
+  margin-left: 5%;
+  list-style-type: disc;
+}
+ol {
+  margin-left: 5%;
+}
+button {
+  margin-top: 40px;
+  background-color: white;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#order{
+  background-color: white;
+  border: 1px solid #3366BB;
+  color: #3366BB;
+}
+
+
+aside {
+  width: 33.33%;
+  float: left;
+  padding: 5%;
+}
+aside section {
+  padding: 5%;
+  margin-bottom: 10%;
+}
+aside h3 {
+  font-style: italic;
+}
+aside ul li {
+  list-style-type: none;
+}
+aside section:first-child {
+  background-color: #f8f9fa;
+}
+aside section:nth-child(2) {
+  margin-bottom: 10%;
+}
