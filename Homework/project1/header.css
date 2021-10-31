@@ -1,0 +1,113 @@
+.header {
+    width: 100%;
+    min-height: 10%;
+    background-color: rgb(255, 204, 0);
+    position: relative;
+}
+
+.header-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    min-height: 90%;
+    margin-left: 5%;
+}
+
+h1 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.header-container ul {
+    display: flex;
+    list-style: none;
+    width: 20%;
+    justify-content: space-around; 
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-container > button {
+    background-color: rgb(167, 167, 167);
+    color: white;
+    padding: 10px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.search {
+    display: flex;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.search button {
+    background: url(search-button.png);
+    padding: 5px;
+}
+
+@media screen and (max-width: 720px) {    
+    .header-container h1 {
+        grid-area: h1;
+    }
+
+    .header-container ul {
+        grid-area: ul;
+    }
+
+    .header-container button {
+        grid-area: btn;
+    }
+
+    .header-container .search {
+        grid-area: search;
+    }
+
+    .header-container {
+        display: grid;
+        position: absolute;
+        grid-template-columns: 45% 37% 18%;
+        grid-template-rows: repeat(2 50%);
+        grid-template-areas: 
+            "h1 ul btn"
+            "h1 search search";
+        width: 90%;
+        height: 90%;
+        margin-left: 5%;
+        margin-bottom: 0;
+    }
+    
+    h1 {
+        font-family:Verdana, Geneva, Tahoma, sans-serif ;
+        font-size: 28px
+    }
+    
+    .header-container ul {
+        display: flex;
+        list-style: none;
+        width: 8%;
+        justify-content: space-between;
+        gap: 20%;
+    }
+    
+    .header-container > button {
+        background-color: rgb(167, 167, 167);
+        color: white;
+        padding: 2px;
+        border-style: none;
+        border-radius: 3px;
+    }
+
+    .search input {
+        width: 80%;
+    }
+    
+    .search button {
+        background: url(search-button.png);
+        padding: 2px;
+    }
+}
