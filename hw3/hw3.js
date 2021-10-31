@@ -24,21 +24,32 @@ console.log("Q2. ", checkPalindrom("abbae"));
 console.log();
 
 //3. Write a JavaScript function that generates all combinations of a string.
+// Expected Output: d, do, dog, o, og, g
+let generateAllString = (s) => {
+  let res = [];
+  for (let h = 0; h < s.length; h++) {
+    for (let i = h; i < s.length; i++) {
+      let str = "";
+      for (let j = h; j < i + 1; j++) {
+        str += s[j];
+      }
+      res.push(str);
+    }
+  }
+  return res;
 
-// let generateAllString = (s) => {
-//   let res = [];
-//   bk(s);
-//   return res;
-
-//   function bk(s) {
-//     if (s.length === 0) {
-//       return;
-//     } else {
-//       bk(s, s.substr());
-//     }
-//   }
-// };
-// generateAllString("Q3. ", "dog");
+  // let res = [];
+  // bk(s);
+  // return res;
+  // function bk(s) {
+  //   if (s.length === 0) {
+  //     return;
+  //   } else {
+  //     bk(s, s.substr());
+  //   }
+  // }
+};
+console.log("Q3. ", generateAllString("dog"));
 console.log();
 
 // 4. Write a JavaScript function that returns a passed string with letters in alphabetical order.
