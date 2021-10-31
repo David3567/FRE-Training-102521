@@ -225,7 +225,7 @@ console.log();
 
 //16. Write a JavaScript function to extract unique characters from a string.
 let getUniqueChar = (s) => {
-  let map = [];
+  let map = {};
   let res = [];
   for (let i = 0; i < s.length; i++) {
     if (!map[s[i]]) {
@@ -241,7 +241,7 @@ console.log();
 //17. Write a JavaScript function to get the number of occurrences of each letter in specified string.
 
 const occrrencesOfEachLetter = (s) => {
-  let map = [];
+  let map = {};
   for (let i = 0; i < s.length; i++) {
     if (!map[s[i]]) {
       map[s[i]] = 1;
@@ -339,7 +339,7 @@ console.log();
 //23. Write a JavaScript function to find the first not repeated character.
 
 const firstRepeat = (s) => {
-  let map = [];
+  let map = {};
   let nonRepeat = "";
   for (let i = 0; i < s.length; i++) {
     if (!map[s[i]]) {
@@ -386,7 +386,7 @@ console.log();
 //25. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output.
 const Longest_Country_Name = (countries) => {
   let max = Number.MIN_VALUE;
-  let map = [];
+  let map = {};
   for (let country of countries) {
     if (parseInt(country.lentgh) > parseInt(max)) {
       console.log("tes");
@@ -400,7 +400,7 @@ const Longest_Country_Name = (countries) => {
 
 const Longest_Country_Name2 = (countries) => {
   let max = Number.MIN_VALUE;
-  let map = [];
+  let map = {};
   for (let i = 0; i < countries.length; i++) {
     if (countries[i].length > max) {
       max = countries[i].length;
@@ -418,13 +418,15 @@ console.log();
 
 //26. Write a JavaScript function to find longest substring in a given a string without repeating characters.
 
+//iterative
 // const longestSubstring = (s) =>{
+//   s = s.toLowerCase();
 //   let str = "";
 //   for(let i =0; i <s.length; i++){
 //     if(s)
 //   }
 // }
-// console.log("Q26. ",longestSubstring("Australia"));
+// console.log("Q26. ",longestSubstring("australia"));
 console.log();
 
 //27. Write a JavaScript function that returns the longest palindrome in a given string.
