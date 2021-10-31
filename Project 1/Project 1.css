@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    line-height: 1.2;
+
+}
+
+header {
+    text-decoration: underline;
+    text-align: center;
+    width:100%;
+    position: relative;
+    margin-top: 30px;
+}
+
+header p {
+    position: absolute; 
+    left: 5%;
+    color: grey;
+    top: 30%;
+
+}
+
+header img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 5%;
+    top: 30%;
+}
+
+main {
+    display: grid;
+    margin: 0; 
+    grid-template-columns: 50% 50%; 
+    grid-gap: 20px;
+    padding: 40px;
+}
+
+.BlogGrid {
+  
+    border: 5px solid rgb(192, 190, 190);
+    padding-left: 30px;
+    position: relative;
+    padding-bottom: 30px;
+    
+}
+
+.world {
+    color: green;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.design {
+    color: blue;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.con {
+    
+    position: absolute;
+    
+    bottom: 0;
+    
+}
+
+.bottom {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    width: 100%;
+    background-color: rgb(182, 178, 178);
+    position: fixed;
+    bottom:0;
+    height: 60px;
+    border-top: 2px solid grey;
+    
+}
+
+.bottom p {
+    text-align: center;
+    
+    padding-top: 8px;
+}
+
+.mainArea {
+    width: 66.66%;
+    padding: 25px;
+    float: left;
+
+}
+
+.author {
+    color: rgb(192, 192, 192)
+}
+
+.mainArea p {
+    padding: 10px 0;
+}
+
+article p:first-child {
+    border-bottom: 1px solid rgb(192, 192, 192);
+  }
+
+.BorderArea {
+    border: 1px solid rgb(94, 88, 88);
+}
+
+ul.sub-heading {
+    margin-left: 5%;
+    list-style-type: disc; /*is it needed?*/
+  }
+  
+ol {
+    margin-left: 5%;
+  }
+
+  button {
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+  }
+
+  button:focus {
+    
+    box-shadow: 0 0 5px grey;
+    border-radius: 10px;
+    background-color: rgba(61, 178, 255, 0.966);
+    
+}
+
+aside {
+    width: 33.33%;
+    float: right;
+    padding: 5%;
+}
+
+aside section {
+    padding: 5%;
+    margin-bottom: 10%;
+}
+aside h3 {
+    font-style: italic;
+}
+
+aside ul li {
+    list-style-type: none;
+  }
+
+aside section:first-child {
+    background-color: rgb(151, 147, 147);
+}
