@@ -1,0 +1,55 @@
+.grid-left-column {
+  grid-area: left;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: url(../img/mountain.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.grid-left-column::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  padding: 3rem 2rem;
+  overflow: auto;
+}
+
+.blog-title small {
+  color: var(--mute-color);
+  font-style: italic;
+}
+
+.blog-content h2,
+.blog-content h3 {
+  margin-top: 1.5rem;
+}
+
+.blog-content p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.blog-content ul {
+  margin: 0.5rem 2rem;
+  line-height: 1.5;
+}

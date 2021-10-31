@@ -1,0 +1,68 @@
+.card {
+  border-radius: 1rem;
+  color: white;
+  background-image: url(../img/mountain.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10rem 0 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(20 0% 0% /0.3) 20%,
+    hsl(0 0% 0% / 1)
+  );
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: calc(100% + var(--padding));
+  background-color: var(--success-color);
+  left: calc(var(--padding) * -1);
+  bottom: 0;
+}
+
+.card h2,
+.card p {
+  margin-top: 0.7rem;
+}
+
+.card small {
+  color: var(--mute-color);
+  font-style: italic;
+}
+.card a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--success-color);
+  text-decoration: none;
+  color: white;
+  border-radius: 0.2rem;
+}
+
+.card.green-leaf-background {
+  background: url(../img/green-leaf.webp) no-repeat;
+}
+
+.card.river-background {
+  background: url(../img/river.webp) no-repeat center;
+}
+
+.card.building-background {
+  background: url(../img/building.webp) no-repeat center;
+}

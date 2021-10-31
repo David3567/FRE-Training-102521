@@ -1,0 +1,43 @@
+@import "./default.css";
+@import "./navbar.css";
+@import "./page_layout.css";
+@import "./grid_right_column.css";
+@import "./grid_left_column.css";
+
+.post-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: "left right";
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .page-layout {
+    width: 95%;
+  }
+  .post-container {
+    grid-template-areas:
+      "left"
+      "left"
+      "left"
+      "right";
+    grid-template-columns: 100%;
+  }
+
+  .overlay {
+    overflow: auto;
+  }
+
+  .grid-right-column {
+    height: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .archives a {
+    margin-top: 0.2rem;
+  }
+}

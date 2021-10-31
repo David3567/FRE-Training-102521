@@ -1,0 +1,14 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.nav-bar a {
+  color: var(--mute-color);
+}
+
+.nav-bar h1 {
+  text-decoration: underline;
+}

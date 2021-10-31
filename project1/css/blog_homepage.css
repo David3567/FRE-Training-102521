@@ -1,0 +1,49 @@
+@import "./default.css";
+@import "./card.css";
+@import "./navbar.css";
+@import "./page_layout.css";
+
+.card-container {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.page-layout footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.page-layout footer a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.page-layout footer a i {
+  margin-right: 0.2rem;
+}
+
+@media screen and (max-width: 480px) {
+  .page-layout {
+    width: 80%;
+  }
+  .card-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
