@@ -1,0 +1,86 @@
+* {
+	margin-left: auto;
+    margin-right: auto;
+    font-family:Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.2;
+
+}
+
+header {
+    text-decoration: underline;
+    text-align: center;
+    width:100%;
+    position: relative;
+    margin-top: 30px;
+}
+
+header p {
+    position: absolute; 
+    left: 30%;
+    color: grey;
+    top: 30%;
+    font-size:12px;
+
+}
+
+header h1 {
+	font-size: 20px;
+}
+
+
+
+.blog-group {
+    margin: 0px auto 10px;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    position: absolute;
+    left: 18%;
+}
+
+ .blog-group .blog-left, .blog-group .blog-right{
+    background-color:#fff;
+    padding:12px;
+    margin: 5px 5px 12px 5px;
+    border-radius: 5px;
+    border: 2px solid silver;
+    border-width: 5px;
+    text-align: left;
+}
+
+#blog-name {
+	font-size: 15px;
+	margin-top: 3px;
+	margin-bottom: 0px;
+}
+
+#world {
+	font-size: 12px;
+	color:blue;
+	margin-top: 0px;
+	margin-bottom: 3px;
+}
+
+#Design {
+	font-size: 12px;
+	color:green;
+	margin-top: 0px;
+	margin-bottom: 3px;
+}
+
+#date {
+	color: grey;
+	font-size:12px;
+	margin-bottom: 0px;
+	margin-top:0px;
+}
+#abstract {
+	font-size: 12px;
+	margin-top:0px;
+	margin-bottom: 20px;
+}
+
+
+
