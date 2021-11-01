@@ -1,0 +1,95 @@
+* {
+   font-family: "Arial, Helvetica, sans-serif";
+   padding: 0;
+   margin:0;
+}
+
+
+.header{
+   display: flex;
+   justify-content: space-between;
+   margin: 0;
+   padding: 1em 1em 1em 1em;
+   align-items: baseline;
+   background-color: rgba(158, 231, 158 , .5);
+   border: 5px white, solid;
+   border-radius: 4px;
+
+}
+.header #main-title{
+   text-decoration: underline;
+   font-size: 3em;
+   font-weight: bolder;
+   color:black;
+   font-family: "Times New Roman", Times, serif;
+}
+.header #sub-button{
+   color: #8b8b8b;
+   font-size: 105%;
+}
+.card-area{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   margin: 5% 15% 5% 15%;
+}
+.column1, .column2{
+   width: 40%;
+   display: flex;
+   flex-direction: column;
+}
+
+.card-type1, .card-type2{
+   border-radius: 15px;
+   border: 3px lightgray solid;
+   margin: 1em 0em 1em 0em;
+   height: 30%;
+   padding: 2em;
+
+}
+.card-type1 .Category{
+   color: Blue;
+   font-weight: bold;
+}
+.card-type2 .Category{
+   color: green;
+   font-weight: bold;
+}
+.description{
+   margin-top: .5em;
+}
+.continue-reading{
+   margin-top: 1.7em;
+}
+.continue-reading a{
+   color: lightseagreen
+}
+.date{
+   color: darkgray
+}
+.footer{
+   display: flex;
+   justify-content: center;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+   margin: 2em 0 0 0;
+   background-color: rgba(172, 172, 172, .90);
+}
+.footer p{
+   margin: .5em 0 .5em 0 ;
+   color: white;
+}
+@media (max-width:800px){
+   .card-area{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 5% 8% 3% 8%;
+   }
+   .column1, .column2{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+   }
+}

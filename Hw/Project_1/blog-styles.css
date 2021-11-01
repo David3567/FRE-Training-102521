@@ -1,0 +1,130 @@
+* {
+   font-family: "Arial, Helvetica, sans-serif";
+   padding: 0;
+   margin:0;
+}
+
+.header{
+   display: flex;
+   justify-content: space-between;
+   margin: 0;
+   padding: 1em 1em 1em 1em;
+   align-items: baseline;
+   background-color: rgba(158, 231, 158 , .5);
+   border: 5px white, solid;
+   border-radius: 4px;
+}
+.header #main-title{
+   text-decoration: underline;
+   font-size: 3em;
+   font-weight: bolder;
+   color:black;
+   font-family: "Times New Roman", Times, serif;
+}
+.header #sub-button{
+   color: #8b8b8b;
+   font-size: 105%;
+}
+.container{
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+}
+.content-title{
+   font-size: 3em;
+   font-family: "Times New Roman", Times, serif;
+}
+.content{
+   /* border: 1px black solid; */
+   margin: 1em 2em 3em 5em;
+   padding: 1em;
+   flex-basis: 65vw;
+}
+.date{
+   color: gray;
+}
+.date a{
+   color: lightskyblue
+}
+.content-text{
+   margin: 1em 0 1em 0;
+}
+.box-text{
+   border: 1px darkgray solid;
+   margin: 1em 0 1em 0;
+   padding: 1em;
+}
+.sidebar{
+   flex-basis: 30vw;
+   margin: 1em 2em 1em 1em;
+   padding: 1em;
+   display: flex;
+   flex-direction: column;
+}
+.sidebar-text{
+   margin: .5em 0;
+   padding: 0 1em 0 0;
+}
+.heading{
+   margin: .5em 0;
+   font-size: 2.5em;
+   font-family: "Times New Roman", Times, serif;
+}
+.sub-heading{
+   margin: .5em 0;
+   font-size: 2em;
+   font-family: "Times New Roman", Times, serif;
+}
+.content ul, .content ol{
+   padding: 0em 2em;
+   margin: 1em 0;
+}
+.sidebar ul{
+   list-style-type: none;
+   padding: 0em 1em;
+   margin: .5em 0;
+}
+.sidebar ul li a{
+   color: hsl(203, 86%, 67%)
+}
+.author{
+   border: 1px darkgray solid;
+   margin: 2em 0 3em 0;
+   display: flex;
+   flex-direction: row;
+}
+.author-image{
+   height: 15%;
+   width: 15%;
+}
+.author-bio{
+   display: flex;
+   flex-direction: column;
+   margin-left: 3em;
+}
+.footer{
+   display: flex;
+   justify-content: center;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+   margin: 2em 0 0 0;
+   background-color: rgba(172, 172, 172, .90);
+}
+.footer p{
+   margin: .5em 0 .5em 0 ;
+   color: white;
+}
+#button2{
+   margin-left: 3em;
+}
+button{
+   background-color: white;
+   border: 1px gray solid;
+   padding: .5em 1em;
+   border-radius: 9px;
+}
+button:hover{
+   background-color: green;
+   color: white;
+}
