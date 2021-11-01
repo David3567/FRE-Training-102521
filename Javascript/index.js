@@ -125,31 +125,33 @@
 // // inheritance
 
 
-class Person {
-    #name;
-    #age;
-    constructor(name, age) {
-        this.#name = name;
-        this.#age = age;
-    }
-    run() {
-        console.log(this.#name + ' is running');
-    }
-}
-class Employee extends Person {
+// class Person {
+//     // #name;
+//     // #age;
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
 
-    constructor(name, age, company = 'Jump') {
-        super(name, age);
-        this.company = 'Jump';
-    }
+//     run() {
+//         console.log(this.name + ' is running');
+//     }
+// }
+// class Employee extends Person {
 
-    walk() {
-        console.log(this.name + ' is walking');
-    }
-}
-const e = new Employee('Dio', 200);
-console.log(e);
-e.run();
+//     constructor(name, age, company = 'Jump') {
+//         super(name, age);
+//         this.company = 'Jump';
+//     }
+
+//     walk() {
+//         console.log(this.name + ' is walking');
+//     }
+// }
+// const e = new Employee('Dio', 200);
+
+// console.log(e);
+// e.run();
 
 
 // function PersonFn(name, age) {
@@ -170,7 +172,7 @@ e.run();
 // const e = new EmployeeFn('Dio', 200, 'Jump');
 // console.log(e);
 
-// // Polymorphism
+// // Poly-morph-ism : Many Forms
 // class Animal {
 //     constructor(name) {
 //         this.name = name;
@@ -246,31 +248,29 @@ e.run();
 
 // // MyReduce
 
-// Array.prototype.myReduce = function (...args) {
-//     // let acc = this[0];
-//     // let index = 1;
-//     // if (args.length > 1) {
-//     //     acc = args[1];
-//     //     index = 0;
-//     // }
-//     let [ acc, index ] =
-//         args.length === 1
-//             ? [ this[0], 1 ]
-//             : [ args[1], 0 ];
+Array.prototype.myReduce = function (...args) {
+    // let acc = this[0];
+    // let index = 1;
 
-//     for (let i = index; i < this.length; i++) {
-//         acc = args[0](acc, this[i], i, this);
-//     }
-//     return acc;
-// }
+    // if (args.length > 1) {
+    //     acc = args[1];
+    //     index = 0;
+    // }
+    let [ acc, index ] = args.length === 1 ? [ this[0], 1 ] : [ args[1], 0 ];
 
-// const numbers = [175, 50, 25];
+    for (let i = index; i < this.length; i++) {
+        acc = args[0](acc, this[i], i, this);
+    }
+    return acc;
+}
 
-// function myFunc(acc, cur) {
-//     return acc - cur;
-// }
+const numbers = [175, 50, 25];
 
-// console.log(numbers.myReduce(myFunc, 0));
+function myFunc(acc, cur) {
+    return acc - cur;
+}
+
+// console.log(numbers.myReduce(myFunc));
 
 // const str = 'abc';
 // const strarr = str.split(''); // ['a', 'b', 'c'];
@@ -350,3 +350,151 @@ e.run();
 // // console.log(obj.name);
 // const name = 'name';
 // console.log(obj[name]);
+
+
+// // // // destructure;
+// let [a, b] = [0, 1];
+
+// const obj = {
+//     name: 'Jojo',
+//     age: 18
+// }
+// let {age, name} = obj;
+
+// const obj = {
+//     id: 1,
+//     name: 'David Dong',
+//     links: [
+//         { name: 'wechat',       link: 'wechat.com'      },
+//         { name: 'apple',        link: 'apple.com'       },
+//         { name: 'cnn',          link: 'cnn.com'         },
+//         { name: 'fox',          link: 'fox.com'         },
+//         { name: 'hbo',          link: 'hbo.com'         },
+//     ]
+// }
+// console.log(obj.links.find( ({name})=> name === 'apple').link);
+
+// // // // rest parameter vs. spread operator
+// const arr = [1, 2, 3];
+// const arr1 = [0, ...arr, 456];
+
+// const obj = {
+//     name: 'Jojo',
+//     age: 18
+// }
+// const obj1 = {...obj};
+
+// const str = 'testtestabc';
+
+// const set = new Set([...str]);
+// console.log([...set].join(''));
+
+// function foo(num, num1, ...args) {
+//     console.log(args);
+// }
+// foo(1, 2, 1, 12, 123);
+
+// // // // object copy
+// // deep coyp vs shallow copy
+// const newobj = {name: 'test'}
+
+// const obj = {
+//     name: 'Jojo',
+//     age: 18,
+//     links: [
+//         'show', 1, 2, newobj
+//     ],
+//     foo: function() {
+//         console.log(5);
+//     },
+//     date: new Date()
+// }
+// obj.foo();
+
+// // JSON.parse and JSON.stringify
+// const obj1 = JSON.parse(JSON.stringify(obj));
+// console.log(obj, obj1);
+
+// deep copy: Lodash | _.cloneDeep() Method
+
+
+// // // // iife
+
+// (
+//     function() {
+//     return console.log(5)
+//     }
+// )();
+
+// (   
+//     function() {
+//         return console.log(5)
+//     }()    
+// );
+
+// const bar = foo();
+// const baz = foo();
+
+// // // // closure
+
+// const foo = () => {
+// // ~~~~~~~~~~~~~~~~~~
+//     function print(num) {
+//         console.log(num);
+//     }
+// // ~~~~~~~~~~~~~~~~~~
+//     return function(b) {
+//         print(b);
+//     }
+// }
+
+// const bar = foo();
+// bar(5); // sum
+
+/**
+ * 
+ * @param {number} num 
+ * @param {function} cb 
+ */
+
+const target = (a, b) => console.log(a + b);
+const fn = limitedFunction(2, target);
+
+function limitedFunction(num, cb) { 
+
+    return function(...args) {
+        if (num > 0) {
+            num--;
+            return cb(...args);
+        } else {
+            console.log('overlimited');
+        }
+    }
+}
+ 
+fn(4, 5); // 9
+fn(1, 2); // 3
+fn(3, 12); // 15
+fn(4, 2); // 6
+fn(3, 12); // 15
+
+
+// // // // this
+
+// // // // call, apply, bind
+
+// // // // arrow funciton
+
+// // // // currying
+
+
+
+// // // // event loop
+
+// // // // callback function & Callback Hell;
+
+// // // // Promise && MyPromise
+
+// // // // MyFetch
+
+// // // // todolist
