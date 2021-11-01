@@ -1,0 +1,140 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+h2{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.head-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* background-color: tomato; */
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    background-image: url(https://i.picsum.photos/id/1036/4608/3072.jpg?hmac=Tn9CS_V7lFSMMgAI5k1M38Mdj-YEJR9dPJCyeXNpnZc);
+}
+.head-container ul{
+    display: flex;
+    /* flex-direction: row; */
+    
+}
+.head-container li{
+    display: flex;
+    list-style: none;
+}
+.head-container li .start{
+    font-size: 0.9em;
+    color:grey;
+    /* padding-left: 10%; */
+}
+.head-container li .middle{
+    font-size: 2em;
+    font-weight: bold;
+    color:black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.head-container li .end{
+    background-color: tomato;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.content-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    
+}
+.content-container .title{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+.content-container .left{
+    width: 70%;
+    padding: 3rem;
+}
+.content-container .right{
+    width: 30%;
+    padding: 2rem;
+}
+.content-container .content1{
+    border-bottom: darkgrey solid;
+    border-width: thin;
+}
+
+.content-container .content3{
+    border: darkgrey solid;
+    border-width: thin;
+    /* padding-top: -2px; */
+}
+.content-container .content3 p{
+    margin-top: -0.05rem;
+}
+
+@keyframes change-color{
+    0%{border: white solid; border-width: thin; color:grey}
+    40%{border:purple; border-width: thin; color:darkgrey}
+    80%{border:darksalmon; border-width: thin;color:black}
+
+}
+.animation1{
+    animation-name: change-color;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.content-container .buttons{
+    display: flex;
+    flex-direction: row;
+}
+.content-container .buttons .item{
+    display: flex;
+    flex:0 1 100%;
+    margin:0.5rem 1rem;
+    
+}
+.item input{
+    padding:0.8rem;
+    width:100%;
+    border-radius: 8px;
+    border:1px gray solid ;
+}
+
+.item .btn1{
+    color: darksalmon;
+}
+
+.item .btn1:active{
+    background-color: purple;
+}
+
+.item .btn2{
+    color: darksalmon;
+}
+
+.item .btn2:active{
+    background-color:purple;
+}
+
+.content-container .about{
+    background-color: lightgrey;
+    padding: 0.5rem;
+}
+
+@media (max-width:600px){
+    .head-container{
+        display: block;
+        /* justify-content: center; */
+    }
+    .content-container{
+        display: block;
+        /* justify-content: center; */
+    }
+ }

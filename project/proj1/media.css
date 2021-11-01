@@ -1,0 +1,10 @@
+@media (max-width:600px){
+    .content-container{
+        display: block;
+        /* justify-content: center; */
+    }
+    .content-container .card .container{
+        display: block;
+        justify-content: center;
+    }
+ }

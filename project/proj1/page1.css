@@ -1,0 +1,117 @@
+@import "media.css";
+
+:root{
+    --color-grey: grey;
+    --color-white: white;
+    --color-black: black;
+}
+
+*{
+    font-family: Arial;
+}
+
+.head-container1{
+    display: flex;
+    /* width: 100%; */
+    /* background-color: tomato; */
+    list-style: none;
+    justify-content: flex-end;
+    padding-right: 15%;
+}
+.head-container2{
+    display: flex;
+    /* background-color: tomato; */
+    width: 100%;
+    list-style: none;
+    justify-content: center;
+    height: 3em;
+}
+
+.head-container1 a{
+    color:var(--color-grey);
+
+}
+.head-container2 a{
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: 2.5em;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.content-container{
+    width: 100%;
+    /* background-color: tomato; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 40em;
+    /* padding: 1rem; */
+    justify-content: center;
+    /* justify-content: space-evenly; */
+    list-style: none;
+    /* margin: 1rem; */
+}
+.content-container .card{
+    display: flex;
+    box-shadow: 2px 4px 4px 2px lightgray;
+    margin: 1rem;
+    background-color: lightcoral;
+    /* padding: 2rem; */
+    border-radius: 5%;
+    width: 35%;
+    /* height: 30%; */
+    background-image: url(https://i.picsum.photos/id/1036/4608/3072.jpg?hmac=Tn9CS_V7lFSMMgAI5k1M38Mdj-YEJR9dPJCyeXNpnZc);
+}
+.card:hover {
+    box-shadow: 2px 4px 12px 2px lightblue;
+    
+}
+.content-container .card .container{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+
+}
+.content-container li{
+    padding: 2px;
+}
+.content-container p{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer{
+    /* background-color: green; */
+    display: flex;
+    position:sticky; 
+    list-style: none;
+    justify-content: flex-end;
+    /* padding-right: 5%; */
+
+    bottom: 0rem;
+    height: 8rem; 
+}
+
+.footer ul{
+    display: flex; 
+    flex-direction: column;
+    list-style: none;
+ }
+ .footer li{
+    padding: 1rem;
+    
+}
+.footer a{
+    color: lightcoral
+}
+
+@media (max-width:600px){
+    .content-container{
+        display: block;
+        /* justify-content: center; */
+    }
+    .content-container .card .container{
+        display: block;
+        justify-content: center;
+    }
+ }
+
