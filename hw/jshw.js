@@ -364,7 +364,6 @@ console.log(getOccurrences(str));
 // console.log(subset(arr, len));
 function subSet(arr, length) {
     return arr.reduce((acc, curr) => acc.concat(acc.map(ele => [...ele, curr])), [[]]).filter((ele) => ele.length === length);
-
 }
 console.log(subSet([1, 2, 3, 4, 5], 3));
 
