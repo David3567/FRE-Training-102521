@@ -8,53 +8,19 @@
 </head>
 <body>
     <script>
+        //5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case. 
+// Example string: 'the quick brown fox' 
+// Expected Output: 'The Quick Brown Fox 
+   function uppercase(String) {
+       let array = String.split(" ");
+       let newArray = [];
+       for (let i = 0; i < array.length; i++){
+           newArray.push(array[i].charAt(0).toUpperCase() + array[i].slice(1));
+       }
+       return newArray.join(" ");
+   }
 
-/*Array.prototype.myReduce = function (callbackfn) {
-   let value = this[0];
-   for (let i = 1; i < this.length; i++) {
-         value = callbackfn(value, this[i], i, this);
-    }
-     return value;
-     }*/
-
-     const str = 'abc';
-const strarr = str.split(''); // ['a', 'b', 'c'];
-
- console.log(strarr.reduce((acc, cur) => acc + cur + cur, '')); // 'aabbcc'
-//const numbers = [175, 50, 25];
-
-//function myFunc(acc, cur) {
-//  return acc- cur;
-//}
-
-//console.log(numbers.reduce((acc,cur) => {
-//    return acc-cur
-//}, 0));
-
-/*
-const arr = [175, 25, 50]
-const result = arr.reduce((acc, elem) => {
-  return acc - elem
-}, 0) // *start the accumulator at 10 instead of 1*
-
-console.log(result)
-*/
-
-Array.prototype.myReduce = function(callbackfn) {
-    let value = this[0];
-    
-    for(let i =1; i<this.length; i++){
-        
-        value = callbackfn(value ,this[i]);
-    }
-    return value;
-}
-const arr = [175, 25, 50]
-const result = arr.myReduce((acc, elem) => {
-  return acc - elem
-}) // *start the accumulator at 10 instead of 1*
-
-console.log(result)
+   console.log(uppercase("applr pie"));
         </script>
     
 </body>
