@@ -1,0 +1,52 @@
+html, body {
+    font-family: "Times New Roman", Times, serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#container {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}.column.left {
+    margin-right: 20px;
+    margin-left: 200px;
+    width: 900px;
+}.column.right {
+    margin-right: 200px;
+    width: 450px;
+}.flex3{
+    display:flex;
+    gap: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 200px;
+    margin-left: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 1 1 auto;
+}.flex3 > * {
+        flex: 1 1 auto;
+}h1{
+  margin-right: 200px;
+}.button {
+  background-color: #ffffff; /* Green */
+  border: solid;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px 4px;
+  cursor: pointer;
+}.button3 {
+    border-radius: 8px;
+    width: 200px;
+    border-color: rgb(175,207,246);
+}.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    grid-auto-rows: minmax(100px, auto);
+}
