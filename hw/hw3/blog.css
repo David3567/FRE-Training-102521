@@ -1,0 +1,94 @@
+header {
+    position: relative;
+    width: 70%;
+    left: 15%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height:10%;
+}
+content {
+    position: relative;
+    width: 100%;
+    left: 15%;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+content > .mainleft {
+    width: 40%;
+    padding-right: 30px;
+}
+content > .mainright {
+    width: 20%;
+}
+.mainleft > .title {
+    font-size:xx-large;
+    font-weight: bold;
+}
+.mainleft > .subcontent {
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(241, 241, 241);
+}
+.mainleft > .content1 {
+    padding: 15px 0;
+}
+.mainleft > .content2 {
+    margin: 15px 0;
+    padding-bottom: 15px;
+    border: 1px solid rgb(176, 176, 176);
+}
+.mainleft >.content3 {
+    padding-bottom: 15px;
+}
+.mainleft> .heading {
+    font-size: xx-large;
+    font-weight: bold;
+}
+.mainleft > .date {
+    color: rgb(176, 176, 176);
+}
+.mainleft > .content4 {
+    padding: 15px 0;
+}
+.mainleft >.subheading {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.mainleft > .content5 {
+    border: 1px solid rgb(176, 176, 176);
+}
+.btn {
+    color: rgb(168, 201, 252);
+    border-radius: 50%;
+    border: 1px solid rgb(168, 201, 252);
+}
+.mainright .title {
+    font-style: italic;
+    font-size: large;
+    font-weight: bold;
+}
+.mainright .about {
+    padding-bottom: 50px;
+}
+.mainright .archives {
+    padding-bottom: 50px;
+}
+footer {
+    top: 20px;
+    position: relative;
+    left: 15%;
+    height: 40%;
+    width: 70%;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+footer > div{
+    padding-top: 30px;
+}
