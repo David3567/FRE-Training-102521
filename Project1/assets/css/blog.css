@@ -1,0 +1,40 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 6px solid #e3e5e8;
+  width: 500px;
+  min-height: 250px;
+  margin: 20px 20px;
+  padding: 26px;
+  position: relative;
+}
+
+.card h4 {
+  padding: 10px 0;
+}
+
+.card .world {
+  color: #2d86ff;
+}
+
+.card .design {
+  color: #4db462;
+}
+
+.card .date {
+  color: #9aa0a6;
+}
+
+.card .intro {
+  padding: 10px 0;
+}
+
+.card a {
+  position: absolute;
+  bottom: 26px;
+  color: #5298ff;
+}

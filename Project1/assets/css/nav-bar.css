@@ -1,0 +1,33 @@
+.nav-bar {
+  padding-right: 5%;
+}
+
+.nav-bar .about {
+  background: #f8f8f8;
+  padding: 1.5rem;
+}
+
+.nav-bar figure img {
+  height: 200px;
+  margin: 0 auto;
+}
+
+.nav-bar h3 {
+  font-style: oblique;
+}
+
+figure {
+  text-align: center;
+}
+
+.nav-list {
+  padding: 2rem 1.5rem;
+}
+
+.nav-list ul {
+  list-style-type: none;
+}
+
+.nav-list ul li {
+  padding-bottom: 0.2em;
+}

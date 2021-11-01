@@ -1,0 +1,27 @@
+footer {
+  height: 6rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-container {
+  background: #f9f9f9;
+  border: 1px solid #f3f3f3;
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container p {
+  color: #b9b8b8;
+  padding: 10px;
+}
+
+.footer-container a {
+  color: #5298ff;
+}

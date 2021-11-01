@@ -1,0 +1,106 @@
+@import "header.css";
+@import "footer.css";
+@import "index.css";
+@import "nav-bar.css";
+
+a {
+  color: #69a4ff;
+}
+
+h2,
+h3,
+h4 {
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.post-container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.post {
+  padding: 0 3rem;
+}
+@media (max-width: 600px) {
+  .post {
+    padding: 0;
+  }
+}
+
+.post-title {
+  padding-bottom: 10px;
+}
+
+.post-title h1 {
+  padding-bottom: 5px;
+}
+
+.post-title p {
+  color: #c4c4c4;
+}
+
+.paragraph {
+  padding: 10px 0;
+}
+
+hr {
+  border-top: 1px solid #f8f8f8;
+  width: 95%;
+  margin: 1rem 0;
+}
+
+.box {
+  border: 2px solid #d5d9dd;
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+}
+
+.box span {
+  font-weight: bold;
+}
+
+.code-box {
+  padding-bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.post ul {
+  padding: 1rem 2.5rem;
+}
+
+.post .list2 {
+  list-style-type: decimal;
+}
+
+.button-section {
+  padding: 3rem 0;
+}
+
+.button-section button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.8em;
+  margin-right: 0.3em;
+  border-radius: 2em;
+  box-sizing: border-box;
+  border: 1px solid #69a4ff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #69a4ff;
+  background-color: white;
+  text-align: center;
+  transition: all 0.2s;
+}
+.button-section button:hover {
+  background-color: #f8f8f8;
+}
+@media all and (max-width: 30em) {
+   .button-section button {
+    display: block;
+    margin: 0.2em auto;
+  }
+}
