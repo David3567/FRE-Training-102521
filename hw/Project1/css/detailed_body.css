@@ -1,0 +1,92 @@
+img {width:80%;}
+
+.mainflex {
+    margin-top:30px;
+    display:flex;
+    flex-flow:row wrap;
+}
+
+#main {
+    flex:66.6%;
+    margin-right:5%;
+}
+
+.post-title {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.date {color:rgb(131, 130, 130)}
+
+.mainflex a {color:rgb(80, 185, 226);}
+
+.post-intro {
+    border-style:none none solid none;
+    border-width:1px;
+    border-color: rgb(211, 211, 211);
+    padding-bottom:20px;
+}
+
+.quote::before {content:open-quote;}
+
+.quote::after {content:close-quote;}
+
+.block1 {
+    box-shadow:0 0 0 2px rgb(209, 209, 209);
+    padding-bottom:20px;
+}
+
+.block1 span {font-weight: bold;}
+
+.block2 {box-shadow:0 0 0 2px rgb(209, 209, 209);}
+
+.list {padding-left:5%;}
+
+.button {
+    border-style:solid;
+    border-radius: 30px;
+    background-color: white;    
+    padding:5px 10px;
+    margin:40px 10px 40px 0px;
+    cursor:pointer;
+}
+
+.older {
+    color:gray;
+    border-color: gray;
+}
+
+.newer {
+    color:mediumpurple;
+    border-color: mediumpurple;
+}
+
+#side {flex:28.3%;}
+
+#about {background-color: rgb(168, 147, 209);}
+
+.side-block {
+    position:relative;
+    padding:20px;
+    margin-bottom:30px;
+}
+
+.side-block ul {list-style:none;}
+
+.side-block a {
+    color:black;
+    text-decoration: none;
+}
+
+.side-block a:hover {text-decoration:underline;}
+
+#side h1 {font-style: italic;}
+
+#centered {
+    position:absolute;
+    top:40%;
+    left:10%;
+    font-style: italic;
+    font-weight:700;
+    color:gold;
+}
