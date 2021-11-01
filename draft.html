@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*Array.prototype.myReduce = function (callbackfn) {
+   let value = this[0];
+   for (let i = 1; i < this.length; i++) {
+         value = callbackfn(value, this[i], i, this);
+    }
+     return value;
+     }*/
+
+     const str = 'abc';
+const strarr = str.split(''); // ['a', 'b', 'c'];
+
+ console.log(strarr.reduce((acc, cur) => acc + cur + cur, '')); // 'aabbcc'
+//const numbers = [175, 50, 25];
+
+//function myFunc(acc, cur) {
+//  return acc- cur;
+//}
+
+//console.log(numbers.reduce((acc,cur) => {
+//    return acc-cur
+//}, 0));
+
+/*
+const arr = [175, 25, 50]
+const result = arr.reduce((acc, elem) => {
+  return acc - elem
+}, 0) // *start the accumulator at 10 instead of 1*
+
+console.log(result)
+*/
+
+Array.prototype.myReduce = function(callbackfn) {
+    let value = this[0];
+    
+    for(let i =1; i<this.length; i++){
+        
+        value = callbackfn(value ,this[i]);
+    }
+    return value;
+}
+const arr = [175, 25, 50]
+const result = arr.myReduce((acc, elem) => {
+  return acc - elem
+}) // *start the accumulator at 10 instead of 1*
+
+console.log(result)
+        </script>
+    
+</body>
+</html>
