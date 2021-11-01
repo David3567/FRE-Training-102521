@@ -77,32 +77,32 @@
 
 // oop: Object oriented programming
 // encapsulation
-class Person {
-    #name;
-    #age;
-    constructor(name, age) {
-        this.#name = name;
-        this.#age = age;
-    }
-    get name() {
-        return this.#name;
-    }
-    set name(newName) {
-        this.#name = newName;
-    }
-    get abc() {
-        return this.#age;
-    }
-    set abc(newage) {
-        this.#age = newage;
-    }
-    run() {
-        console.log(this.#name + ' is running');
-        // console.log(this.#name, 'is running');
+// class Person {
+//     #name;
+//     #age;
+//     constructor(name, age) {
+//         this.#name = name;
+//         this.#age = age;
+//     }
+//     // get name() {
+//     //     return this.#name;
+//     // }
+//     // set name(newName) {
+//     //     this.#name = newName;
+//     // }
+//     // get abc() {
+//     //     return this.#age;
+//     // }
+//     // set abc(newage) {
+//     //     this.#age = newage;
+//     // }
+//     run() {
+//         console.log(this.#name + ' is running');
+//         // console.log(this.#name, 'is running');
 
-        // console.log(`${this.#name} is running`);
-    }
-}
+//         // console.log(`${this.#name} is running`);
+//     }
+// }
 // const p = new Person('Jojo', 18)
 // p.abc = 20;
 // console.log(p.abc);
@@ -124,19 +124,33 @@ class Person {
 
 // // inheritance
 
-// class Employee extends Person {
 
-//     constructor(name, age, company = 'Jump') {
-//         super(name, age);
-//         this.company = 'Jump';
-//     }
+class Person {
+    #name;
+    #age;
+    constructor(name, age) {
+        this.#name = name;
+        this.#age = age;
+    }
+    run() {
+        console.log(this.#name + ' is running');
+    }
+}
+class Employee extends Person {
 
-//     walk() {
-//         console.log(this.name + ' is walking');
-//     }
-// }
-// const e = new Employee('Dio', 200);
-// console.log(e);
+    constructor(name, age, company = 'Jump') {
+        super(name, age);
+        this.company = 'Jump';
+    }
+
+    walk() {
+        console.log(this.name + ' is walking');
+    }
+}
+const e = new Employee('Dio', 200);
+console.log(e);
+e.run();
+
 
 // function PersonFn(name, age) {
 //     this.name = name;
@@ -231,21 +245,32 @@ class Person {
 // console.log(newArrViaFilter);
 
 // // MyReduce
-// Array.prototype.myReduce = function (callbackfn) {
-//     let value = this[0];
-//     for (let i = 1; i < this.length; i++) {
-//         value = callbackfn(value, this[i], i, this);
+
+// Array.prototype.myReduce = function (...args) {
+//     // let acc = this[0];
+//     // let index = 1;
+//     // if (args.length > 1) {
+//     //     acc = args[1];
+//     //     index = 0;
+//     // }
+//     let [ acc, index ] =
+//         args.length === 1
+//             ? [ this[0], 1 ]
+//             : [ args[1], 0 ];
+
+//     for (let i = index; i < this.length; i++) {
+//         acc = args[0](acc, this[i], i, this);
 //     }
-//     return value;
+//     return acc;
 // }
 
 // const numbers = [175, 50, 25];
 
 // function myFunc(acc, cur) {
-//   return acc - cur;
+//     return acc - cur;
 // }
 
-// console.log(numbers.myReduce(myFunc));
+// console.log(numbers.myReduce(myFunc, 0));
 
 // const str = 'abc';
 // const strarr = str.split(''); // ['a', 'b', 'c'];
