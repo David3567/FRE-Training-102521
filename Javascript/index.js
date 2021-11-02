@@ -153,17 +153,16 @@
 // console.log(e);
 // e.run();
 
-
 // function PersonFn(name, age) {
 //     this.name = name;
 //     this.age = age;
 // }
-// PersonFn.prototype.run = function() {
-//     console.log(`${this.name} is running`);
-// }
+// // PersonFn.prototype.run = function() {
+// //     console.log(`${this.name} is running`);
+// // }
 
 // function EmployeeFn(name, age, company) {
-//     PersonFn.call(this, name, age);
+//     PersonFn.apply(this, [name, age]);
 //     this.company = company;
 // }
 // EmployeeFn.prototype = PersonFn.prototype;
@@ -222,6 +221,9 @@
 //         callbackfn(this[i], i, this);
 //     }
 // }
+// arr.myForEach(ele => {
+//     console.log(ele);
+// });
 // Array.prototype.myMap = function (callbackfn) {
 //     const arr = [];
 //     for (let i = 0; i < this.length; i++) {
@@ -248,27 +250,34 @@
 
 // // MyReduce
 
-Array.prototype.myReduce = function (...args) {
-    // let acc = this[0];
-    // let index = 1;
+// Array.prototype.myReduce = function (...args) {
+//     // let acc = this[0];
+//     // let index = 1;
 
-    // if (args.length > 1) {
-    //     acc = args[1];
-    //     index = 0;
-    // }
-    let [ acc, index ] = args.length === 1 ? [ this[0], 1 ] : [ args[1], 0 ];
+//     // if (args.length > 1) {
+//     //     acc = args[1];
+//     //     index = 0;
+//     // }
+//     // let [ acc, index ] = args.length === 1 ? [ this[0], 1 ] : [ args[1], 0 ];
 
-    for (let i = index; i < this.length; i++) {
-        acc = args[0](acc, this[i], i, this);
-    }
-    return acc;
-}
+//     // for (let i = index; i < this.length; i++) {
+//     //     acc = args[0](acc, this[i], i, this);
+//     // }
+//     // return acc;
+//     console.log(this);
+// }
 
-const numbers = [175, 50, 25];
+// const arr =[];
+// console.log(arr);
 
-function myFunc(acc, cur) {
-    return acc - cur;
-}
+
+
+
+// const numbers = [175, 50, 25];
+
+// function myFunc(acc, cur) {
+//     return acc - cur;
+// }
 
 // console.log(numbers.myReduce(myFunc));
 
@@ -451,45 +460,226 @@ function myFunc(acc, cur) {
 // const bar = foo();
 // bar(5); // sum
 
-/**
- * 
- * @param {number} num 
- * @param {function} cb 
- */
+// /**
+//  * 
+//  * @param {number} num 
+//  * @param {function} cb 
+//  */
 
-const target = (a, b) => console.log(a + b);
-const fn = limitedFunction(2, target);
+// const target = (a, b) => console.log(a + b);
+// const fn = limitedFunction(2, target);
 
-function limitedFunction(num, cb) { 
+// function limitedFunction(num, cb) { 
 
-    return function(...args) {
-        if (num > 0) {
-            num--;
-            return cb(...args);
-        } else {
-            console.log('overlimited');
-        }
-    }
-}
+//     return function(...args) {
+//         if (num > 0) {
+//             num--;
+//             return cb(...args);
+//         } else {
+//             console.log('overlimited');
+//         }
+//     }
+// }
  
-fn(4, 5); // 9
-fn(1, 2); // 3
-fn(3, 12); // 15
-fn(4, 2); // 6
-fn(3, 12); // 15
+// fn(4, 5); // 9
+// fn(1, 2); // 3
+// fn(3, 12); // 15
+// fn(4, 2); // 6
+// fn(3, 12); // 15
 
 
 // // // // this
+// (function() {
+//     console.log(this);
+// })();
+
+// const myObj = {
+//     name: 'Dio',
+//     age: 200,
+
+//     foo: function() {
+//         // console.log(this); // this --> myObj
+
+//         // (function bar() {
+//         //     console.log('function: bar: ', this); // this --> global obj
+//         // }).call(this); // this ---> myObj
+
+//         const baz = function() {
+//             console.log('function: baz: ', this); // this --> global obj
+//         }
+//         const newbaz = baz.bind(this); // this ---> myObj
+//         newbaz();
+
+//         const bar = () => {
+//             console.log('function: bar: ', this); // this --> myObj
+//         }
+//         bar();
+        
+//     }
+// }
+// myObj.foo();
+
+// class Person {
+//     constructor(name) {
+//         this.name = name; 
+//     }
+//     showThis() {
+//         console.log(this);
+//     }
+//     static staticShowThis() {
+//         console.log(this);
+//     }
+// }
+// const p = new Person('Jojo');
+
+// p.showThis();
+
+// Person.staticShowThis();
 
 // // // // call, apply, bind
+// const obj = {
+//     pi: 3.1415926,
+//     getPi() {
+//         return this.pi;
+//     }
+// }
+// function getArea(num0, num1, num2) { // 100 args
+//     console.log(this.getPi(), num0, num1, num2);
+// }
+// // // bind
+// const newGetArea = getArea.bind(obj); // lazyloading
+// newGetArea(1, 2, 3);
 
-// // // // arrow funciton
+// // call, apply
+// getArea.call(obj, 1, 2, 3);// eagerloading // 101 args
+// getArea.apply(obj, [1, 2, 3]);// eagerloading // 2 args: target obj, arr.length === 100
+
+// // // // ES6: arrow funciton, class, let, const, Promise / async await
+
+// function bar() {
+//     console.log(arguments);
+// }
+
+// console.log(bar());
 
 // // // // currying
+// const callback1 = (a) => a + 2; // 5
+// const callback2 = (b) => b * 2; // 20
+// const callback3 = (c) => c / 2; // 2
 
+// console.log(runAll(callback1, callback2, callback3)(5)); // 2
 
+// function runAll(...args) {
+//     return function(num) {
+//         // return args.reduce((acc, cb) => cb(acc), num);
+//         let result = num;
+//         for(let i in args){
+//             result = args[i](result);
+//         }
+//         return result;
+//     }
+// }
+
+// const arr = [1, 2, 3];
+// const bar = (num) => {
+    
+//     return  (ele) => {
+//         console.log(ele + num);
+//     }
+// }
+// arr.forEach(bar(12));
 
 // // // // event loop
+
+// for (var i = 0; i < 5; i++) {
+//     (function(v) {
+//         setTimeout(() => console.log(v), (5 - v) * 1000);
+//     })(i);
+    
+//     console.log('test ' + i);
+// }
+
+// call stack: () => console.log(i) 
+/**
+ * async api, web api: 
+ * () => console.log(0), 3 
+ * () => console.log(1), 2
+ * () => console.log(2), 1 
+ * () => console.log(3), 0
+ * () => console.log(4), 0 
+ * ...
+ */
+/**
+ * tasks queue, message queue:
+ * [() => console.log(i)]
+ */
+
+// 0, 1, 2, 3, 4
+// 5, 5, 5, 5, 5
+
+// ~~~~~~interview question~~~~~~~~~~~~
+const first = [
+    { userid: 2, name: 'Velen' },
+    { userid: 56, name: 'Illidan' },
+    { userid: 23, name: 'Muradin' },
+    { userid: 12, name: 'Sylvanas' },
+    { userid: 44, name: 'Cenarius' },
+    { userid: 4, name: 'Gul\'Dan' }
+];
+const second = [
+    { userid: 2, role: 'Mage' },
+    { userid: 4, role: 'Worlock' },
+    { userid: 56, role: 'Demon Hunter' },
+    { userid: 66, role: 'Druid' },
+    { userid: 87, role: 'Shaman' },
+    { userid: 12, role: 'Hunter' },
+];
+
+function solution(firstarr, secondarr) {
+    const arr = [...firstarr, ...secondarr];
+    const map = {};
+ /**
+  * 2: { userid: 2, name: 'Velen', role: null },
+  */
+    arr.forEach(ele => {
+        map[ele.userid] = {
+            ...{ userid: null, name: null, role: null },
+            ...map[ele.userid],
+            ...ele
+        };
+    })
+
+    return Object.values(map);
+}
+
+console.log(solution(first, second));
+
+const obj = {
+    name: 'Dio'
+}
+
+obj.age = 200;
+
+// ~~~~~~~~~~~~~~~ JS Day4 HW ~~~~~~~~~~~~~~~
+const state = {
+    a: "apple",
+    b: "banana",
+    c: "city",
+    d: "dom",
+    e: "end",
+    f: "forEach"
+  };
+
+// [
+//     { userid: 2, name: 'Velen', role: 'Mage' },
+//     { userid: 4, name: "Gul'Dan", role: 'Worlock' },
+//     { userid: 12, name: 'Sylvanas', role: 'Hunter' },
+//     { userid: 23, name: 'Muradin', role: null },
+//     { userid: 44, name: 'Cenarius', role: null },
+//     { userid: 56, name: 'Illidan', role: 'Demon Hunter' },
+//     { userid: 66, name: null, role: 'Druid' },
+//     { userid: 87, name: null, role: 'Shaman' }
+// ]
 
 // // // // callback function & Callback Hell;
 
