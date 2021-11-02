@@ -480,7 +480,7 @@
 //         }
 //     }
 // }
- 
+
 // fn(4, 5); // 9
 // fn(1, 2); // 3
 // fn(3, 12); // 15
@@ -514,7 +514,7 @@
 //             console.log('function: bar: ', this); // this --> myObj
 //         }
 //         bar();
-        
+
 //     }
 // }
 // myObj.foo();
@@ -582,7 +582,7 @@
 
 // const arr = [1, 2, 3];
 // const bar = (num) => {
-    
+
 //     return  (ele) => {
 //         console.log(ele + num);
 //     }
@@ -595,7 +595,7 @@
 //     (function(v) {
 //         setTimeout(() => console.log(v), (5 - v) * 1000);
 //     })(i);
-    
+
 //     console.log('test ' + i);
 // }
 
@@ -638,9 +638,9 @@ const second = [
 function solution(firstarr, secondarr) {
     const arr = [...firstarr, ...secondarr];
     const map = {};
- /**
-  * 2: { userid: 2, name: 'Velen', role: null },
-  */
+    /**
+     * 2: { userid: 2, name: 'Velen', role: null },
+     */
     arr.forEach(ele => {
         map[ele.userid] = {
             ...{ userid: null, name: null, role: null },
@@ -668,7 +668,7 @@ const state = {
     d: "dom",
     e: "end",
     f: "forEach"
-  };
+};
 
 // [
 //     { userid: 2, name: 'Velen', role: 'Mage' },
