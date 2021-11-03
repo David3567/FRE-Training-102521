@@ -322,6 +322,27 @@ console.log();
 
 //21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array.
 
+// const fixedLengthComb = (arr, leng) => {
+//   res = [];
+//   bk(arr, leng);
+//   return res;
+
+//   function bk(arr, leng, comb = []) {
+//     if (comb.length === leng) {
+//       res.push(comb);
+//       return;
+//     } else {
+//       for (let i = 0; i < arr.length; i++) {    1
+//         comb.push(arr[i]);
+//         bk(arr, leng, comb);
+//       }
+//     }
+//   }
+// };
+
+// console.log("Q21. ", fixedLengthComb([1, 2, 3], 2));
+// console.log();
+
 //22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.
 
 const countNumOccurences = (str, letter) => {
@@ -418,7 +439,6 @@ console.log();
 
 //26. Write a JavaScript function to find longest substring in a given a string without repeating characters.
 
-//iterative
 const longestSubstring = (s) => {
   let count = 0;
   let max = 0;
