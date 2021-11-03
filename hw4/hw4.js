@@ -37,7 +37,6 @@ function selectItem2() {
 
   Object.entries(state).forEach(([key, value], index) => {
     if (value === selectedItemRight) {
-      console.log(value, document.getElementById("myList").value);
       document.getElementById("myList").selectedIndex = index;
     }
   });
