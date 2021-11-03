@@ -1,0 +1,20 @@
+*{
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.layout{
+    margin-left: 2em;
+    width: 15%;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.layout .select1{
+    padding:0.5rem;
+}
+select :hover{
+    border: blue;
+}
+
