@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS HW</title>
+</head>
+
+<body>
+    <form>
+        <select id="favourite" class="box">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+        </select>
+        <select id="myList" onchange=favTutorial()>
+            <option>Arm</option>
+            <option>Ball</option>
+            <option>Code</option>
+            <option>Deep</option>
+            <option>Enter</option>
+            <option>ForEach</option>
+        </select>
+    </form>
+
+    <script>
+        function favTutorial() {
+            var mylist = document.getElementById("myList");
+            document.getElementById("favourite").value = favourite.options[mylist.selectedIndex].text;
+        }
+    </script>
+
+</body>
+
+</html>
