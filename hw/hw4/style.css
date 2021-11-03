@@ -1,0 +1,12 @@
+.row {
+    width:70%;
+    display:flex;
+    flex:wrap;
+}
+
+.box {
+    position:relative;
+    width:20%;
+    height:30px;
+    margin:50px;
+}
