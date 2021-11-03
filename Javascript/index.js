@@ -618,72 +618,204 @@
 // 5, 5, 5, 5, 5
 
 // ~~~~~~interview question~~~~~~~~~~~~
-const first = [
-    { userid: 2, name: 'Velen' },
-    { userid: 56, name: 'Illidan' },
-    { userid: 23, name: 'Muradin' },
-    { userid: 12, name: 'Sylvanas' },
-    { userid: 44, name: 'Cenarius' },
-    { userid: 4, name: 'Gul\'Dan' }
-];
-const second = [
-    { userid: 2, role: 'Mage' },
-    { userid: 4, role: 'Worlock' },
-    { userid: 56, role: 'Demon Hunter' },
-    { userid: 66, role: 'Druid' },
-    { userid: 87, role: 'Shaman' },
-    { userid: 12, role: 'Hunter' },
-];
+// const first = [
+//     { userid: 2, name: 'Velen' },
+//     { userid: 56, name: 'Illidan' },
+//     { userid: 23, name: 'Muradin' },
+//     { userid: 12, name: 'Sylvanas' },
+//     { userid: 44, name: 'Cenarius' },
+//     { userid: 4, name: 'Gul\'Dan' }
+// ];
+// const second = [
+//     { userid: 2, role: 'Mage' },
+//     { userid: 4, role: 'Worlock' },
+//     { userid: 56, role: 'Demon Hunter' },
+//     { userid: 66, role: 'Druid' },
+//     { userid: 87, role: 'Shaman' },
+//     { userid: 12, role: 'Hunter' },
+// ];
 
-function solution(firstarr, secondarr) {
-    const arr = [...firstarr, ...secondarr];
-    const map = {};
-    /**
-     * 2: { userid: 2, name: 'Velen', role: null },
-     */
-    arr.forEach(ele => {
-        map[ele.userid] = {
-            ...{ userid: null, name: null, role: null },
-            ...map[ele.userid],
-            ...ele
-        };
-    })
+// function solution(firstarr, secondarr) {
+//     const arr = [...firstarr, ...secondarr];
+//     const map = {};
+//     /**
+//      * 2: { userid: 2, name: 'Velen', role: null },
+//      */
+//     arr.forEach(ele => {
+//         map[ele.userid] = {
+//             ...{ userid: null, name: null, role: null },
+//             ...map[ele.userid],
+//             ...ele
+//         };
+//     })
 
-    return Object.values(map);
-}
+//     return Object.values(map);
+// }
 
-console.log(solution(first, second));
+// console.log(solution(first, second));
 
-const obj = {
-    name: 'Dio'
-}
+// const obj = {
+//     name: 'Dio'
+// }
 
-obj.age = 200;
+// obj.age = 200;
 
 // ~~~~~~~~~~~~~~~ JS Day4 HW ~~~~~~~~~~~~~~~
-const state = {
-    a: "apple",
-    b: "banana",
-    c: "city",
-    d: "dom",
-    e: "end",
-    f: "forEach"
-};
-
-// [
-//     { userid: 2, name: 'Velen', role: 'Mage' },
-//     { userid: 4, name: "Gul'Dan", role: 'Worlock' },
-//     { userid: 12, name: 'Sylvanas', role: 'Hunter' },
-//     { userid: 23, name: 'Muradin', role: null },
-//     { userid: 44, name: 'Cenarius', role: null },
-//     { userid: 56, name: 'Illidan', role: 'Demon Hunter' },
-//     { userid: 66, name: null, role: 'Druid' },
-//     { userid: 87, name: null, role: 'Shaman' }
-// ]
+// const state = {
+//     a: "apple",
+//     b: "banana",
+//     c: "city",
+//     d: "dom",
+//     e: "end",
+//     f: "forEach"
+// };
 
 // // // // callback function & Callback Hell;
+// const foo = () => console.log('foo');
 
+// const getRendomTime = () => Math.floor(Math.random() * 6);
+
+// const callFunInRendomTime = (callback) => {
+//     const time = getRendomTime();
+//     console.log(`${time}s`);
+
+//     setTimeout(callback, time * 1000);
+// }
+
+// callFunInRendomTime(() => {
+//     callFunInRendomTime(() => {
+//         callFunInRendomTime(() => {
+//             callFunInRendomTime(() => {
+//                 callFunInRendomTime(() => {
+//                     console.log('stop');
+//                     callFunInRendomTime(() => {
+//                         callFunInRendomTime(() => {
+//                             callFunInRendomTime(() => {
+//                                 callFunInRendomTime(foo)
+//                             });
+//                         });
+//                     });
+//                 });
+//             });
+//         });
+//     });
+// });
+
+// // XHR: 
+
+// const getTodoFormJsonPlaceHolder = (id) => {
+
+//     return new Promise((resolve, reject) => {
+//         const xhttp = new XMLHttpRequest();
+//         xhttp.onreadystatechange = function () {
+//             if (this.readyState == 4 && this.status == 200) {
+//                 // Typical action to be performed when the document is ready:
+//                 resolve(JSON.parse(xhttp.response));
+//             }
+//         };
+//         xhttp.open("GET", `https://jsonplaceholder.typicode.com/todos/${id}`, true);
+//         xhttp.send();
+//     });
+// }
+
+// // const print = (ele) => {
+// //     console.log(ele);
+// // }
+
+// getTodoFormJsonPlaceHolder(4)
+//     .then(data => {
+//         print(data);
+//         return getTodoFormJsonPlaceHolder(15);
+//     })
+//     .then(data => {
+//         print(data);
+//         return getTodoFormJsonPlaceHolder(78);
+//     })
+//     .then(data => {
+//         print(data);
+//     });
+
+// (async () => {
+//     const gettodo4 = await getTodoFormJsonPlaceHolder(4);
+//     print(gettodo4);
+//     const gettodo15 = await getTodoFormJsonPlaceHolder(15).then(data => {
+//         print(data);
+//     });
+//     const gettodo78 = await getTodoFormJsonPlaceHolder(78);
+//     print(gettodo78);
+// })();
+
+// 4,  15, 78
+// getTodoFormJsonPlaceHolder(4, print);
+// getTodoFormJsonPlaceHolder(15, print);
+// getTodoFormJsonPlaceHolder(78, print);
+
+// getTodoFormJsonPlaceHolder((data) => {
+//     print(data);
+//     getTodoFormJsonPlaceHolder((data) => {
+//         print(data);
+//         getTodoFormJsonPlaceHolder((data) => {
+//             print(data);
+//         }, 78);
+//     }, 15);
+// }, 4);
+
+// [1, 2, 3]
+// push(4) -> [1, 2, 3, 4]
+// pop() -> [1, 2, 3]
+// shift() -> [2, 3];
+// unshift(4) -> [4, 2, 3]
 // // // // Promise && MyPromise
+class MyPromise {
+    thencallbackqueue = [];
+    currentData = undefined;
+    
+    constructor(executor) {
+        executor(this.resolve.bind(this), this.reject);
+    }
+
+    resolve(resdata) {
+        setTimeout(() => {
+            this.currentData = resdata;
+            while (this.thencallbackqueue.length) {
+                const cb = this.thencallbackqueue.shift();
+
+                if (this.currentData instanceof MyPromise) {
+                    this.currentData.then(data => {
+                        this.currentData = cb(data);
+                    });
+                } else {
+                    this.currentData = cb(this.currentData);
+                }
+            }
+        }, 0);
+    }
+    reject = () => {
+        console.log('reject', this);
+    }
+
+    then(thencbfn) {
+        this.thencallbackqueue.push(thencbfn);
+        return this;
+    }
+
+    catch() {}
+}
+
+new MyPromise((resolve, reject) => {
+    console.log('hello');
+
+    resolve({ name: 'Jojo' });
+}).then((data) => {
+    console.log(data);
+
+    return new MyPromise((res, rej) => {
+        res('world');
+    });
+}).then((data) => {
+    console.log(data);
+});
+
 
 // // // // MyFetch
 
