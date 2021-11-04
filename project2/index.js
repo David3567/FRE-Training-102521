@@ -1,61 +1,62 @@
-// const state= {
-//     a: "apple",
-//     b: "banana",
-//     c: "city",
-//     d: "dom",
-//     e: "end",
-//     f: "forEach"
-// };
+const View = (() => {
+    const domElements = {
+        keys: document.querySelector('#keys'),
+        values: document.querySelector('#values')
+    }
+    const render = (element, tmp) => {
+        element.innerHTML = tmp;
+    }
+    return {
+        domElements,
+        render
+    }
+})();
 
-// const array = Object.values(state);
+const Model = (() => {
+    const state = {
+        a: "apple",
+        b: "banana",
+        c: "city",
+        d: "dom",
+        e: "end",
+        f: "forEach"
+    };
 
-// const letterElement = document.querySelector("#letters");
-// letterElement.addEventListener('change', changeWordHandler);
+    return {
+        state
+    }
+})();
 
-// const wordElement = document.querySelector("select[name='words']");
-// wordElement.addEventListener('change', changeLetterHandler);
+const Controler = ((view, model) => {
+    const createKeyList = () => {
+        let tmp = '';
+        Object.keys(model.state).forEach(key => {
+            tmp += `<option value="${key}">${key}</option>`;
+        });
+        view.render(keys, tmp);
+    }
+    const createValueList = () => {
+        let tmp = '';
+        Object.keys(model.state).forEach(key => {
+            tmp += `<option value="${key}">${model.state[key]}</option>`;
+        });
+        view.render(values, tmp);
+    }
+    const setUpEvent = () => {
+        view.domElements.keys.addEventListener('change', event => {
+            view.domElements.values.value = event.target.value;
+        });
+        view.domElements.values.addEventListener('change', event => {
+            view.domElements.keys.value = event.target.value;
+        });
+    }
 
+    const init = () => {
+        createKeyList();
+        createValueList();
+        setUpEvent();
+    }
+    return { init };
+})(View, Model);
 
-// function changeWordHandler(e) {
-//     let word = state[e.target.value];
-//     let index = array.indexOf(word);
-//     wordElement.selectedIndex = index;
-// }
-
-// function changeLetterHandler(e) {
-//     let word = e.target.value;
-//     let index = array.indexOf(word);
-//     letterElement.selectedIndex = index;
-// }
-
-const data = {
-    a: "apple",
-    b: "banana",
-    c: "city",
-    d: "dom",
-    e: "end",
-    f: "forEach"
-};
-// get all the values from data
-const arr = Object.values(data);
-
-const letterElement = document.querySelector('#letter');
-letterElement.addEventListener('change', matchWord);
-
-const wordElement = document.querySelector('#word');
-wordElement.addEventListener('change', matchLetter);
-
-function matchWord(input) {
-    // use letter find word
-    let word = data[input.target.value];
-    let index = arr.indexOf(word);
-    wordElement.selectedIndex = index;
-}
-function matchLetter(e) {
-    let word = e.target.value;
-    let index = arr.indexOf(word);
-    letterElement.selectedIndex = index;
-}
-
-
-
+Controler.init();
