@@ -73,3 +73,27 @@ ul {
     height: calc(var(--height-todolist) - var(--height-todolist-header) * 2);
     overflow: auto;
 }
+ul li {
+    display: flex;
+    justify-content: space-between;
+}
+ul li:hover {
+    background-color: var(--color-red-li-hover);
+}
+ul li span {
+    width: 90%;
+    overflow: hidden;
+}
+ul li button {
+    height: var(--height-todolist-header);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: red;
+    font-size: 1.5rem;
+}
+ul li button:hover {
+    font-size: 1.7rem;
+}
+ul li button:active {
+    font-size: 1.3rem;
+}

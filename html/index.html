@@ -9,6 +9,19 @@
         <script async src="./index.js"></script>
     </head>
     <body>
-        <h1>Hello world</h1>
+        <div onclick="clickevent()" class="gp">
+            <div class="p">
+                <div
+                    style="width: 30px; height: 30px; background-color: red"
+                    class="c"
+                ></div>
+            </div>
+        </div>
+
+        <script>
+            function clickevent() {
+                console.log(event.target.className);
+            }
+        </script>
     </body>
 </html>
