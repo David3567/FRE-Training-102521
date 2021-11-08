@@ -1,41 +1,60 @@
-const state = {
-  a: "apple",
-  b: "banana",
-  c: "city",
-  d: "dom",
-  e: "end",
-  f: "forEach"
-};
+const View = (() => {
+  const domElements = {
+    keys: document.querySelector("#keys"),
+    values: document.querySelector("#values"),
+  };
+  const render = (element, tmp) => {
+    element.innerHTML = tmp;
+  };
+  return {
+    domElements,
+    render,
+  };
+})();
 
-const keys = document.querySelector('#keys');
-const values = document.querySelector('#values');
+const Model = (() => {
+  const state = {
+    a: "apple",
+    b: "banana",
+    c: "city",
+    d: "dom",
+    e: "end",
+    f: "forEach",
+  };
+  return {
+    state,
+  };
+})();
 
-console.log(keys, values);
-
-const render = (element, tmp) => {
-  element.innerHTML = tmp;
-}
-const createKeyList = () => {
-  let tmp = '';
-  Object.keys(state).forEach(key => {
+const Controller = ((view, model) => {
+  const createKeyList = () => {
+    let tmp = "";
+    Object.keys(model.state).forEach((key) => {
       tmp += `<option value="${key}">${key}</option>`;
-  });
-  render(keys, tmp);
-}
-const createValueList = () => {
-  let tmp = '';
-  Object.keys(state).forEach(key => {
-      tmp += `<option value="${key}">${state[key]}</option>`;
-  });
-  render(values, tmp);
-}
+    });
+    view.render(keys, tmp);
+  };
+  const createValueList = () => {
+    let tmp = "";
+    Object.keys(model.state).forEach((key) => {
+      tmp += `<option value="${key}">${model.state[key]}</option>`;
+    });
+    view.render(values, tmp);
+  };
+  const setUpEvent = () => {
+    view.domElements.keys.addEventListener("change", (event) => {
+      view.domElements.values.value = event.target.value;
+    });
+    view.domElements.values.addEventListener("change", (event) => {
+      view.domElements.keys.value = event.target.value;
+    });
+  };
+  const init = () => {
+    createKeyList();
+    createValueList();
+    setUpEvent();
+  };
+  return { init };
+})(View, Model);
 
-createKeyList();
-createValueList();
-
-keys.addEventListener('change', event => {
-  values.value = event.target.value;
-});
-values.addEventListener('change', event => {
-  keys.value = event.target.value;
-});
+Controller.init();
