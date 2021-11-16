@@ -546,6 +546,8 @@ const obj = {
 function getArea(num0, num1, num2) { // 100 args
     console.log(this.getPi(), num0, num1, num2);
 }
+
+[].map()
 // // // bind
 // const newGetArea = getArea.bind(obj); // lazyloading
 // newGetArea(1, 2, 3);
