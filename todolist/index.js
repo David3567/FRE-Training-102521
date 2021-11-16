@@ -100,6 +100,7 @@ const Controler = ((view, model) => {
             state.todolist = todolist;
         });
     }
+
     const init = () => {
         inittodolist();
         deletTodo();

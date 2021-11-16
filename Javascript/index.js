@@ -537,23 +537,23 @@
 // Person.staticShowThis();
 
 // // // // call, apply, bind
-// const obj = {
-//     pi: 3.1415926,
-//     getPi() {
-//         return this.pi;
-//     }
-// }
-// function getArea(num0, num1, num2) { // 100 args
-//     console.log(this.getPi(), num0, num1, num2);
-// }
+const obj = {
+    pi: 3.1415926,
+    getPi() {
+        return this.pi;
+    }
+}
+function getArea(num0, num1, num2) { // 100 args
+    console.log(this.getPi(), num0, num1, num2);
+}
 // // // bind
 // const newGetArea = getArea.bind(obj); // lazyloading
 // newGetArea(1, 2, 3);
 
 // // call, apply
 // getArea.call(obj, 1, 2, 3);// eagerloading // 101 args
-// getArea.apply(obj, [1, 2, 3]);// eagerloading // 2 args: target obj, arr.length === 100
-
+const checkapplyreturn = getArea.apply(obj, [1, 2, 3]);// eagerloading // 2 args: target obj, arr.length === 100
+console.log('check the returned: ', checkapplyreturn);
 // // // // ES6: arrow funciton, class, let, const, Promise / async await
 
 // function bar() {
@@ -647,8 +647,7 @@
 //             ...map[ele.userid],
 //             ...ele
 //         };
-//     })
-
+//     });
 //     return Object.values(map);
 // }
 
@@ -800,7 +799,6 @@
 //                 this.reject(error);
 //             }
 //         });
-
 //     }
 //     reject = (rejdata) => {
 //         this.promiseState = 'rejected';
@@ -821,6 +819,10 @@
 //     }
 //     catch(catchcbfn) {
 //         this.catchcallbackqueue.push(catchcbfn);
+//         return this;
+//     }
+//     finally(finalfn) {
+//         finalfn();
 //         return this;
 //     }
 //     static resolve(resdata) {
@@ -855,10 +857,34 @@
 //                     }
 //                 }
 //             });
-//             // res(resolveArr);
+//         });
+//     }
+//     static race(promisearr) {
+//         const arr = [...promisearr];
+
+//         return new MyPromise((res, rej) => {
+//             for (let i = 0; i < arr.length; i++) {
+//                 arr[i].then(data => {
+//                     res(data);
+//                 });
+//             }
 //         });
 //     }
 // }
+
+// const promise1 = new MyPromise((resolve, reject) => {
+//     setTimeout(resolve, 500, 'one');
+//   });
+
+//   const promise2 = new MyPromise((resolve, reject) => {
+//     setTimeout(resolve, 100, 'two');
+//   });
+
+//   MyPromise.race([promise1, promise2]).then((value) => {
+//     console.log(value);
+//     // Both resolve, but promise2 is faster
+//   });
+//   // expected output: "two"
 
 // const promise1 = MyPromise.resolve(3);
 // const promise2 = 42;
@@ -870,15 +896,17 @@
 // MyPromise.all([promise1, promise2, promise3]).then((values) => {
 //     console.log(values);
 // });
-// expected output: Array [3, 42, "foo"]
+
+// // expected output: Array [3, 42, "foo"]
+// [3, 42, 'foo']
 
 // const getRendomTime = () => Math.floor(Math.random() * 6);
 
-// const promise = new MyPromise((resolve, reject) => {
+// new Promise((resolve, reject) => {
 //     const timer = getRendomTime();
 //     console.log(`${timer}s`);
 //     if (timer < 3) {
-//         resolve(console.log(a));
+//         resolve('test');
 //     } else {
 //         reject('err');
 //     }
@@ -887,9 +915,16 @@
 //         console.log('then: ', data);
 //         return 1;
 //     })
+//     .then((data) => {
+//         console.log('then: ', data);
+//         return 1;
+//     })
 //     .catch((err) => {
 //         console.log('catch: ', err);
-//     });
+//     })
+//     .finally(() => console.log('closed!'))
+
+
 
 
 // console.log(promise);
@@ -989,23 +1024,26 @@
 // await promisifyFunction(add)(1, 1) should return 2
 // await promisifyFunction(multiplyByTwo)(3).then(val => val + 1) should return 7
 
-function promisifyFunction(callback) {
-    return function (...args) {
-        const data = callback(...args);
-        return new Promise((res, rej) => {
-            res(data);
-        })
-    }
-}
-const add = (a, b) => a + b;
-const multiplyByTwo = (c) => c * 2;
+// function promisifyFunction(callback) {
+//     return function (...args) {
+//         const data = callback(...args);
+//         return new Promise((res, rej) => {
+//             res(data);
+//         })
+//     }
+// }
+// const add = (a, b) => a + b;
+// const multiplyByTwo = (c) => c * 2;
 
-(async () => {
-    try {
-        const a = await promisifyFunction(add)(1, 1);
-        const b = await promisifyFunction(multiplyByTwo)(3).then(val => val + 1);
-        console.log(a, b);
-    } catch (error) {
+// (async () => {
+//     try {
+//         const a = await promisifyFunction(add)(1, 1);
+//         const b = await promisifyFunction(multiplyByTwo)(3).then(val => val + 1);
+//         console.log(a, b);
+//     } catch (error) {
 
-    }
-})();
+//     }
+// })();
+
+// const arr = [1, 2, 3, 4, 0, 2, 1, 4, 1];
+// console.log(arr.indexOf(Math.min(...arr)));
