@@ -95,3 +95,113 @@ interface FnInterface {
 //     openRadio(): void {
 //     }
 // }
+
+// // callback function
+// type myType = (num: number) => number;
+
+// let myFn: myType = function(num) {
+//     return num;
+// }
+
+// // function foo(cb: myFn): never {
+// //     // throw Error;
+// //     while(true) {}
+// // }
+// function foo(num1: number, cb: myType): number {
+//     return cb(num1);
+// }
+
+// foo(5, myFn);
+
+// // enum
+// enum Role {
+//     user,
+//     superuser,
+//     admin = 19,
+//     superadmin,
+//     W = "winter",
+//     S = "summer",
+// }
+// console.log(Role);
+
+// // oop
+// class Animal {
+//     _name: string;
+//     // private _age: number;
+//     protected _age: number;
+//     // protected company: string = "Jump";
+
+//     constructor(name: string, age: number) {
+//         this._name = name;
+//         this._age = age;
+//     }
+
+//     consoleage(): void {
+//         console.log(this._age);
+//     }
+// }
+// // const a = new Animal("Fish", 2);
+// // console.log(a._age);
+
+// class Cat extends Animal {
+//     type: string;
+
+//     constructor(name: string, age: number, type: string) {
+//         super(name, age);
+//         this.type = type;
+//     }
+
+//     consoleage() {
+//         console.log(this._age);
+//     }
+// }
+
+// // generic
+// let arr: number[] = [1, 2, 3, 4];
+// let arrNumber: Array<number> = [1, 2, 3, 4];
+// let arrString: Array<string> = ["1", "2", "3", "4"];
+// let arrstr: string[] = ["1", "2", "3", "4"];
+
+// // function toNumber(x: number, y: number): number[] {
+// //     return [x, y];
+// // }
+// // toNumber(2, 4); // [2, 4];
+
+// // function toString(x: string, y: string): string[] {
+// //     return [x, y];
+// // }
+// // toString("2", "4"); // ['2', '4'];
+
+// function toArray<T, R>(x: T, y: R): [T, R] {
+//     console.log([x, y]);
+//     return [x, y];
+// }
+// toArray<number, number>(2, 4);
+// toArray<string, string>("2", "4");
+// toArray<number, string>(2, "4");
+
+interface Queue<T> {
+    enqueue(item: T): void;
+    dequeue(): T;
+    getqueue(): T[];
+}
+class MyQueue<T> implements Queue<T> {
+    queue: T[];
+    constructor(queue: T[]) {
+        this.queue = queue;
+    }
+    enqueue(item: T): void {
+        this.queue.push(item);
+    }
+    dequeue(): T {
+        throw new Error("Method not implemented.");
+    }
+    getqueue(): T[] {
+        return this.queue;
+    }
+}
+const myqueue1 = new MyQueue<number>([]);
+myqueue1.enqueue(4);
+console.log(myqueue1.getqueue());
+
+// // Decorator
