@@ -1,0 +1,30 @@
+:host {
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  width: 100%;
+  height: var(--height-todolist-header);
+  line-height: var(--height-todolist-header);
+  padding: 0 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  width: 90%;
+  overflow: hidden;
+}
+button {
+  height: var(--height-todolist-header);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: red;
+  font-size: 1.5rem;
+}
+button:hover {
+  font-size: 1.7rem;
+}
+button:active {
+  font-size: 1.3rem;
+}

@@ -1,19 +1,25 @@
-var MyQueue = (function () {
-    function MyQueue(queue) {
-        this.queue = queue;
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+function course(name) {
+    return function (target) {
+        target.prototype.name = name;
+    };
+}
+var Person = (function () {
+    function Person() {
     }
-    MyQueue.prototype.enqueue = function (item) {
-        this.queue.push(item);
+    Person.prototype.printcourse = function () {
+        console.log("Angular: ", this.name);
     };
-    MyQueue.prototype.dequeue = function () {
-        throw new Error("Method not implemented.");
-    };
-    MyQueue.prototype.getqueue = function () {
-        return this.queue;
-    };
-    return MyQueue;
+    Person = __decorate([
+        course("Jojo")
+    ], Person);
+    return Person;
 }());
-var myqueue1 = new MyQueue([]);
-myqueue1.enqueue(4);
-console.log(myqueue1.getqueue());
+var p = new Person();
+p.printcourse();
 //# sourceMappingURL=index.js.map

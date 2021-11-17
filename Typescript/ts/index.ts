@@ -180,28 +180,63 @@ interface FnInterface {
 // toArray<string, string>("2", "4");
 // toArray<number, string>(2, "4");
 
-interface Queue<T> {
-    enqueue(item: T): void;
-    dequeue(): T;
-    getqueue(): T[];
-}
-class MyQueue<T> implements Queue<T> {
-    queue: T[];
-    constructor(queue: T[]) {
-        this.queue = queue;
-    }
-    enqueue(item: T): void {
-        this.queue.push(item);
-    }
-    dequeue(): T {
-        throw new Error("Method not implemented.");
-    }
-    getqueue(): T[] {
-        return this.queue;
-    }
-}
-const myqueue1 = new MyQueue<number>([]);
-myqueue1.enqueue(4);
-console.log(myqueue1.getqueue());
+// interface Queue<T> {
+//     enqueue(item: T): void;
+//     dequeue(): T;
+//     getqueue(): T[];
+// }
+// class MyQueue<T> implements Queue<T> {
+//     queue: T[];
+//     constructor(queue: T[]) {
+//         this.queue = queue;
+//     }
+//     enqueue(item: T): void {
+//         this.queue.push(item);
+//     }
+//     dequeue(): T {
+//         return this.queue.shift();
+//     }
+//     getqueue(): T[] {
+//         return this.queue;
+//     }
+// }
+// const myqueue1 = new MyQueue<number>([]);
+// myqueue1.enqueue(4);
+// console.log(myqueue1.getqueue());
 
 // // Decorator
+// function component(target: Function) {
+//     target.prototype.id = 100;
+// }
+
+// @component
+// class Emplyee {
+//     id: number;
+
+//     printid(str: string) {
+//         console.log(str, this.id);
+//     }
+// }
+
+// const e = new Emplyee();
+// e.printid("print the id: ");
+
+function course(name: string) {
+    return function (target: Function) {
+        target.prototype.name = name;
+    };
+}
+@course("Jojo")
+class Person {
+    name: string;
+
+    // constructor(name: string) {
+    //     this.name = name;
+    // }
+
+    printcourse() {
+        console.log("Angular: ", this.name);
+    }
+}
+const p = new Person();
+p.printcourse();
