@@ -601,7 +601,24 @@ const getName = (func) => {
   return func.name;
 };
 // ~test~
-function foo() {}
-const far = foo;
-console.log(typeof far);
-console.log(getName(far));
+// function foo() {}
+// const far = foo;
+// console.log(typeof far);
+// console.log(getName(far));
+
+// 30. calculate the factorial of a number
+// factorial of 5 === 5 * 4 * 3 * 2 * 1
+// use array functions instead of creating loops
+
+const CalFactorial = (num) => {
+  arr = [];
+  for (let i = 1; i <= num; i++) {
+    arr.push(i);
+  }
+  console.log(arr);
+  const reducer = (a, b) => a * b;
+  arr = arr.reduce(reducer);
+  return arr;
+};
+
+console.log(CalFactorial(5));
