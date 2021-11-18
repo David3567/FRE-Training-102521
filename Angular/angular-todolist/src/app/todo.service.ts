@@ -16,10 +16,13 @@ export class TodoService {
     this.http.get([this.baseurl, this.todoPath].join('/')) as Observable<
       Todo[]
     >;
-  deleteTodo = (id: string) => {
+  deleteTodo = (id: string): Observable<Object> => {
     return this.http.delete([this.baseurl, this.todoPath, id].join('/'));
   };
-  addTodo = (newtodo: Todo) => {
-    return this.http.post([this.baseurl, this.todoPath].join('/'), newtodo);
+  addTodo = (newtodo: Todo): Observable<Todo> => {
+    return this.http.post(
+      [this.baseurl, this.todoPath].join('/'),
+      newtodo
+    ) as Observable<Todo>;
   };
 }
