@@ -1,12 +1,17 @@
 export default class Timer {
   constructor(root) {
     root.innerHTML = Timer.getHTML();
+    this.flag = false;
     this.ele = {
       hours: root.querySelector(".timer__part--hours"),
       minutes: root.querySelector(".timer__part--minutes"),
       seconds: root.querySelector(".timer__part--seconds"),
       control: root.querySelector(".timer__btn--control "),
       reset: root.querySelector(".timer__btn--reset"),
+      hoursPicker: document.querySelector("#hoursPicker"),
+      minutesPicker: document.querySelector("#minutesPicker"),
+      secondsPicker: document.querySelector("#secondsPicker"),
+      picker: document.querySelector("#picker"),
     };
 
     this.interval = null;
@@ -20,10 +25,11 @@ export default class Timer {
       }
     });
     this.ele.reset.addEventListener("click", () => {
-      const inputMinutes = prompt("Enter number of minutes:");
+      //const inputMinutes = prompt("Enter number of minutes:");
 
       this.stop();
-      this.remainingSeconds = inputMinutes * 60;
+      this.remainingSeconds =
+        hoursPicker * 3600 + minutesPicker * 60 + secondsPicker;
       this.updateInterfaceTime();
     });
   }
