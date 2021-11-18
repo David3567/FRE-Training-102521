@@ -1,0 +1,35 @@
+:host {
+  height: var(--height-todolist);
+  width: var(--width-todolist);
+  background-color: var(--color-green);
+  box-shadow: 5px 5px 5px black;
+  border-radius: 5px;
+}
+.todolist__header,
+.todolist__input {
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  width: 100%;
+  height: var(--height-todolist-header);
+  line-height: var(--height-todolist-header);
+  border: none;
+  outline: none;
+  list-style: none;
+  padding: 0 10px;
+}
+.todolist__header {
+  font-size: 1.5rem;
+  text-align: center;
+}
+ul {
+  height: calc(var(--height-todolist) - var(--height-todolist-header) * 2);
+  overflow: auto;
+}
+ul .todo_item {
+  display: flex;
+  justify-content: space-between;
+}
+ul .todo_item:hover {
+  background-color: var(--color-red-li-hover);
+}
