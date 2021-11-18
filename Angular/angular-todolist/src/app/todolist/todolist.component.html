@@ -1,12 +1,10 @@
 <header class="todolist__header">todo list</header>
-<input class="todolist__input" />
+<input class="todolist__input" [(ngModel)]="num" />
 <ul id="todolist__container">
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
+  <app-todo-list-item
+    class="todo_item"
+    *ngFor="let todo of todolist"
+    [todo]="todo"
+    (deletedTodoId)="deletetodo($event)"
+  ></app-todo-list-item>
 </ul>
