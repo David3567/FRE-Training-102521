@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Todo } from './todo.interface';
+import { Todo } from '../todo.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
-  baseurl = 'https://jsonplaceholder.typicode.com';
+  baseurl = 'http://localhost:3000';
+  // baseurl = 'https://jsonplaceholder.typicode.com';
   todoPath = 'todos';
 
   constructor(private http: HttpClient) {}

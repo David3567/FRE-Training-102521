@@ -95,19 +95,19 @@ const Controler = ((view, model) => {
         });
     }
 
-    const inittodolist = () => {
+    const onInit = () => {
         model.getAllTodos().then(todolist => {
             state.todolist = todolist;
         });
     }
 
-    const init = () => {
-        inittodolist();
+    const bootstrap = () => {
+        onInit();
         deletTodo();
         addTodo();
     }
 
-    return { init };
+    return { bootstrap };
 })(View, Model);
 
-Controler.init();
+Controler.bootstrap();

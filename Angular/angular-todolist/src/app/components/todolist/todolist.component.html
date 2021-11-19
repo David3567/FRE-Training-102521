@@ -1,5 +1,11 @@
 <header class="todolist__header">todo list</header>
-<input class="todolist__input" [(ngModel)]="num" />
+
+<input
+  class="todolist__input"
+  [(ngModel)]="inputval"
+  (keyup.enter)="addtodo()"
+/>
+
 <ul id="todolist__container">
   <app-todo-list-item
     class="todo_item"
