@@ -1,12 +1,22 @@
 <header class="todolist__header">todo list</header>
-<input class="todolist__input" />
+<input class="todolist__input" [(ngModel)]="num" />
 <ul id="todolist__container">
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
+  <app-todo-list-item
+    class="todo_item"
+    *ngFor="let todo of todolist"
+    [todo]="todo"
+    (deletedTodoId)="deletetodo($event)"
+  ></app-todo-list-item>
+  <!-- $event is from eventemitter, holding the data from the child -->
+  <!-- <div>{{num}}</div> -->
+  
+  
+  <!-- <button (click)="toggle()">Toggle</button>
 
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
-  <app-todo-list-item class="todo_item"></app-todo-list-item>
+  <p
+    [ngClass]="{
+      redbox: controlclass,
+      bluebox: !controlclass
+    }"
+  ></p>  -->
 </ul>
