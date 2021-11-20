@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 // import { BLOGS } from '../../mock-blogs';
-// import { Blog } from '../../Blog';
+import { Blog } from '../../Blog';
 
 @Component({
   selector: 'app-blog-itm',
@@ -8,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
   styleUrls: ['./blog-itm.component.scss']
 })
 export class BlogItmComponent implements OnInit {
-  @Input() blog: any;
+  @Input() blog: Blog;
   @Output() getColor = new EventEmitter();
   
   constructor() { }
