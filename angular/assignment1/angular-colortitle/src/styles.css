@@ -3,5 +3,13 @@
 }
 
 .body-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
     font-size: 1em;
+}
+.body-container .news1 {
+    border: solid;
+    border-radius: 2%; 
 }
