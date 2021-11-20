@@ -4,17 +4,26 @@
     margin-bottom:40px;
     margin-right:40px;
     position:relative;
+    font-style: italic;
+}
+
+h4 {
+    position:absolute;
+    top:20px;
+    bottom:170px;
+    overflow: hidden;
 }
 
 p {
-    font-style: italic;
-    font-size:medium;
+    position:absolute;
+    bottom:70px;
+    top:80px;
+    overflow:hidden;
 }
 
 button {
     height:40px;
     width:80px;
-    font-style: italic;
     color:white;
     border:none;
     border-radius: 10%;
@@ -22,7 +31,7 @@ button {
     bottom:20px;
 }
 
-.blue {
+/* .blue {
     border-style: solid;
     border-radius: 5%;
     border-color: blue;
@@ -48,4 +57,4 @@ button {
     border-radius: 5%;
     border-color: green;
     box-shadow: 4px 4px green;
-}
+} */
