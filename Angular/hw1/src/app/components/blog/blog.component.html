@@ -1,0 +1,40 @@
+<header>
+    <h2 
+    [ngStyle]="{color: titleColor}">header color change
+    </h2>
+</header>
+<div class="container">
+    <app-blog-itm
+ *ngFor="let blog of blogs"
+ [blog]="blog"
+ [ngStyle]="{
+    border:
+      titleColor === blog.color
+        ? '2px solid ' + blog.color
+        : '2px solid transparent',
+    'border-radius': '10px',
+    'box-shadow': titleColor === blog.color ? '5px 5px 2px ' + blog.color : ''
+  }"
+ (getColor)="getTitleColor($event)"
+></app-blog-itm>
+</div>
+
+
+
+<!-- <header><h2 [ngStyle]="{color: titleColor}">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2></header>
+<div class="container">
+  <app-context-container 
+    *ngFor="let context of contextsInfo"
+    [context]="context"
+    [ngStyle]="{
+      border:
+        titleColor === context.color
+          ? '2px solid ' + context.color
+          : '2px solid transparent',
+      'border-radius': '10px',
+      'box-shadow': titleColor === context.color ? '5px 5px 2px ' + context.color : ''
+    }"
+    (getColor)="getTitleColor($event)"
+  >
+  </app-context-container>
+</div> -->
