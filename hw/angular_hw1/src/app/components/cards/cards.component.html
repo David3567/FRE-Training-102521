@@ -1,0 +1,7 @@
+<div class='card' [ngClass]='[borderStyle]'>
+    <h4>{{ title }}</h4>
+
+    <p>{{ content }}</p>
+    
+    <button [ngStyle]="{'background-color': color}" (click)='onClick(this.color)'>{{ text }}</button>
+</div>

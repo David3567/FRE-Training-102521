@@ -1,0 +1,41 @@
+header {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:20px;
+    font-style: italic;
+}
+
+.container {
+    margin:auto;
+    width:50%;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+app-cards {
+    flex:40%;
+    /* height:250px;
+    padding:20px;
+    margin-bottom:40px;
+    margin-right:40px;
+    position:relative; */
+}
+
+.blue {
+    color: blue;
+}
+
+.black{
+    color: black;
+}
+
+.red{
+    color: red;
+}
+
+.green {
+    color: green;
+}

@@ -1,0 +1,51 @@
+.card {
+    height:250px;
+    padding:20px;
+    margin-bottom:40px;
+    margin-right:40px;
+    position:relative;
+}
+
+p {
+    font-style: italic;
+    font-size:medium;
+}
+
+button {
+    height:40px;
+    width:80px;
+    font-style: italic;
+    color:white;
+    border:none;
+    border-radius: 10%;
+    position:absolute;
+    bottom:20px;
+}
+
+.blue {
+    border-style: solid;
+    border-radius: 5%;
+    border-color: blue;
+    box-shadow: 4px 4px blue;
+}
+
+.black {
+    border-style: solid;
+    border-radius: 5%;
+    border-color: black;
+    box-shadow: 4px 4px black;
+}
+
+.red {
+    border-style: solid;
+    border-radius: 5%;
+    border-color: red;
+    box-shadow: 4px 4px red;
+}
+
+.green {
+    border-style: solid;
+    border-radius: 5%;
+    border-color: green;
+    box-shadow: 4px 4px green;
+}
