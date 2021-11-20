@@ -9,7 +9,19 @@
     flex-direction: row;
     font-size: 1em;
 }
+
 .body-container .news1 {
     border: solid;
     border-radius: 2%; 
+}
+
+.btn1{
+    background-color: blue;
+    color: white;
+    font-size: 1.5rem;
+}
+.btn2{
+    background-color: green;
+    color: white;
+    font-size: 1.5rem;
 }
