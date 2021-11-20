@@ -28,4 +28,16 @@ export class AppComponent {
     this.bColor2 = "black";
     this.radius = "5%";
   }
+  titleColorChange3() {
+    this.color = "green";
+    this.isSolid = "solid";
+    this.bColor3 = "green";
+    this.radius = "5%";
+  }
+  titleColorChange4() {
+    this.color = "red";
+    this.isSolid = "solid";
+    this.bColor4 = "red";
+    this.radius = "5%";
+  }
 }
