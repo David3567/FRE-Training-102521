@@ -1,0 +1,8 @@
+<h1 [ngClass]="textColor">Welcom to hw1</h1>
+<ul>
+  <app-box
+    *ngFor="let content of contentArr"
+    [content]="content"
+    (colorChange)="colorChange($event)"
+  ></app-box>
+</ul>

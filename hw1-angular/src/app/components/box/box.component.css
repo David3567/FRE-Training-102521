@@ -1,0 +1,15 @@
+li {
+  border: none;
+}
+
+.blue-border {
+  border: 2px solid blue;
+}
+
+.red-border {
+  border: 2px solid red;
+}
+
+.green-border {
+  border: 2px solid green;
+}
