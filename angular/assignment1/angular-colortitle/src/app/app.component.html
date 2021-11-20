@@ -2,7 +2,9 @@
   <h1 [style.color] = "color">{{ title }}</h1>
 </div>
 <div class="body-container">
-  <div [style.border] = "isSolid" >
+  <div [style.border] = "isSolid" 
+  [style.border-color] = "bColor" 
+  [style.border-radius] = "radius">
     <app-news1 (btnClick)="titleColorChange()"></app-news1>
   </div>
   

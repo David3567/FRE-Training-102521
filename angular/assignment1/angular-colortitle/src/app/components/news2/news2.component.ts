@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news2.component.css']
 })
 export class News2Component implements OnInit {
-  heads: string = '“It’s like the elephant in the room,” Doctors urge caution as COVID-19 cases rise in Oklahoma again';
+  heads: string = 'Doctors urge caution as COVID-19 cases rise in Oklahoma again';
 
   constructor() { }
 
