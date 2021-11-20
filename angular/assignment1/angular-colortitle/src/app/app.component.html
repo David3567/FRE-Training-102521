@@ -3,10 +3,13 @@
 </div>
 <div class="body-container">
   <div [style.border] = "isSolid" 
-  [style.border-color] = "bColor" 
+  [style.border-color] = "bColor1" 
   [style.border-radius] = "radius">
-    <app-news1 (btnClick)="titleColorChange()"></app-news1>
+    <app-news1 (btnClick)="titleColorChange1()"></app-news1>
   </div>
-  
-  <app-news2></app-news2>
+  <div [style.border] = "isSolid" 
+  [style.border-color] = "bColor2" 
+  [style.border-radius] = "radius">
+    <app-news2 (btnClick)="titleColorChange2()"></app-news2>
+  </div>
 </div>

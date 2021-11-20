@@ -8,15 +8,24 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'It’s like the elephant in the room,” Doctors urge caution as COVID-19 cases rise in Oklahoma again';
   color: string = "";
+  bColor1: string = "";
+  bColor2: string = "";
+  bColor3: string = "";
+  bColor4: string = "";
   isSolid: string = "";
-  bColor: string = "";
   radius: string = "";
 
   
-  titleColorChange() {
+  titleColorChange1() {
     this.color = "blue";
     this.isSolid = "solid";
-    this.bColor = "blue";
+    this.bColor1 = "blue";
+    this.radius = "5%";
+  }
+  titleColorChange2() {
+    this.color = "black";
+    this.isSolid = "solid";
+    this.bColor2 = "black";
     this.radius = "5%";
   }
 }
