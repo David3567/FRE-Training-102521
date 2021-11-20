@@ -1,0 +1,39 @@
+.head-container {
+    font-size: 1.5em;
+}
+
+.body-container {
+    margin:auto;
+    width:50%;
+    display:flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.body-sub {
+    flex: 40%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.btn1{
+    background-color: blue;
+    color: white;
+    font-size: 1.5rem;
+}
+.btn2{
+    background-color:  black;
+    color: white;
+    font-size: 1.5rem;
+}
+.btn3{
+    background-color: green;
+    color: white;
+    font-size: 1.5rem;
+}
+.btn4{
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+}
