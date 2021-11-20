@@ -1,8 +1,8 @@
 <div class="head-container">
-  <h1>{{ title }}</h1>
+  <h1 [style.color] = "color">{{ title }}</h1>
 </div>
 <div class="body-container">
-  <div class="news1">
+  <div [style.border] = "isSolid" >
     <app-news1 (btnClick)="titleColorChange()"></app-news1>
   </div>
   

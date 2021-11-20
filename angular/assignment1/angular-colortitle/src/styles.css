@@ -8,12 +8,9 @@
     display: flex;
     flex-direction: row;
     font-size: 1em;
+    
 }
 
-.body-container .news1 {
-    border: solid;
-    border-radius: 2%; 
-}
 
 .btn1{
     background-color: blue;
