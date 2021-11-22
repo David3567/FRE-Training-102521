@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script async src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>iphone timer</title>
+</head>
+<body>
+    <div class="container">
+        <div class="flip">
+            <div class = "container1">
+                <input value = "0" type="number" min = '0' max = '23' class = "hours1"></input>
+                <label for="">hours</label>
+                <input value = "0" type="number" min = '0' max = '59'  class = "min1"></input>
+                <label for="">min</label>
+                <input value = "0" type="number" min = '0' max = '59'  class = "sec1"></input>
+                <label for="">sec</label>
+                <br>
+                <!-- <button class = "cancel">Cancel</button> -->
+                <button class = "start">Start</button>
+            </div>
+            <div class = "container2">
+                <span class = "hours2">0</span>
+                <label for="">:</label>
+                <span class = "min2">0</span>
+                <label for="">:</label>
+                <span class = "sec2">0</span>
+                <br>
+                <button class = "cancel">Cancel</button>
+                <button class = "control">Pause</button>
+            </div>  
+        </div>
+    </div> 
+</body>
+</html>
