@@ -1,0 +1,132 @@
+:root {
+    --container-width: 300px;
+    --container-height: 370px;
+
+    --container-background-color: rgb(9, 73, 9);
+    --background-transparent: linear-gradient(transparent, black, transparent);
+    --countNum-font-color: rgb(236, 198, 198);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    overflow: hidden;
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: var(--container-height);
+    width: var(--container-width);
+}
+.timer_container .timer_showplace {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    box-shadow: 0 0 3px black;
+    border-radius: 50%;
+
+    background: var(--background-transparent);
+}
+.timer_container .timer_showplace .timer__selector,
+.timer_container .timer_showplace .timer__countdown {
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.timer_container .timer_showplace .timer__selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    height: 35px;
+    overflow: hidden;
+    background: var(--background-transparent);
+    border-radius: 25px;
+    border: 2px solid rgb(158, 4, 4);
+    box-shadow: 0 0 5px rgb(133, 2, 2);
+}
+.selector {
+    margin: 0 10px;
+    width: 25%;
+    text-align: right;
+
+    color: white;
+}
+.hour {
+    width: calc(25% + 13px);
+}
+.timer_container .btn__container {
+    display: flex;
+    justify-content: space-between;
+}
+.timer_container .btn__container .btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 20px;
+    background: linear-gradient(transparent, rgb(97, 67, 2), transparent);
+    color: white;
+    transition: all 0.5s linear;
+}
+#start_btn,
+#resume_btn {
+    background: linear-gradient(transparent, rgb(0, 70, 0), transparent);
+}
+#pause_btn {
+    background: linear-gradient(transparent, rgb(131, 28, 2), transparent);
+}
+
+.hour__selector,
+.min__selector,
+.sec__selector {
+    position: relative;
+}
+.hour__list,
+.min__list,
+.sec__list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    transition: 0.1s ease-in-out;
+    color: var(--countNum-font-color);
+    font-size: 1.1rem;
+}
+#cancel_btn:disabled {
+    color: rgb(85, 84, 84);
+    background: linear-gradient(transparent, rgb(95, 81, 50), transparent);
+}
+.timer_container .timer_showplace .timer__countdown {
+    transform: rotateY(180deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+.timer__countdown .show__countdown {
+    font-size: 2.5rem;
+    color: var(--countNum-font-color);
+    padding: 0 20px;
+
+    border-radius: 25px;
+    border: 2px solid rgb(158, 4, 4);
+    box-shadow: 0 0 5px rgb(133, 2, 2);
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="icon" href="https://antra.com/wp-content/uploads/2017/08/favicon-32x32.png" sizes="32x32" />
+        <link rel="stylesheet" href="./index.css" />
+        <script async src="./index.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <main class="timer_container">
+                <div class="timer_showplace">
+                    <div class="timer__selector" >
+                        <div class="hour selector">
+                            <span class="hour__selector"
+                                ><div class="hour__list"></div></span
+                            >hours
+                        </div>
+                        <div class="min selector">
+                            <span class="min__selector"
+                                ><div class="min__list"></div></span
+                            >min
+                        </div>
+                        <div class="sec selector">
+                            <span class="sec__selector"
+                                ><div class="sec__list"></div> </span
+                            >sec
+                        </div>
+                    </div>
+
+                    <div class="timer__countdown">
+                        <div class="show__countdown" id="countdown">00:00:00</div>
+                    </div>
+                </div>
+
+                <div class="btn__container">
+                    <button class="btn" id="cancel_btn" disabled>Cancel</button>
+                    <button class="btn" id="start_btn">Start</button>
+                    <button class="btn" id="resume_btn" style="display: none">
+                        Resume
+                    </button>
+                    <button class="btn" id="pause_btn" style="display: none">
+                        Pause
+                    </button>
+                </div>
+            </main>
+        </div>
+
+        <audio id="audio">
+            <source src="clickbtn.mp3"></source>
+        </audio>
+    </body>
+</html>
