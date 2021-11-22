@@ -63,9 +63,21 @@ class Observable<T> {
     return subscription;
   }
 
-  map<R>(fn: (vlaue: T) => R) {
+  lett<R>(fn: (source: Observable<T>) => Observable<R>): Observable<R> {
+    return new Observable<R>(s => {
+      const subs = fn(this).subscribe(s);
+      return () => {
+        subs.unsubscribe();
+      };
+    });
+  }
+}
+
+const map =
+  <T, R>(fn: (vlaue: T) => R) =>
+  (source: Observable<T>) => {
     return new Observable<R>(subscriber => {
-      this.subscribe({
+      const subs = source.subscribe({
         next(value: T) {
           subscriber.next(fn(value));
         },
@@ -76,10 +88,11 @@ class Observable<T> {
           subscriber.complete();
         },
       });
-      return () => {};
+      return () => {
+        subs.unsubscribe();
+      };
     });
-  }
-}
+  };
 
 const myObservable = new Observable((observer: Observer<number>) => {
   let i = 0;
@@ -97,20 +110,23 @@ const myObservable = new Observable((observer: Observer<number>) => {
   };
 });
 
-const teardown = myObservable
-  .map(x => x + 100)
-  .subscribe({
-    next(value) {
-      console.log(value);
-    },
-    error(err) {
-      console.log(err);
-    },
-    complete() {
-      console.log('done');
-    },
-  });
+const teardown = myObservable.lett(map(x => x + 100)).subscribe({
+  next(value) {
+    console.log(value);
+  },
+  error(err) {
+    console.log(err);
+  },
+  complete() {
+    console.log('done');
+  },
+});
 
 setTimeout(() => {
   teardown.unsubscribe();
 }, 2000);
+
+function pipe(...fns: Array<(source: Observable<any>) => Observable<any>>) {
+  return (source: Observable<any>) =>
+    fns.reduce((prev, fn) => fn(prev), source);
+}

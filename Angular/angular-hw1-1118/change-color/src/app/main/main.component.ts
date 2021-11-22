@@ -37,7 +37,7 @@ export class MainComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.titleColor);
+    //console.log(this.titleColor);
   }
 
   getTitleColor(color: string) {
