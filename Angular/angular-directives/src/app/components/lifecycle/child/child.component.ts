@@ -15,7 +15,7 @@ import { Customer } from '../../interface/customer';
 
 @Component({
   selector: 'app-child',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './child.component.html',
 })
 export class ChildComponent

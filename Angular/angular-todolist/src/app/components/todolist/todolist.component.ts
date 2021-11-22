@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { TodoService } from 'src/app/core/todo.service';
 import { Todo } from 'src/app/todo.interface';
 
@@ -7,16 +12,19 @@ import { Todo } from 'src/app/todo.interface';
   templateUrl: './todolist.component.html',
   styleUrls: ['./todolist.component.scss'],
 })
-export class TodolistComponent implements OnInit {
+export class TodolistComponent implements OnInit, OnDestroy {
   inputval = '';
   todolist: Todo[] = [];
+  todolist$: any;
+  // subscription: any;
 
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
-    this.todoService.getAllTodos().subscribe((todolist) => {
-      this.todolist = todolist as Todo[];
-    });
+    this.todolist$ = this.todoService.todolist$;
+    // this.subscription = this.todoService.getAllTodos().subscribe((todolist) => {
+    //   this.todolist = todolist as Todo[];
+    // });
   }
 
   deletetodo(id: string) {
@@ -38,5 +46,11 @@ export class TodolistComponent implements OnInit {
       // this.todolist.unshift(todo); // mutable
     });
     this.inputval = '';
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    // this.subscription.unsubscribe();
   }
 }

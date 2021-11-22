@@ -16,7 +16,7 @@ import { Customer } from '../../interface/customer';
 @Component({
   selector: 'app-grand-child',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: ``,
+  templateUrl: './grandchild.component.html',
 })
 export class GrandChildComponent
   implements
@@ -32,6 +32,7 @@ export class GrandChildComponent
   @Input('newCustomer') customer: Customer | undefined;
 
   constructor() {
+    console.log('hello');
     console.log('    GrandChildComponent:Contructed');
   }
 

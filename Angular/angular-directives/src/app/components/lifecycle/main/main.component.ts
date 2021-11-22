@@ -12,6 +12,7 @@ import {
   AfterViewInit,
   Input,
 } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'my-main',
@@ -31,9 +32,10 @@ export class MainComponent
 {
   name = 'Angular ' + VERSION.major;
 
-  message = 'Hello';
+  message = 'Hello'; // hello
   content = 'Hello';
   hideChild = false;
+  interval: any;
 
   constructor() {
     console.log('AppComponent:Contructed');
@@ -48,6 +50,7 @@ export class MainComponent
   }
 
   ngDoCheck(): void {
+    // this.interval = setInterval(() => console.log('hello'), 1000);
     console.log('AppComponent:DoCheck');
   }
 
@@ -68,6 +71,8 @@ export class MainComponent
   }
 
   ngOnDestroy(): void {
+    // clearInterval(this.interval);
+
     console.log('AppComponent:ngOnDestroy');
   }
 }
