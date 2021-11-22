@@ -4,12 +4,13 @@
 <!--[ngStyle]="{ color: titleColor }"-->
 <!--(bgColor)="changeHeadingColor($event)"-->
 <div class="articleWraper">
-  <app-article
+  <app-article *ngFor="let d of data" [title]="d.title" [bgColor]="d.color" [content]="d.content" (newColorEvent)= "changeHeadingColor($event)"></app-article>
+  <!-- <app-article
     [title]="titleBlue"
     [bgColor]="'blue'"
     (newColorEvent)="changeHeadingColor($event)"
   ></app-article>
   <app-article [title]="titleBlack" [bgColor]="'black'" (newColorEvent)="changeHeadingColor($event)"></app-article>
   <app-article [title]="titleRed" [bgColor]="'red'" (newColorEvent)="changeHeadingColor($event)"></app-article>
-  <app-article [title]="titleGreen" [bgColor]="'green'" (newColorEvent)="changeHeadingColor($event)"></app-article>
+  <app-article [title]="titleGreen" [bgColor]="'green'" (newColorEvent)="changeHeadingColor($event)"></app-article> -->
 </div>

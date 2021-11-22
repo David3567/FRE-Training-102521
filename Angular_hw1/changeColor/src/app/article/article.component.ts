@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ArticleComponent implements OnInit {
   @Input() title: string = 'title';
   @Input() bgColor: string = 'bgColor';
+  @Input() content:string = 'content';
 
   @Output() newColorEvent = new EventEmitter<string>();
 
