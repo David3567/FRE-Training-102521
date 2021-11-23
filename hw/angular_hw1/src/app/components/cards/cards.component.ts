@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class CardsComponent implements OnInit {
   title: string = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.';
   content: string = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate sed accusamus earum consequatur atque in pariatur adipisci cum temporibus ducimus non, ratione vitae fugit quasi, enim sunt dolor obcaecati quas!';
-  @Input() text: string = '';
+  @Input() btnText: string = '';
   @Input() color: string = '';
   // @Input() borderStyle: string = '';
   @Output() btnClick = new EventEmitter();

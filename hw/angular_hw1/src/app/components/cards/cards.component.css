@@ -29,6 +29,7 @@ button {
     border-radius: 10%;
     position:absolute;
     bottom:20px;
+    font-style: italic;
 }
 
 /* .blue {

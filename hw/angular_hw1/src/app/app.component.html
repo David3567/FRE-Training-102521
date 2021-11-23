@@ -3,12 +3,5 @@
 </header>
 
 <div class='container'>
-    <app-cards  text='Set Blue' color='blue' (btnClick)='toggle($event)'></app-cards>
-
-    <app-cards text='Set Black' color='black' (btnClick)='toggle($event)'></app-cards>
-
-    <app-cards text='Set Red' color='red' (btnClick)='toggle($event)'></app-cards>
-
-    <app-cards text='Set Green' color='green' (btnClick)='toggle($event)'></app-cards>
-
+    <app-cards *ngFor='let style of styles' color='{{ style.color }}' btnText= '{{ style.btnText }}' (btnClick)='toggle($event)'></app-cards>
 </div>
