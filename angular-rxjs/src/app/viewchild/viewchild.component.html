@@ -1,0 +1,15 @@
+<input
+  type="checkbox"
+  id="showCounter"
+  name="showCounter"
+  [(ngModel)]="showCounter"
+/>
+
+<ng-container *ngIf="showCounter">
+  <p>current count is {{ child?.count }}</p>
+
+  <button (click)="increment()" #incrementbtn>Increment</button>
+  <button (click)="decrement()">decrement</button>
+
+  <app-child #child></app-child>
+</ng-container>
