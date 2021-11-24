@@ -1,0 +1,20 @@
+<header>
+    <h2 
+    [ngStyle]="{color: titleColor}">header color change
+    </h2>
+</header>
+<div class="container">
+    <app-blog-item
+ *ngFor="let blog of blogs"
+ [blog]="blog"
+ [ngStyle]="{
+    border:
+      titleColor === blog.color
+        ? '2px solid ' + blog.color
+        : '2px solid transparent',
+    'border-radius': '10px',
+    'box-shadow': titleColor === blog.color ? '5px 5px 2px ' + blog.color : ''
+  }"
+ (getColor)="getTitleColor($event)"
+></app-blog-item>
+</div>
