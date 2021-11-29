@@ -1,0 +1,9 @@
+
+<div class="book">
+  <h3>book title:{{book?.title??''}}
+      <img src="{{book?.imageLinks?.smallThumbnail??''}}" alt=""/></h3>
+  <p>Author:{{book?.authors??[].join(',')}}</p>
+  <p>Publisher:{{book?.publisher??''}}</p>
+  <p>Published Date:{{book?.publishedDate??''}}</p>
+  <p>Description:{{book?.description??''}}</p>
+  </div>
