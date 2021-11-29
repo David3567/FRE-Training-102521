@@ -1,0 +1,25 @@
+* {
+    margin-bottom:10px;
+}
+
+mat-card:hover {
+    box-shadow: 4px 4px 2px grey;
+    cursor: pointer;
+}
+
+#main {
+    display:flex;
+    justify-content: center;
+}
+
+img {
+    margin: 15px;
+    width: 200px;
+    height: 250px;
+}
+
+mat-card-content {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

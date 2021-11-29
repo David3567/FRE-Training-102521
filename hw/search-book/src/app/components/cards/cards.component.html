@@ -1,0 +1,14 @@
+<div *ngFor='let book of books'>
+    <mat-card (click)='addToList(book.title)'>
+        <div id='main'>
+            <img [src]='book?.image' alt=''>
+            <mat-card-content>
+                <mat-card-title>{{ book?.title }}</mat-card-title>
+                <p><b>Author: </b>{{ book?.author }}</p>
+                <p><b>Publisher: </b>{{ book?.publisher }}</p>
+                <p><b>Published Date: </b>{{ book?.publishedDate }}</p>
+                <p><b>description: </b>{{ book?.description }}</p>
+            </mat-card-content>
+        </div>
+    </mat-card>
+</div>
