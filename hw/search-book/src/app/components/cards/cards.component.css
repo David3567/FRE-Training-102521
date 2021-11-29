@@ -1,4 +1,12 @@
-* {
+#main-container {
+    padding-left:20px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+#search-container {
+    flex-basis: 70%;
     margin-bottom:10px;
 }
 
@@ -22,4 +30,8 @@ mat-card-content {
     display:flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+app-wishlist {
+    flex: 25%;
 }

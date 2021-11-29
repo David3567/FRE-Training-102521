@@ -13,20 +13,3 @@ a {
 app-input {
     margin:40px;
 }
-
-.container {
-
-    padding-left:20px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-
-app-cards {
-    margin:20px;
-    flex-basis:70%;
-}
-
-app-wishlist {
-    flex: 25%;
-}

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title='search-book';
+  title = 'search-book';
 
   toolBar = [
-    { name: 'Home', dest: '#'},
-    { name: 'Show Wishlist', dest: 'src/app/components/showlist/showlist.component.html'}
+    { name: 'Home', dest: '/home' },
+    { name: 'Show Wishlist', dest: '/showlist' }
   ];
-
-  newTitle : string = '';
-
-  getTitle(title: string) {
-
-    this.newTitle = title;
-  }
 
 }

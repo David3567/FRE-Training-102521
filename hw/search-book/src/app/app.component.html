@@ -1,11 +1,12 @@
 <header>
-  <a *ngFor='let tool of toolBar' href={{tool.dest}}>{{ tool.name }}</a>
+  <a *ngFor='let tool of toolBar' routerLink='{{tool.dest}}' routerLinkActive='active'>{{ tool.name }}</a>
 </header>
 
 <app-input></app-input>
 
-<div class='container'>
-  <app-cards></app-cards>
+<!-- <div class='container'> -->
+<!-- <app-cards></app-cards>
 
-  <app-wishlist></app-wishlist>
-</div>
+  <app-wishlist></app-wishlist> -->
+<router-outlet></router-outlet>
+<!-- </div> -->

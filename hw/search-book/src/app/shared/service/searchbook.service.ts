@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { pluck, map, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class SearchbookService {
 
   constructor(private http: HttpClient) { }
 
-  books$ = new Subject();
+  books$ = new BehaviorSubject([]);
 
   getAll(bookname: string) {
 
@@ -38,7 +38,7 @@ export class SearchbookService {
   }
 
   currentList: string[] = [];
-  wishList$ = new Subject<string[]>();
+  wishList$ = new BehaviorSubject(this.currentList);
 
   addToList(title: string) {
     let found = false;
