@@ -8,7 +8,7 @@ import { Blog } from '../../Blog';
   styleUrls: ['./blog-itm.component.scss']
 })
 export class BlogItmComponent implements OnInit {
-  @Input() blog: Blog;
+  @Input() blog!: Blog;
   @Output() getColor = new EventEmitter();
   
   constructor() { }
@@ -24,22 +24,3 @@ export class BlogItmComponent implements OnInit {
 
 
 
-// import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-
-// @Component({
-//   selector: 'app-blog-itm',
-//   templateUrl: './blog-itm.component.html',
-//   styleUrls: ['./blog-itm.component.scss']
-// })
-// export class BlogItmComponent implements OnInit {
-//   @Input() context: any;
-//   @Output() getColor = new EventEmitter();
-
-//   constructor() {}
-
-//   ngOnInit() {}
-
-//   emitColor() {
-//     this.getColor.emit(this.context.color);
-//   }
-// }

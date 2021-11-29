@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 // import { ButtonComponent } from './components/button/button.component';
 import { BlogItmComponent } from './components/blog-itm/blog-itm.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { ShortPipe } from './components/blog-itm/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BlogComponent } from './components/blog/blog.component';
     // ButtonComponent,
     BlogItmComponent,
     BlogComponent,
+    ShortPipe
   
   ],
   imports: [

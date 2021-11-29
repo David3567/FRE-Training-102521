@@ -2,21 +2,9 @@
 
 <div class="blog">
     <p>{{ blog.title }}</p>
-    <p>{{ blog.content }}</p>
+    <p>{{ blog.content | shorten}}</p>
     <button (click)="emitColor()"> Set  {{ blog.color }}</button>
 </div>
 
 
 
-<!-- <div class="contextinfo_container">
-    <h2 class="title">
-      {{ context.title }}
-    </h2>
-    <p class="info">{{ context.content }}</p>
-    <button
-      [ngStyle]="{ background: context.color }"
-      (click)="emitColor()"
-    >
-      Set {{ context.color }}
-    </button>
-  </div> -->

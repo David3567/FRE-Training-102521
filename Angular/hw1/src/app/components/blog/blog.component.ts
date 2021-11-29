@@ -8,7 +8,7 @@ import { Blog } from '../../Blog';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  @Input() blogs: Blog[] = BLOGS;
+  blogs:  Blog[] = BLOGS;
   titleColor = "";
 
   constructor() { }
