@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TodoService } from './core/todo.service';
+
+export const SelectUrl = new InjectionToken<string>('');
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +22,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ComponentsModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    { provide: TodoService, useClass: TodoService },
+    { provide: SelectUrl, useValue: true },
+    {
+      provide: 'baseUrl',
+      useFactory: () =>
+        SelectUrl
+          ? 'https://jsonplaceholder.typicode.com'
+          : 'http://localhost:3000',
+      deps: [SelectUrl],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

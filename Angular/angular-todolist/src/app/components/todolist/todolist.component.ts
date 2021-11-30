@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  Inject,
   OnDestroy,
   OnInit,
 } from '@angular/core';
@@ -30,7 +31,7 @@ export class TodolistComponent implements OnInit, OnDestroy {
   deletetodo(id: string) {
     console.log(id);
     this.todolist = this.todolist.filter((ele: any) => +ele.id !== +id);
-    this.todoService.deleteTodo(id).subscribe((_) => {
+    this.todoService.deleteTodo(id).subscribe((_: any) => {
       console.log('delete');
     });
   }
@@ -41,7 +42,7 @@ export class TodolistComponent implements OnInit, OnDestroy {
       title: this.inputval,
       completed: false,
     };
-    this.todoService.addTodo(newtodo).subscribe((todo) => {
+    this.todoService.addTodo(newtodo).subscribe((todo: Todo) => {
       this.todolist = [todo, ...this.todolist]; // inmutable
       // this.todolist.unshift(todo); // mutable
     });

@@ -1,21 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, Optional } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Todo } from '../todo.interface';
+import { catchError } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TodoService {
   // baseurl = 'http://localhost:3000';
-  baseurl = 'https://jsonplaceholder.typicode.com';
+  // baseurl = 'https://jsonplaceholder.typicode.com';
   todoPath = 'todos';
   todolist$?: Observable<Todo[]>;
 
-  constructor(private http: HttpClient) {
-    this.todolist$ = this.http
-      .get([this.baseurl, this.todoPath].join('/'))
-      .pipe() as Observable<Todo[]>;
+  constructor(
+    private http: HttpClient,
+    @Optional() @Inject('baseUrl') private baseurl: string
+  ) {
+    console.log(this.baseurl);
+    this.todolist$ = this.http.get(
+      [this.baseurl, this.todoPath].join('/')
+    ) as Observable<Todo[]>;
+    // .pipe(catchError((err) => console.log))
   }
 
   // getAllTodos: () => Observable<Todo[]> = () =>

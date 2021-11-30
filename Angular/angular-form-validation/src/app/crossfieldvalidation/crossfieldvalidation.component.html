@@ -1,0 +1,28 @@
+<form
+  autocomplete="off"
+  [formGroup]="myForm"
+  (ngSubmit)="onSubmit()"
+  novalidate
+>
+  <div>
+    <label for="password">Password :</label>
+    <input type="text" id="password" formControlName="password" />
+  </div>
+
+  <div>
+    <label for="confirm">Confirm :</label>
+    <input type="text" id="confirm" formControlName="confirm" />
+  </div>
+
+  <div *ngIf="!myForm.valid && (myForm.dirty || myForm.touched)">
+    <div *ngIf="myForm.errors?.noMatch">
+      The password and confirm not Match!
+    </div>
+  </div>
+
+  <p>Is Form Valid : {{ myForm.status }}</p>
+
+  <p>
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+  </p>
+</form>

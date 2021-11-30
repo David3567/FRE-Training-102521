@@ -1,0 +1,26 @@
+<h1>Async Validator in Angular</h1>
+
+<h2>Reactive Form</h2>
+
+<form
+  autocomplete="off"
+  [formGroup]="myForm"
+  (ngSubmit)="onSubmit()"
+  novalidate
+>
+  <div>
+    <label for="numVal">Number :</label>
+    <input type="text" id="numVal" name="numVal" formControlName="numVal" />
+    <div *ngIf="!numVal.valid && (numVal.dirty || numVal.touched)">
+      <div *ngIf="numVal.errors.gte">
+        The number should be greater than {{ numVal.errors.requiredValue }}
+      </div>
+    </div>
+  </div>
+
+  <p>Is Form Valid : {{ myForm.valid }}</p>
+
+  <p>
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+  </p>
+</form>

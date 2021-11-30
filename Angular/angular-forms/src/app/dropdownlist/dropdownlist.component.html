@@ -1,0 +1,24 @@
+<h1>Angular Select Option Example</h1>
+
+<form [formGroup]="contactForm" (ngSubmit)="submit()">
+  <p>
+    <select formControlName="country">
+      <option [ngValue]="null" disabled>Select Country</option>
+      <option *ngFor="let country of countries" [ngValue]="country.id">
+        {{ country.name }} {{ country.id }}
+      </option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </p>
+</form>
+
+<p>
+  <input [(ngModel)]="country_name" />
+  <button (click)="addCountry()">Add</button>
+</p>
+
+<p>
+  <input [(ngModel)]="set_country" />
+  <button (click)="setCountry()">Set Country</button>
+</p>
