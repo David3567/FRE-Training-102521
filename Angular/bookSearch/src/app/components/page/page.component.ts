@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BookService } from 'src/app/book.service';
-import { Book } from '../../Book';
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatSelectModule} from "@angular/material/select";
+import { VolumeInfo } from 'src/app/interface/volume-info';
+import { BookService } from 'src/app/services/book.service';
+import { Book } from '../../interface/Book';
+
 
 @Component({
   selector: 'app-page',
@@ -10,25 +10,24 @@ import {MatSelectModule} from "@angular/material/select";
   styleUrls: ['./page.component.css']
 })
 export class PageComponent implements OnInit {
-  title = 'Angular-searchBook';
-  books?:Book;
+  title = 'searchBook';
+  books?:Book[]= [];
   constructor(private BookService: BookService) { }
 
   ngOnInit(): void {
-    //  this.BookService.getBooks()
-    //      .subscribe(data => this.books = data);
+
     
   }
 
   searchBooks(event:any):void{
-    this.BookService.getBooks(event.target.value)?.subscribe((books:Book) => {
-      if(this.books !== null){
+ 
+    this.BookService
+    .getBooks(event.target.value)?.subscribe((books:Book[]) => {
+        this.books = books;
         console.log(books)
-        this.books = books
-      }else{
-        console.log("books is null");
-      }
+
     });
+
   }
   
 

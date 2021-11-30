@@ -11,9 +11,9 @@
 <mat-form-field appearance="fill">
   <mat-label class="test">Search</mat-label>
   <input matInput (input)="searchBooks($event)" >
-</mat-form-field>
+</mat-form-field> 
 
 <!-- <p>{{books?.items}}</p> -->
 <app-item 
-*ngFor="let book of books?.items??[]" 
+*ngFor="let book of books" 
 [book]="book"></app-item>

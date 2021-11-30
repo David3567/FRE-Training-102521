@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
-import { Book } from '../../Book';
-// import { BookService } from 'src/app/book.service';
+import { Book } from 'src/app/interface/Book';
+
 
 @Component({
   selector: 'app-item',
@@ -9,14 +8,12 @@ import { Book } from '../../Book';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  @Input() book:any = null;
+  @Input() book?: Book;
   
-  constructor(
-    
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.book = this.book.volumeInfo;
+   console.log(this.book?.title + 'item');
   }
 
 }
