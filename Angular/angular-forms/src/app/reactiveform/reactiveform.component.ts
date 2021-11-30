@@ -37,13 +37,13 @@ export class ReactiveformComponent implements OnInit {
     return this.contactForm.get('country');
   }
   get city() {
-    return this.contactForm.get('address').get('city');
+    return this.contactForm.get('address')?.get('city');
   }
   get street() {
-    return this.contactForm.get('address').get('street');
+    return this.contactForm.get('address')?.get('street');
   }
   get pincode() {
-    return this.contactForm.get('address').get('pincode');
+    return this.contactForm.get('address')?.get('pincode');
   }
 
   constructor(private fb: FormBuilder) {}
@@ -51,7 +51,7 @@ export class ReactiveformComponent implements OnInit {
   ngOnInit(): void {
     // // ractive form
     // this.contactForm = new FormGroup({
-    //   firstname: new FormControl('', validators, async validators),
+    //   firstname: new FormControl('', Validators.required),
     //   lastname: new FormControl(),
     //   email: new FormControl(),
     //   gender: new FormControl(),
@@ -59,17 +59,17 @@ export class ReactiveformComponent implements OnInit {
     //   country: new FormControl(),
 
     //   address: new FormGroup({
-    //       city: new FormControl(),
-    //       street: new FormControl(),
-    //       pincode: new FormControl(),
+    //     city: new FormControl(),
+    //     street: new FormControl(),
+    //     pincode: new FormControl(),
     //   }),
     // });
 
-    // console.log(this.contactForm.get('firstname'));
-    // form builder && validator
+    // console.log(this.contactForm);
+    // // form builder && validator
 
     this.contactForm = this.fb.group({
-      firstname: ['', [Validators.required, Validators.minLength(10)]],
+      firstname: ['', [Validators.required, Validators.minLength(3)], []],
       lastname: [
         '',
         [

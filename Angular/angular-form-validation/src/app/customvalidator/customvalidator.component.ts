@@ -21,26 +21,26 @@ export class CustomvalidatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
-      numVal: new FormControl('', [gtepassval(20)]),
+      numVal: new FormControl('', [gtepassval(10)]),
     });
   }
 
   onSubmit() {
     console.log(this.myForm.value);
   }
+
+  // gte(control: AbstractControl): ValidationErrors | null {
+  //   const v = +control.value;
+
+  //   if (isNaN(v)) {
+  //     return { msg: true };
+  //   }
+  //   if (v <= 10) {
+  //     return { gte: true, requiredValue: 10, msg: 'msg' };
+  //   }
+  //   return null;
+  // }
 }
-
-// function gte(control: AbstractControl): ValidationErrors | null {
-//   const v = +control.value;
-
-//   if (isNaN(v)) {
-//     return { msg: true };
-//   }
-//   if (v <= 10) {
-//     return { gte: true, requiredValue: 10, msg: 'msg' };
-//   }
-//   return null;
-// }
 
 interface ValidatorFn {
   (control: AbstractControl): ValidationErrors | null;
@@ -49,7 +49,7 @@ interface ValidatorFn {
 function gtepassval(val: number): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     let v: number = +control.value;
-
+    console.log(v);
     if (isNaN(v)) {
       return { msg: true };
     }

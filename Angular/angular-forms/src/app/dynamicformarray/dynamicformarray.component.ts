@@ -12,6 +12,9 @@ export class DynamicformarrayComponent implements OnInit {
   get employees(): FormArray {
     return this.empForm.get('employees') as FormArray;
   }
+  employeeSkills(empIndex: number): FormArray {
+    return this.employees.at(empIndex).get('skills') as FormArray;
+  }
 
   constructor(private fb: FormBuilder) {}
 
@@ -20,7 +23,7 @@ export class DynamicformarrayComponent implements OnInit {
       employees: this.fb.array([]),
     });
   }
-
+  // create employee formArray;
   newEmployee(): FormGroup {
     return this.fb.group({
       firstName: '',
@@ -28,7 +31,6 @@ export class DynamicformarrayComponent implements OnInit {
       skills: this.fb.array([]),
     });
   }
-
   addEmployee() {
     this.employees.push(this.newEmployee());
   }
@@ -36,21 +38,16 @@ export class DynamicformarrayComponent implements OnInit {
     this.employees.removeAt(empIndex);
   }
 
-  employeeSkills(empIndex: number): FormArray {
-    return this.employees.at(empIndex).get('skills') as FormArray;
-  }
-
+  // create employees' skills formArray;
   newSkill(): FormGroup {
     return this.fb.group({
       skill: '',
       exp: '',
     });
   }
-
   addEmployeeSkill(empIndex: number) {
     this.employeeSkills(empIndex).push(this.newSkill());
   }
-
   removeEmployeeSkill(empIndex: number, skillIndex: number) {
     this.employeeSkills(empIndex).removeAt(skillIndex);
   }

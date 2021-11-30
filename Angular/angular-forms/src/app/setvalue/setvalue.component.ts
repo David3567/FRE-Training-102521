@@ -77,6 +77,7 @@ export class SetvalueComponent implements OnInit {
         pincode: '400050',
       },
     };
+    // this.reactiveForm.value = contact;
     this.reactiveForm.setValue(contact);
   }
   setValue() {

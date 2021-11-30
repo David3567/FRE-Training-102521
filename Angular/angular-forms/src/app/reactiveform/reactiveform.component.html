@@ -10,7 +10,12 @@
       />
     </p>
 
-    <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)">
+    <div
+      *ngIf="
+        !contactForm.get('firstname')?.valid &&
+        (firstname?.dirty || firstname?.touched)
+      "
+    >
       <div class="validator" [hidden]="!firstname.errors.required">
         First Name is required
       </div>
