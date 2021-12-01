@@ -11,6 +11,11 @@
       [(ngModel)]="contact.firstname"
     />
   </p>
+
+  <h1>
+    {{ firstname.errors | json }}
+  </h1>
+
   <div
     *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)"
     class="error"
@@ -35,16 +40,17 @@
       [(ngModel)]="contact.lastname"
     />
   </p>
+
   <div
     *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)"
     class="error"
   >
     <div *ngIf="lastname.errors?.required">Last Name is required</div>
-    <div *ngIf="lastname.errors?.maxlength">
-      Last Name Minimum Length is
-      {{ lastname.errors?.maxlength?.requiredLength }}
-    </div>
     <div *ngIf="lastname.errors?.pattern">Only characters are allowed</div>
+  </div>
+
+  <div *ngIf="lastname.value?.length === 15" class="warning">
+    Last Name MaxLength is 15
   </div>
 
   <p>

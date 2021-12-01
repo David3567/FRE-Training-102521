@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
+  FormBuilder,
   FormControl,
   FormGroup,
   ValidationErrors,
@@ -19,42 +20,42 @@ export class CustomvalidatorComponent implements OnInit {
     return this.myForm.get('numVal');
   }
 
+  constructor(private fb: FormBuilder) {}
+
   ngOnInit(): void {
-    this.myForm = new FormGroup({
-      numVal: new FormControl('', [gtepassval(10)]),
+    this.myForm = this.fb.group({
+      numVal: ['', [customValidatorWithArgs(5)]],
     });
   }
 
   onSubmit() {
     console.log(this.myForm.value);
   }
-
-  // gte(control: AbstractControl): ValidationErrors | null {
-  //   const v = +control.value;
-
-  //   if (isNaN(v)) {
-  //     return { msg: true };
-  //   }
-  //   if (v <= 10) {
-  //     return { gte: true, requiredValue: 10, msg: 'msg' };
-  //   }
-  //   return null;
-  // }
 }
 
 interface ValidatorFn {
   (control: AbstractControl): ValidationErrors | null;
 }
 
-function gtepassval(val: number): ValidatorFn {
+// function customValidator(control: AbstractControl): ValidationErrors | null {
+//   if (isNaN(+control.value)) {
+//     return { nan: true };
+//   }
+//   if (control.value.length <= 10) {
+//     return { minlen: true, requiredValue: 10 };
+//   }
+//   return null;
+// }
+
+function customValidatorWithArgs(minlen: number): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
-    let v: number = +control.value;
-    console.log(v);
+    const v = +control.value;
+
     if (isNaN(v)) {
-      return { msg: true };
+      return { nan: true };
     }
-    if (v <= +val) {
-      return { gte: true, requiredValue: val };
+    if (v.toString().length <= +minlen) {
+      return { minlen: true, requiredValue: minlen };
     }
     return null;
   };

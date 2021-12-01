@@ -21,7 +21,9 @@ export class SetvalidatorComponent implements OnInit {
     return this.myform.get('mobile');
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
     this.myform = this.fb.group({
       email: [''],
       mobile: [''],
@@ -32,7 +34,6 @@ export class SetvalidatorComponent implements OnInit {
       this.changeValidators();
     });
   }
-  ngOnInit(): void {}
 
   changeValidators() {
     console.log(this.notifyVia.value);
@@ -44,11 +45,11 @@ export class SetvalidatorComponent implements OnInit {
       ]);
       this.myform.controls.mobile.clearValidators();
     } else {
-      this.myform.controls.email.clearValidators();
       this.myform.controls.mobile.setValidators([
         Validators.required,
         Validators.minLength(10),
       ]);
+      this.myform.controls.email.clearValidators();
     }
 
     this.email.updateValueAndValidity();

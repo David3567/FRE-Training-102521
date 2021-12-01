@@ -31,10 +31,10 @@ export class CrossfieldvalidationComponent implements OnInit {
         password: ['', [Validators.required]],
         confirm: ['', [Validators.required]],
       },
-      // { validators: this.matchPassword }
-      {
-        validator: this.matchPassword2('password', 'confirm'),
-      }
+      { validators: this.matchPassword }
+      // {
+      //   validators: this.matchPassword2('password', 'confirm'),
+      // }
     );
   }
 
@@ -53,6 +53,7 @@ export class CrossfieldvalidationComponent implements OnInit {
     }
     return null;
   }
+
   matchPassword2(val1: string, val2: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const password = control.get(val1)?.value;

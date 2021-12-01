@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
+  FormBuilder,
   FormControl,
   FormGroup,
   ValidationErrors,
 } from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { map, debounceTime } from 'rxjs/operators';
+import { map, debounceTime, switchMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-asyncvalidator',
@@ -17,11 +19,11 @@ import { HttpClient } from '@angular/common/http';
 export class AsyncvalidatorComponent implements OnInit {
   myForm: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private fb: FormBuilder, private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.myForm = new FormGroup({
-      numVal: new FormControl('', null, [gte]),
+    this.myForm = this.fb.group({
+      numVal: ['', null, [this.dataService.validate]],
     });
   }
 
@@ -32,31 +34,18 @@ export class AsyncvalidatorComponent implements OnInit {
   onSubmit() {
     console.log(this.myForm.value);
   }
-
-  // validate(control: AbstractControl): Observable<ValidationErrors | null> {
-  //   const baseURL = 'https://jsonplaceholder.typicode.com/todos';
-  //   const value: string = control.value;
-
-  //   return this.http.post(baseURL, value).pipe(
-  //     debounceTime(500),
-  //     map((data: any) => {
-  //       if (!data.isValid) {
-  //         return { InValid: true }
-  //       };
-  //       return of(null);
-  //     })
-  //   );
-  // }
 }
 
-function gte(control: AbstractControl): Observable<ValidationErrors | null> {
+function customAsyncValidator(
+  control: AbstractControl
+): Observable<ValidationErrors | null> {
   const v = +control.value;
   console.log(v);
 
   if (isNaN(v)) {
-    return of({ gte: true, requiredValue: 10 });
+    return of({ msg: true });
   }
-  if (v <= 10) {
+  if (v.toString().length <= 10) {
     return of({ gte: true, requiredValue: 10 });
   }
   return of(null);

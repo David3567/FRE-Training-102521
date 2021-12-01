@@ -7,11 +7,15 @@
     <label for="numVal">Number : </label>
     <input type="text" id="numVal" name="numVal" formControlName="numVal" />
 
+    <!-- <div *ngIf="!numVal.valid && (numVal.dirty || numVal.touched)">
+      <div *ngIf="numVal.errors.required">the num is required</div>
+    </div> -->
+
     <div *ngIf="!numVal.valid && (numVal.dirty || numVal.touched)">
-      <div *ngIf="numVal.errors.msg">Please input number!</div>
-      <div *ngIf="numVal.errors.gte">
+      <div *ngIf="numVal.errors.nan">Please input number!</div>
+
+      <div *ngIf="numVal.errors.minlen">
         The number should be greater than {{ numVal.errors.requiredValue }}
-        {{ numVal.errors.msg }}
       </div>
     </div>
   </div>

@@ -537,25 +537,25 @@
 // Person.staticShowThis();
 
 // // // // call, apply, bind
-const obj = {
-    pi: 3.1415926,
-    getPi() {
-        return this.pi;
-    }
-}
-function getArea(num0, num1, num2) { // 100 args
-    console.log(this.getPi(), num0, num1, num2);
-}
+// const obj = {
+//     pi: 3.1415926,
+//     getPi() {
+//         return this.pi;
+//     }
+// }
+// function getArea(num0, num1, num2) { // 100 args
+//     console.log(this.getPi(), num0, num1, num2);
+// }
 
-[].map()
+// [].map()
 // // // bind
 // const newGetArea = getArea.bind(obj); // lazyloading
 // newGetArea(1, 2, 3);
 
 // // call, apply
 // getArea.call(obj, 1, 2, 3);// eagerloading // 101 args
-const checkapplyreturn = getArea.apply(obj, [1, 2, 3]);// eagerloading // 2 args: target obj, arr.length === 100
-console.log('check the returned: ', checkapplyreturn);
+// const checkapplyreturn = getArea.apply(obj, [1, 2, 3]);// eagerloading // 2 args: target obj, arr.length === 100
+// console.log('check the returned: ', checkapplyreturn);
 // // // // ES6: arrow funciton, class, let, const, Promise / async await
 
 // function bar() {
@@ -1049,3 +1049,53 @@ console.log('check the returned: ', checkapplyreturn);
 
 // const arr = [1, 2, 3, 4, 0, 2, 1, 4, 1];
 // console.log(arr.indexOf(Math.min(...arr)));
+
+
+
+/**
+ * 'abc', 'cba'
+ * 'free food', 'dofoee fr'
+ * 'aab', 'bba'
+ */
+
+function compare(str1, str2) {
+    // return str1.split('').sort().join('') === str2.split('').sort().join(''); // O(nlgn)
+    // O(n);
+    if (str1.length !== str2.length) {
+        return false;
+    }
+    let map1 = new Map();
+    for (let char of str1) {
+
+        if (map1.has(char)) {
+            map1.set(char, map1.get(char)+1);
+        }
+        else {
+            map1.set(char, 1);
+        }
+    }
+    let map2 = new Map();
+    for (let char of str2) {
+        if (char in map2) {
+            map2.get(char)++;
+        }
+        else {
+            map2.set(char, 1);
+        }
+    } 
+    console.log(map1);
+    
+    for (let [key, val] of map1) {
+
+        let tmp = map2.get(key);
+        if (tmp !== val || (tmp === undefined)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+// console.log(compare('abc', 'cba')); // true
+// console.log(compare('free food', 'dofoee fr')); // true
+console.log(compare('aab', 'bba')); // false

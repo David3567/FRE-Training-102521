@@ -2,20 +2,26 @@
 
 <h2>Reactive Form</h2>
 
-<form
-  autocomplete="off"
-  [formGroup]="myForm"
-  (ngSubmit)="onSubmit()"
-  novalidate
->
+<form autocomplete="off" [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="numVal">Number :</label>
     <input type="text" id="numVal" name="numVal" formControlName="numVal" />
-    <div *ngIf="!numVal.valid && (numVal.dirty || numVal.touched)">
+
+    <div
+      *ngIf="!numVal.valid && (numVal.dirty || numVal.touched)"
+      class="error"
+    >
+      <div *ngIf="numVal.errors?.InValid">this title already exist</div>
+    </div>
+    <!-- <div
+      *ngIf="!numVal.valid && (numVal.dirty || numVal.touched)"
+      class="error"
+    >
+      <div *ngIf="numVal.errors.msg">Please input number!</div>
       <div *ngIf="numVal.errors.gte">
         The number should be greater than {{ numVal.errors.requiredValue }}
       </div>
-    </div>
+    </div> -->
   </div>
 
   <p>Is Form Valid : {{ myForm.valid }}</p>
