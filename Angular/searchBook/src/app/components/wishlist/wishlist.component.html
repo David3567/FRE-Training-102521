@@ -1,0 +1,6 @@
+<div class="container">
+    <h4>Your book wishlist</h4>
+    <ul>
+        <li *ngFor='let item of wishList'>{{ item }}<button mat-icon-button (click)='delete(item)'>X</button></li>
+    </ul>
+  </div>
