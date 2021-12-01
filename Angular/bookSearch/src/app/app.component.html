@@ -1,1 +1,7 @@
+<header>
+  {{ title }} <br>
+  <a *ngFor='let tool of toolBar' routerLink='{{tool.dest}}' routerLinkActive='active'>{{ tool.name }}</a>
+</header>
 <app-page></app-page>
+<!-- <app-item></app-item> -->
+<router-outlet></router-outlet>

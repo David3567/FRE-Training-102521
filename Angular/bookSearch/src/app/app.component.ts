@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bookSearch';
+ 
+
+  toolBar = [
+    { name: 'Home', dest: '/home' },
+    { name: 'Show Wishlist', dest: '/showlist' }
+  ];
 }

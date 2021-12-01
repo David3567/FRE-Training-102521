@@ -1,41 +1,23 @@
-<!-- <mat-card class="book-card">
-  <div>
-    <img
-      mat-card-image
-      src="{{ book?.imageLink }}"
-      alt="book-thumbnail"
-    />
-  </div>
-  <div>
-    <mat-card-header>
-      <mat-card-title>{{ book?.title }}</mat-card-title>
-    </mat-card-header>
 
-    <mat-card-content>
-      <p *ngIf="book?.volumeInfo?.authors">
-        <strong>Author: </strong> {{ book?.authors }}
-      </p>
-      <p *ngIf="book?.volumeInfo?.publisher">
-        <strong>Publisher: </strong> {{ book?.publisher }}
-      </p>
-      <p *ngIf="book?.volumeInfo?.publishDate">
-        <strong>Publish Date: </strong> {{ book?.published_date }}
-      </p>
-      <p *ngIf="book?.volumeInfo?.description">
-        <strong>Description: </strong> {{ book?.vdescriptionn }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="addToWishlist()">Add to WishList</button>
-    </mat-card-actions>
+<div id='main-container'>
+  <div id='search-container'>
+      <div class='card' *ngFor='let book of books'>
+          <mat-card (click)='addToList(book.title)'>
+              <div id='main'>
+                  <img [src]='book?.image' alt=''>
+                  <mat-card-content>
+                      <mat-card-title>{{ book?.title }}</mat-card-title>
+                      <p><b>Author: </b>{{ book?.author }}</p>
+                      <p><b>Publisher: </b>{{ book?.publisher }}</p>
+                      <p><b>Published Date: </b>{{ book?.publishedDate }}</p>
+                      <p><b>description: </b>{{ book?.description }}</p>
+                  </mat-card-content>
+              </div>
+          </mat-card>
+      </div>
   </div>
-</mat-card> -->
+  <app-wishlist></app-wishlist>
+</div>
 
-<div class="book">
-  <h3>book title:{{ book?.title }} </h3>
-      <!-- <img src="{{bookItem?.imageLink }}" alt=""/></h3>
-  <p>Author:{{ book?.authors }}</p>
-  <p>Publisher:{{ book?.publisher }}</p>
-  <p>Published Date:{{ book?.publishedDate }}</p>
-  <p>Description:{{ book?.description }}</p> -->
-  </div>
+
+

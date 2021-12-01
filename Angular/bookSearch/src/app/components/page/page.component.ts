@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { fromEvent, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { VolumeInfo } from 'src/app/interface/volume-info';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from '../../interface/Book';
@@ -9,26 +11,30 @@ import { Book } from '../../interface/Book';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css']
 })
-export class PageComponent implements OnInit {
-  title = 'searchBook';
-  books?:Book[]= [];
-  constructor(private BookService: BookService) { }
+export class PageComponent implements AfterViewInit, OnDestroy{
 
-  ngOnInit(): void {
-
-    
-  }
-
-  searchBooks(event:any):void{
- 
-    this.BookService
-    .getBooks(event.target.value)?.subscribe((books:Book[]) => {
-        this.books = books;
-        console.log(books)
-
-    });
-
-  }
   
+  
+
+  constructor(private BookService: BookService) { }
+  
+  private subscription!: Subscription;
+  @ViewChild('inputBox') inputBox!: ElementRef;
+
+  ngAfterViewInit(): void {
+    let context$ = fromEvent<any>(this.inputBox.nativeElement, 'keyup').pipe(
+      debounceTime(400),
+      map((event) => event.target.value),
+      distinctUntilChanged(),
+    );
+
+    this.subscription = context$.subscribe((text) => {
+      this.BookService.getAll(text);
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
 }

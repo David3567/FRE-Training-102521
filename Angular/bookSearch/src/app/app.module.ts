@@ -10,14 +10,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from "@angular/material/form-field";
-// import { RouterModule } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import { ShortPipe } from './components/item/shorted.pipe';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { ShowComponent } from './components/show/show.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PageComponent,
-    ItemComponent
+    ItemComponent,
+    ShortPipe,
+    WishlistComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +35,10 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatFormFieldModule,
     MatInputModule,
     MatFormFieldModule,
-    // RouterModule.forRoot([
-    //   {path: 'show-books', component: ShowBooksComponent},
-    //   {path: '', redirectTo: '/', pathMatch: 'full'},
-    // ]),
+    MatCardModule,
+    AppRoutingModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

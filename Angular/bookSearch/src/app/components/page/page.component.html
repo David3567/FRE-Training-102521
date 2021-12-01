@@ -1,19 +1,2 @@
-<!-- <input type="text" (change)="searchBooks($event)" placeholder="Search"/> -->
+<input type='text' #inputBox placeholder="Search Book">
 
-<router-outlet></router-outlet>
-<header>
-  <h1>My Application</h1>
-  <ul>
-    <!-- <li><a class="link" routerLink="/" routerLinkActive="activeLink">Home</a></li> -->
-    <!-- <li><a class="link" routerLink="/show-books" routerLinkActive="activeLink">Show Books</a></li> -->
-  </ul>
-</header>
-<mat-form-field appearance="fill">
-  <mat-label class="test">Search</mat-label>
-  <input matInput (input)="searchBooks($event)" >
-</mat-form-field> 
-
-<!-- <p>{{books?.items}}</p> -->
-<app-item 
-*ngFor="let book of books" 
-[book]="book"></app-item>
