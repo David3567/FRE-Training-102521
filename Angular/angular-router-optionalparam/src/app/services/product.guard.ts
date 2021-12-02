@@ -24,7 +24,6 @@ export class ProductGuard implements CanActivate {
       console.log('David dont have the permission');
       return false;
     }
-
     return true;
   }
 }

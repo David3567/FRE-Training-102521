@@ -1062,26 +1062,45 @@
  * 'aab', 'bba'             -> 'NO'
  */
 
-function compare(tar, str) {
-    // return str1.split('').sort().join('') === str2.split('').sort().join(''); // O(nlgn)
-    // O(n);
-    if (tar.length !== str.length)
-        return 'NO';
-    const map = {};
-    for (let i = 0; i < str.length; i++) {
-        map[str[i]] = map[str[i]] ? map[str[i]] + 1 : 1;
+// function compare(tar, str) {
+//     // return str1.split('').sort().join('') === str2.split('').sort().join(''); // O(nlgn)
+//     // O(n);
+//     if (tar.length !== str.length)
+//         return 'NO';
+//     const map = {};
+//     for (let i = 0; i < str.length; i++) {
+//         map[str[i]] = map[str[i]] ? map[str[i]] + 1 : 1;
+//     }
+//     for (let i = 0; i < tar.length; i++) {
+//         if (!map[tar[i]] || map[tar[i]] < 0) {
+//             return 'NO';
+//         } else {
+//             map[tar[i]] -= 1;
+//         }
+//     }
+//     return 'YES';
+// }
+
+
+// // console.log(compare('abc', 'cba')); // true
+// // console.log(compare('free food', 'dofoee fr')); // true
+// console.log(compare('aab', 'bba')); // false
+
+/**
+ * 
+ * 'Abc'        // true 
+ * 'ABC'        // true
+ * 'abc'        // true
+ * 
+ * 'aBc'        // false
+ */
+
+function checkStr(str) {
+
+    if (str[0].toUpperCase() + str.substring(1).toLowerCase() === str || str === str.toUpperCase() || str === str.toLowerCase()) {
+        return true;
     }
-    for (let i = 0; i < tar.length; i++) {
-        if (!map[tar[i]] || map[tar[i]] < 0) {
-            return 'NO';
-        } else {
-            map[tar[i]] -= 1;
-        }
-    }
-    return 'YES';
+    return false;
 }
 
-
-// console.log(compare('abc', 'cba')); // true
-// console.log(compare('free food', 'dofoee fr')); // true
-console.log(compare('aab', 'bba')); // false
+console.log(checkStr('abC'));

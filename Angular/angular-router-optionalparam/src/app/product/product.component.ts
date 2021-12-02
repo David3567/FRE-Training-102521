@@ -14,6 +14,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.snapshotPageNo =
       this.route.snapshot.queryParamMap.get('pageNum') || '0';
+
     const name = this.route.snapshot.queryParamMap.get('name');
     console.log('snapshotPageNo: ', this.snapshotPageNo);
 
