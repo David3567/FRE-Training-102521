@@ -1,0 +1,17 @@
+<div id='main-container'>
+    <div class='card' *ngFor='let pokemon of pokemons' this.selectedPokemon='pokemon'>
+        <mat-card (click)='openDialog()'>
+            <div id='main'>
+                <img [src]='pokemon?.sprites?.other?.dream_world?.front_default' alt=''>
+                <mat-card-content>
+                    <mat-card-title>{{ pokemon?.species?.name }}</mat-card-title>
+                    <span><b>ID: </b>{{ pokemon?.id }}</span>
+                    <span><b>Weight: </b>{{ pokemon?.weight }}</span>
+                    <span><b>Height: </b>{{ pokemon?.height }}</span>
+                    <b>Types: </b>
+                    <span *ngFor='let type of pokemon?.types'>{{ type?.type?.name }}</span>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>
