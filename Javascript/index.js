@@ -1053,46 +1053,32 @@
 
 
 /**
- * 'abc', 'cba'
- * 'free food', 'dofoee fr'
- * 'aab', 'bba'
+ * @param {string, string} (tar, str]
+ * @returns {string} ('YES', 'NO')
+ * 
+ * @test
+ * 'abc', 'cba'             -> 'YES'
+ * 'free food', 'dofoee fr' -> 'YES'
+ * 'aab', 'bba'             -> 'NO'
  */
 
-function compare(str1, str2) {
+function compare(tar, str) {
     // return str1.split('').sort().join('') === str2.split('').sort().join(''); // O(nlgn)
     // O(n);
-    if (str1.length !== str2.length) {
-        return false;
+    if (tar.length !== str.length)
+        return 'NO';
+    const map = {};
+    for (let i = 0; i < str.length; i++) {
+        map[str[i]] = map[str[i]] ? map[str[i]] + 1 : 1;
     }
-    let map1 = new Map();
-    for (let char of str1) {
-
-        if (map1.has(char)) {
-            map1.set(char, map1.get(char)+1);
-        }
-        else {
-            map1.set(char, 1);
-        }
-    }
-    let map2 = new Map();
-    for (let char of str2) {
-        if (char in map2) {
-            map2.get(char)++;
-        }
-        else {
-            map2.set(char, 1);
-        }
-    } 
-    console.log(map1);
-    
-    for (let [key, val] of map1) {
-
-        let tmp = map2.get(key);
-        if (tmp !== val || (tmp === undefined)) {
-            return false;
+    for (let i = 0; i < tar.length; i++) {
+        if (!map[tar[i]] || map[tar[i]] < 0) {
+            return 'NO';
+        } else {
+            map[tar[i]] -= 1;
         }
     }
-    return true;
+    return 'YES';
 }
 
 

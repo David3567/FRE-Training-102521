@@ -10,6 +10,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./child/child.module').then((m) => m.ChildModule),
   },
+  {
+    path: 'lazyloaduser',
+    loadChildren: () =>
+      import('./components/components.module').then((m) => m.ComponentsModule),
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
