@@ -14,10 +14,10 @@ const starterPokemon = {
 
 @Component({
   selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  templateUrl: './cards.component.html',
+  styleUrls: ['./cards.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardsComponent implements OnInit {
 
   public pokemons$!: Observable<pokemonInfo[]>;
 
