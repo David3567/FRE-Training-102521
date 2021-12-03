@@ -1,12 +1,15 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/service/pokemon.service';
 import { pokemonInfo } from 'src/app/service/pokemon.interface';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { forkJoin, Observable } from 'rxjs';
+import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 
-const starterPokemon = [ "bulbasaur", "squirtle", "charmander" ];
-
-export interface DialogData {
-  name: string;
+// const starterPokemon = [ "bulbasaur", "squirtle", "charmander" ];
+const starterPokemon = {
+  bulbasaur: "bulbasaur",
+  squirtle: "squirtle",
+  charmander: "charmander"
 }
 
 @Component({
@@ -16,46 +19,40 @@ export interface DialogData {
 })
 export class CardComponent implements OnInit {
 
-  name: string = '';
+  public pokemons$!: Observable<pokemonInfo[]>;
 
-  pokemons: pokemonInfo[] = [];
+  public selectedPokemon: pokemonInfo = {
+    id: 0,
+    weight: 0,
+    height: 0,
+    types: [],
+    species: {name: ''},
+    sprites: {other: {dream_world: {front_default: ''}}}
+  };
 
-  constructor(private pokemonservice: PokemonService, public dialog: MatDialog) { }
+  constructor(public pokemonservice: PokemonService, public dialog: MatDialog) { }
 
-  openDialog() {
+  openDialog(pokemon: pokemonInfo) {
 
-    const dialogRef = this.dialog.open(Dialog, {
+    const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
-      height: '300px',
-      data: {name: this.name},
+      height: '200px',
+      data: pokemon
     });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   this.name = result;
-    //   console.log('cancel');
-    // });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.selectedPokemon = result;
+      }
+    });
   }
 
-  ngOnInit(): void {
-    this.pokemons = this.pokemonservice.getAll(starterPokemon);
-    console.log(this.pokemons);
-  }
-}
-
-@Component ({
-  selector: 'dialog',
-  templateUrl: './dialog.html',
-})
-export class Dialog implements OnInit {
-  constructor(
-    public dialogRef: MatDialogRef<Dialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  ) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.pokemons$ = forkJoin (
+      Object.values(starterPokemon).map(name => 
+        this.pokemonservice.getPokemon(name)
+      )
+    )
   }
 }
+

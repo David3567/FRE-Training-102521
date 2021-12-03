@@ -4,25 +4,20 @@
     justify-content: center;
 }
 
-
 mat-card {
     top:200px;
     margin-right:40px;
     height:500px;
-    flex:30%;
     line-height: 140%;
     overflow:auto;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: center;
 }
 
 mat-card:hover {
     cursor: pointer;
     box-shadow: 4px 4px 2px rgb(167, 166, 166);
-}
-
-#main {
-    display:flex;
-    flex-flow:column wrap;
-    justify-content: center;
 }
 
 img {
@@ -40,5 +35,12 @@ mat-card-content {
 
 mat-card-title::first-letter {
     text-transform: capitalize;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:200px;
 }
 

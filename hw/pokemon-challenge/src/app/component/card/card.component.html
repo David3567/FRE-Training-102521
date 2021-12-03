@@ -1,17 +1,29 @@
-<div id='main-container'>
-    <div class='card' *ngFor='let pokemon of pokemons' this.selectedPokemon='pokemon'>
-        <mat-card (click)='openDialog()'>
-            <div id='main'>
-                <img [src]='pokemon?.sprites?.other?.dream_world?.front_default' alt=''>
-                <mat-card-content>
-                    <mat-card-title>{{ pokemon?.species?.name }}</mat-card-title>
-                    <span><b>ID: </b>{{ pokemon?.id }}</span>
-                    <span><b>Weight: </b>{{ pokemon?.weight }}</span>
-                    <span><b>Height: </b>{{ pokemon?.height }}</span>
-                    <b>Types: </b>
-                    <span *ngFor='let type of pokemon?.types'>{{ type?.type?.name }}</span>
-                </mat-card-content>
-            </div>
+<div id='main-container' *ngIf='selectedPokemon.id === 0'>
+    <div class='card' *ngFor='let pokemon of pokemons$ | async'>
+        <mat-card (click)="openDialog(pokemon)">
+            <img [src]='pokemon?.sprites?.other?.dream_world?.front_default' alt=''>
+            <mat-card-content>
+                <mat-card-title>{{ pokemon?.species?.name }}</mat-card-title>
+                <span><b>ID: </b>{{ pokemon?.id }}</span>
+                <span><b>Weight: </b>{{ pokemon?.weight }}</span>
+                <span><b>Height: </b>{{ pokemon?.height }}</span>
+                <b>Types: </b>
+                <span *ngFor='let type of pokemon?.types'>{{ type?.type?.name }}</span>
+            </mat-card-content>
         </mat-card>
     </div>
+</div>
+
+<div *ngIf='selectedPokemon.id !== 0' class='result'>
+    <mat-card>
+        <img [src]='selectedPokemon?.sprites?.other?.dream_world?.front_default' alt=''>
+        <mat-card-content>
+            <mat-card-title>{{ selectedPokemon?.species?.name }}</mat-card-title>
+            <span><b>ID: </b>{{ selectedPokemon?.id }}</span>
+            <span><b>Weight: </b>{{ selectedPokemon?.weight }}</span>
+            <span><b>Height: </b>{{ selectedPokemon?.height }}</span>
+            <b>Types: </b>
+            <span *ngFor='let type of selectedPokemon?.types'>{{ type?.type?.name }}</span>
+        </mat-card-content>
+    </mat-card>
 </div>
