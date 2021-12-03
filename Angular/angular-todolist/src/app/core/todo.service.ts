@@ -31,9 +31,8 @@ export class TodoService {
     return this.http.delete([this.baseurl, this.todoPath, id].join('/'));
   };
   addTodo = (newtodo: Todo): Observable<Todo> => {
-    return this.http.post(
-      [this.baseurl, this.todoPath].join('/'),
-      newtodo
-    ) as Observable<Todo>;
+    return this.http
+      .post([this.baseurl, this.todoPath].join('/'), newtodo)
+      .pipe() as Observable<Todo>;
   };
 }

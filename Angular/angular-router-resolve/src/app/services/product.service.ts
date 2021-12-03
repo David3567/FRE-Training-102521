@@ -22,11 +22,11 @@ export class ProductService {
 
   //Return Products List with a delay
   public getProducts(): Observable<Product[]> {
-    return of(this.products).pipe(delay(1500));
+    return of(this.products).pipe(delay(2500));
   }
 
   public getProduct(id: number): Observable<any> {
     const Product = this.products.find((i) => i.productID == id);
-    return of(Product).pipe(delay(1500));
+    return of(Product).pipe(delay(2500));
   }
 }

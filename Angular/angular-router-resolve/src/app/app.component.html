@@ -8,7 +8,9 @@
       </div>
       <ul class="nav navbar-nav">
         <li><a [routerLink]="['home']" routerLinkActive="active">Home</a></li>
-        <li><a [routerLink]="['product1']">Product1</a></li>
+        <li>
+          <a [routerLink]="['product1']" routerLinkActive="active">Product1</a>
+        </li>
         <li>
           <a
             [routerLink]="['product2']"
@@ -20,9 +22,15 @@
           <app-spinner></app-spinner>
         </li>
 
-        <li><a [routerLink]="['contact']">Contact us</a></li>
-        <li><a [routerLink]="['static']">static</a></li>
-        <li><a [routerLink]="['dynamic']">dynamic</a></li>
+        <li>
+          <a [routerLink]="['contact']" routerLinkActive="active">Contact us</a>
+        </li>
+        <li>
+          <a [routerLink]="['static']" routerLinkActive="active">static</a>
+        </li>
+        <li>
+          <a [routerLink]="['dynamic']" routerLinkActive="active">dynamic</a>
+        </li>
       </ul>
     </div>
   </nav>

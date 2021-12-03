@@ -18,6 +18,7 @@ export class ProductlistResolverResolver implements Resolve<boolean> {
     state: RouterStateSnapshot
   ): Observable<any> {
     console.log('ProductListResover is called');
+
     return this.productService.getProducts();
   }
 }

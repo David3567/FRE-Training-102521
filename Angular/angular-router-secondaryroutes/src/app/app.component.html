@@ -1,0 +1,40 @@
+<div class="main nav">
+  <h1>Main router</h1>
+  <button [routerLink]="['home']">home</button>
+  <button [routerLink]="['product']">product</button>
+  <button [routerLink]="['contact']">contact</button>
+</div>
+
+<hr />
+<div class="secondary nav">
+  <h1>Secondary router</h1>
+  <button [routerLink]="[{ outlets: { secondary: ['user'] } }]">user</button>
+  <button [routerLink]="[{ outlets: { secondary: ['superuser'] } }]">
+    superuser
+  </button>
+</div>
+
+<hr />
+<div class="main_router">
+  <h3>mainoutlet</h3>
+  <router-outlet></router-outlet>
+</div>
+
+<hr />
+<div class="secondary_router">
+  <h3>secondaryoutlet</h3>
+  <router-outlet name="secondary"></router-outlet>
+</div>
+
+<div class="secondary_router">
+  <h3>secondaryoutlet</h3>
+  <router-outlet name="test1"></router-outlet>
+</div>
+
+<div class="secondary_router">
+  <h3>secondaryoutlet</h3>
+  <router-outlet name="test2"></router-outlet>
+</div>
+
+<hr />
+<button (click)="navigate()">switch the secondary router</button>

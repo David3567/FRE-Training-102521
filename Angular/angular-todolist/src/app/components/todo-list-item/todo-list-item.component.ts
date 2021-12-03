@@ -11,11 +11,11 @@ export class TodoListItemComponent implements OnInit {
   @Output() deletedTodoId = new EventEmitter();
 
   constructor() {
-    console.log(this.todo); // undefined
+    // console.log(this.todo); // undefined
   }
 
   ngOnInit(): void {
-    console.log(this.todo); // { }
+    // console.log(this.todo); // { }
   }
 
   delete() {
