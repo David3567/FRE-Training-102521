@@ -1,0 +1,8 @@
+<div (click)="selected()">
+    <app-sprite [sprites]="pokemon?.sprites"></app-sprite>
+    <p>#{{pokemon?.id}}</p>
+    <span><b>Weight: </b>{{ pokemon?.weight }}</span>
+    <span><b>Height: </b>{{ pokemon?.height }}</span>
+    <app-species [species]="pokemon?.species"></app-species>
+    <app-type *ngFor="let t of pokemon?.types" [type]="t"></app-type>
+</div>
