@@ -1,0 +1,10 @@
+<P> Pokemon
+</P>
+
+<app-card 
+*ngFor='let Pokemon of Pokemons$ | async; let i = index' 
+[Pokemon]='Pokemon'
+[index]="i"
+(selectedEventEmitter)="select($event)"
+> 
+</app-card>

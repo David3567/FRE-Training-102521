@@ -1,0 +1,25 @@
+
+
+<div class='card'
+(click)="selected()"
+> 
+    <mat-card class="example-card" 
+     
+    >
+        <img mat-card-image [src]='Pokemon?.sprites?.other?.dream_world?.front_default' alt=''>
+        <mat-card-content>
+            <mat-card-title><b>ID:</b> {{ Pokemon?.id }} </mat-card-title>
+            <!-- <mat-card-subtitle><b>Name: </b> {{ Pokemon?.forms?.name }} </mat-card-subtitle> -->
+             <mat-card-subtitle><b>Weight: {{ Pokemon?.weight }} </b></mat-card-subtitle>
+            <mat-card-subtitle><b>Height:</b> {{ Pokemon?.height }} </mat-card-subtitle>
+            <mat-card-subtitle><b>Types:</b> 
+                <span *ngFor='let type of Pokemon?.types'>{{ type?.type?.name }}</span> 
+            </mat-card-subtitle> 
+           
+        </mat-card-content>
+      
+      </mat-card>
+    
+
+</div>
+
