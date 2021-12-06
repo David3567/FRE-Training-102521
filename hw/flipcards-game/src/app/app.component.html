@@ -1,0 +1,3 @@
+<div class='main'>
+  <app-card *ngFor='let card of cards; let i = index' [data]='card' (cardClicked)= 'cardClicked(i)'></app-card>
+</div>

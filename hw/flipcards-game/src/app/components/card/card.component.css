@@ -1,0 +1,36 @@
+.card {
+    box-shadow: 10px 10px 40px -30px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    top:20%;
+}
+
+.back,
+.front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(0deg);
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+}
