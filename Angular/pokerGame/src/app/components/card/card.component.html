@@ -1,0 +1,17 @@
+<p> {{ message }}</p>
+<div class="container"
+   *ngFor='let card of cards'
+> 
+<!-- <p> {{ message }}</p> -->
+<div class="card" (click)="cardClicked(card)" [@cardFlip]="card.state">
+<div class="face back">
+	<img src="https://source.unsplash.com/bX9B9c-YasY/200x300" />
+</div>
+<div class="face front">
+	<p>{{ card.value }}</p>
+</div>
+</div>
+</div>
+
+
+
