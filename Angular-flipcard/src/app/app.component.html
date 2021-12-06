@@ -1,0 +1,4 @@
+<p>flip card app</p>
+<div class="allCards">
+    <app-card *ngFor="let card of shuffledCards" [card]="card" (selectedCard)="onCardSelect($event)"></app-card>
+</div>
