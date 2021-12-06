@@ -1,0 +1,44 @@
+<div class="flex"> 
+  <a href="-">Home</a>
+  <a href="-">Show Wishlist</a>
+</div>
+
+<div class="container text-center">
+  <h1>{{title}}</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="search-book">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Enter Book Name">
+    </div>
+    <mat-card *ngFor="let book of books | filter:searchText">
+      <mat-card-title>
+        <img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="Italian Trulli"> 
+      </mat-card-title>
+      <mat-card-title>
+        Book Name:
+        {{book.volumeInfo.title}}
+      </mat-card-title>
+      <mat-card-title>
+        Publisher:
+        {{book.volumeInfo.publisher}}
+      </mat-card-title>
+      <mat-card-title>
+        published Date:
+        {{book.volumeInfo.publishedDate}}
+      </mat-card-title>
+      <mat-card-content>
+        Description:
+        {{book.volumeInfo.description}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="row">
+    <p class="ex2">WishList</p>
+    <button type="button">Delete</button>
+  </div>
+  <div>
+    
+  </div>
+</div>
