@@ -9,15 +9,13 @@ import { BookService } from 'src/app/services/book.service';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  // @Input() book?: Book;
-  // // @Output() wishList_Book = new EventEmitter();
-  // @Output() messageEvent = new EventEmitter<string>();
+  
   books: any = [];
   constructor(private BookService: BookService) { }
    
   addToList(title: string) {
     this.BookService.addToList(title);
-    console.log(this.BookService.wishList$);
+    // console.log(this.BookService.wishList$);
   }
   
   ngOnInit(): void {

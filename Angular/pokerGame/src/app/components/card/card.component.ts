@@ -49,6 +49,7 @@ export class CardComponent implements OnInit {
     // check value
     if (this.newList.length === 2 && card.value === this.newList[0].value) {
       this.cardFlip(card), this.cardFlip(this.newList[0]);
+      this.setToDefault();
       this.message = 'You win!!!'
     } else if (this.newList.length > 2) {
       this.setToDefault();

@@ -32,7 +32,8 @@ export class BookService {
         return arr;
       }),
       tap(myArr => {
-        console.log(myArr);
+        // console.log(myArr);
+        // console.log(myArr);
         this.books$.next(myArr);
       })
     ).subscribe();  
