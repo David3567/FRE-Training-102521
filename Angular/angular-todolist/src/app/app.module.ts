@@ -10,6 +10,11 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoService } from './core/todo.service';
 import { TodosInterceptor } from './core/todos.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { todoreducer } from './Ngrx/todo.reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule, USER_PROVIDED_EFFECTS } from '@ngrx/effects';
+import { TodoEffects } from './Ngrx/todo.effects';
 
 export const SelectUrl = new InjectionToken<string>('');
 
@@ -22,6 +27,12 @@ export const SelectUrl = new InjectionToken<string>('');
     BrowserAnimationsModule,
     ComponentsModule,
     SharedModule,
+    StoreModule.forRoot({ todos: todoreducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      name: 'Todolist Demo',
+    }),
+    EffectsModule.forRoot([TodoEffects]),
   ],
   providers: [
     { provide: TodoService, useClass: TodoService },

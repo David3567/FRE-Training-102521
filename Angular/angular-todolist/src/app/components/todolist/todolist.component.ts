@@ -5,8 +5,11 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { TodoService } from 'src/app/core/todo.service';
-import { Todo } from 'src/app/todo.interface';
+import { Todo } from '../../interfaces/todo.interface';
+import * as TodoActions from '../../Ngrx/todo.actions';
+import * as TodoSelector from '../../Ngrx/todo.selector';
 
 @Component({
   selector: 'app-todolist',
@@ -19,13 +22,20 @@ export class TodolistComponent implements OnInit, OnDestroy {
   todolist$: any;
   // subscription: any;
 
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService, private store: Store) {}
 
   ngOnInit(): void {
-    this.todolist$ = this.todoService.todolist$;
+    // this.todolist$ = this.todoService.todolist$;
     // this.subscription = this.todoService.getAllTodos().subscribe((todolist) => {
     //   this.todolist = todolist as Todo[];
     // });
+    // this.store.dispatch(TodoActions.initTodoList()); // trigger the action
+
+    this.store.dispatch(TodoActions.loadTodolist());
+
+    this.store.select(TodoSelector.getTodoList).subscribe((todolist) => {
+      this.todolist = todolist;
+    });
   }
 
   deletetodo(id: string) {
@@ -38,7 +48,7 @@ export class TodolistComponent implements OnInit, OnDestroy {
 
   addtodo() {
     const newtodo: Todo = {
-      userId: '12',
+      userId: 12,
       title: this.inputval,
       completed: false,
     };

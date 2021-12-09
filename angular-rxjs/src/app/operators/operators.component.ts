@@ -63,7 +63,7 @@ export class OperatorsComponent implements OnInit {
     });
     this.rxjsinterval$ = interval(10).pipe(take(10));
 
-    // merge(this.btnoneevent$, this.btntwoevent$).subscribe(console.log);
+    merge(this.btnoneevent$, this.btntwoevent$).subscribe(console.log);
 
     // forkJoin([this.promisedemo, this.rxjsinterval$]).subscribe(console.log);
 

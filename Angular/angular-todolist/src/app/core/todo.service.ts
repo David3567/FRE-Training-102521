@@ -1,14 +1,18 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { Todo } from '../todo.interface';
+
 import { catchError } from 'rxjs/operators';
+import { Todo } from '../interfaces/todo.interface';
 
 @Injectable()
 export class TodoService {
   // baseurl = 'http://localhost:3000';
   // baseurl = 'https://jsonplaceholder.typicode.com';
   todoPath = 'todos';
+
+  arr = [];
+
   todolist$?: Observable<Todo[]>;
 
   constructor(
