@@ -40,7 +40,9 @@ export class TodolistComponent implements OnInit, OnDestroy {
 
   deletetodo(id: string) {
     console.log(id);
-    this.todolist = this.todolist.filter((ele: any) => +ele.id !== +id);
+    this.todolist = this.todolist.filter((ele: Todo) => {
+      return ele.id ? +ele.id !== +id : true;
+    });
     this.todoService.deleteTodo(id).subscribe((_: any) => {
       console.log('delete');
     });

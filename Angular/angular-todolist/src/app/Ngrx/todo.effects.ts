@@ -26,5 +26,40 @@ export class TodoEffects {
     );
   });
 
+  deleteTodo$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(TodoAtions.deleteTodo),
+      switchMap((action) => {
+        return this.http
+          .delete([this.baseurl, this.todoPath, action.todoId].join('/'))
+          .pipe(
+            map((_) => {
+              return TodoAtions.deleteTodoSuccess({ todoId: action.todoId });
+            }),
+            catchError((err: string) => {
+              return of(TodoAtions.deleteTodoFailure({ err }));
+            })
+          );
+      })
+    );
+  });
+  addTodo$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(TodoAtions.addTodo),
+      switchMap((action) => {
+        return this.http
+          .post([this.baseurl, this.todoPath].join('/'), action.todo)
+          .pipe(
+            map((todo: any) => {
+              return TodoAtions.addTodoSuccess({ todo });
+            }),
+            catchError((err: string) => {
+              return of(TodoAtions.addTodoFailure({ err }));
+            })
+          );
+      })
+    );
+  });
+
   constructor(private actions$: Actions, private http: HttpClient) {}
 }
