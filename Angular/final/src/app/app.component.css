@@ -1,0 +1,11 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+main {
+    /* margin-top:1rem; */
+    width:80%;
+    margin: 1rem auto;
+
+}
+
+.container {
+    display:grid;
+}

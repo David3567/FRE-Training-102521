@@ -1,0 +1,54 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<!-- <mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      {{ post.title }}
+    </mat-expansion-panel-header>
+    <div class="post-image">
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
+    <p>{{ post.content }}</p>
+    <mat-action-row *ngIf="userIsAuthenticated && (userId === post.creator || userId === '61c2af1b2642ff2c8970ab12')">
+      <a mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</a>
+      <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+  *ngIf="posts.length > 0"></mat-paginator>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p> -->
+
+<!-- <mat-grid-list cols="2" rowHeight="2:1">
+  <app-post-list></app-post-list>
+ </mat-grid-list> --> 
+
+ <mat-grid-list cols="3" rowHeight="2:1">
+
+  <div  *ngFor="let post of posts"> 
+  <mat-card class="example-card" multi="true" *ngIf="posts.length > 0 && !isLoading">
+    <!-- <div  *ngFor="let post of posts">  -->
+      <mat-card-header>
+      <mat-card-title> {{ post.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="post.imagePath" [alt]="post.title">
+    <mat-card-content>
+      <p>
+        {{ post.content }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="userIsAuthenticated && (userId === post.creator || userId === '61c2af1b2642ff2c8970ab12')">
+      <button mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</button>
+      <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
+    </mat-card-actions>
+    <p>&nbsp;&nbsp;&nbsp;</p>
+
+    
+  </mat-card>
+</div>
+  
+</mat-grid-list> 
+
+<mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+*ngIf="posts.length > 0"></mat-paginator>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>
+

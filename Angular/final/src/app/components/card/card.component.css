@@ -1,0 +1,28 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+mat-card {
+    width:80%;
+    margin:auto;
+}
+mat-form-field,
+textarea {
+    width:100%;
+    /* background-color:rgb(243, 227, 227); */
+    /* color:black; */
+}
+
+mat-spinner {
+    margin:auto;
+}
+
+input[type="file"] {
+  visibility:hidden;
+}
+
+.image-preview {
+    height: 5rem;
+    margin:1rem 0;
+}
+
+.image-preview img {
+    height:100%;
+}

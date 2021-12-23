@@ -1,0 +1,46 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+:host {
+    display:block;
+    margin-top:1rem;
+  
+   
+}
+
+.info-text {
+    text-align:center;
+}
+
+mat-spinner {
+    margin:auto;
+}
+
+.post-image {
+    width:100%;
+}
+
+.post-image img{
+  width:100%;
+  box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
+}
+
+mat-paginator {
+    margin-top : 1rem;
+    
+}
+
+
+
+.example-card {
+    max-width: 200px;
+    margin: auto;
+    margin-bottom: 8px;
+    
+  }
+
+  mat-card-title {
+      text-align: center;
+  }
+
+  mat-grid-tile {
+    height: 400px;
+  }
