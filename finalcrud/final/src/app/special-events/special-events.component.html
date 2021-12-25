@@ -1,0 +1,71 @@
+<div class ="container mt-5">
+    <h2>List Of User</h2>
+    <table style="width:100%">
+        <thead>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Update User</th>
+            <th>Delete User</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of specialEvents;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.role}}</td>
+            <td><button class="button"(click)="popup = true; popupWindow(user._id)"> Edit</button></td>
+            <td><button class="button button3" (click)="DeleteUser(user._id)">Delete User</button></td>
+            <td><button class="button button5"type="button"(click)="popupAddUser = true"> AddUser</button></td>
+          </tr>
+        </tbody>
+    </table>
+
+    <div class="overlay" *ngIf="popup">
+      <div class="popup">
+        <h2>Update User Data</h2>
+        <a class="close" (click)="popup = false">&times;</a>
+        <div class="content">
+        Please click submit to update
+        </div>
+        <form class="form">
+          <div class="form-group">
+          </div>
+          <div class="form-group">
+              <label for="">Username</label>
+              <input [(ngModel)]= "updateUserData.email" name="email" type="text" class="form-control rounded-0" required>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input [(ngModel)]= "updateUserData.password"  name="password" type="password"  class="form-control rounded-0"  required>
+            </div>
+          <button type="button" (click)="updateUser()" class="btn btn-primary float-right">Updata</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="overlay" *ngIf="popupAddUser">
+      <div class="popup">
+        <h2>Add User to Database</h2>
+        <a class="close" (click)="popupAddUser = false">&times;</a>
+        <div class="content">
+        Please click submit to Add User
+        </div>
+        <form class="form">
+          <div class="form-group">
+          </div>
+          <div class="form-group">
+              <label for="">Username</label>
+              <input [(ngModel)]= "updateUserData.email" name="email" type="text" class="form-control rounded-0" required>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input [(ngModel)]= "updateUserData.password"  name="password" type="password"  class="form-control rounded-0"  required>
+            </div>
+          <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Add New User</button>
+        </form>
+      </div>
+    </div>
+
+</div>
