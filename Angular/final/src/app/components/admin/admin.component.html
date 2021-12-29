@@ -1,0 +1,15 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div multi="true" *ngIf="users?.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let user of users; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title> {{ user?.email }}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{ user?.userRole }}</p>
+    <mat-action-row>
+      <button mat-button color="warn" (click)="onDelete(user.id)">
+        DELETE
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</div>
+

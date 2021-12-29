@@ -7,11 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SafePipe } from './shared/safe.pipe';
-import { AuthInterceptor } from './shared/auth-interceptor';
+import { AuthInterceptor } from './components/auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './components/error/error.component';
-import { AngularMaterialModeul } from './angular-material.module';
+import { AngularMaterialModeul } from './shared/angular-material.module';
 import { PostModeul } from './posts.module';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 // import { AuthModule } from './components/auth/auth.module';
@@ -24,6 +25,7 @@ import { PostModeul } from './posts.module';
     HeaderComponent,
     SafePipe,
     ErrorComponent,
+    AdminComponent
 
   ],
   imports: [

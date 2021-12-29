@@ -5,23 +5,30 @@ color="primary"
 >
 <span>
     <a routerLink="/">
-    Post Your Favorite Fruits</a></span>
+    Fruits</a></span>
 <span class="spacer"> </span>
 <ul>
-    <li *ngIf="userIsAuthenticated">
+    <li *ngIf="userRole === 'admin'"> 
+        <a mat-button routerLink="/users" routerLinkActive="btn-active">Users</a>
+    </li>
+    <li *ngIf="userRole === 'user'">
         <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
     </li>
     <!-- <li>
         <a mat-button routerLink="/login" routerLinkActive="mat-accent">Log in</a>
     </li> -->
-    <li *ngIf="!userIsAuthenticated">
+    <li *ngIf="userRole !== 'user' && userRole !== 'admin'">
         <a mat-button routerLink="auth/login" >Log in</a>
     </li>
-    <li *ngIf="!userIsAuthenticated">
+    <li *ngIf="userRole !== 'user' && userRole !== 'admin'">
         <a mat-button routerLink="auth/signup" routerLinkActive="mat-accent">Sign up</a>
     </li>
-    <li *ngIf="userIsAuthenticated">
+    <li *ngIf="userRole === 'user' || userRole === 'admin'">
         <button mat-button (click)="onLogout()">Log out</button>
     </li>
+    
+    
+   
+
 </ul>
 </mat-toolbar>

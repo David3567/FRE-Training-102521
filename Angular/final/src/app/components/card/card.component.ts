@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output, OnDestroy} from '@angular/core
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthService } from 'src/app/shared/auth.service';
+import { AuthService } from 'src/app/components/auth/auth.service';
 import { Post } from '../../shared/post.interface';
 import { PostService } from '../../shared/post.service';
 import { mimeType } from './mime-type.validator';

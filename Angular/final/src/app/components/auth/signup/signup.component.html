@@ -13,7 +13,7 @@
             required
             email
             >
-            <mat-error *ngIf="emailInput.invalid"> Please enter a good email</mat-error>
+            <mat-error *ngIf="emailInput.invalid"> Please enter a valid email</mat-error>
         </mat-form-field>
         
         <mat-form-field> 
@@ -29,7 +29,21 @@
         >
         <mat-error *ngIf="passwordInput.invalid"> Please enter a good password</mat-error>
         </mat-form-field>
-        <hr>
+        <mat-form-field appearance="fill">
+            <mat-label>userRole</mat-label>
+            <mat-select
+              name="userRole"
+              matInput
+              ngModel
+              placeholder="userRole"
+              #roleInput="ngModel"
+              required
+            >
+              <mat-option value="user">User</mat-option>
+              <mat-option value="admin">Admin</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
     <button 
     mat-raised-button 
     color="primary"
@@ -40,5 +54,4 @@
     <mat-spinner *ngIf="isLoading"></mat-spinner>
     </form>
 </mat-card>
-<div *ngIf=""></div>
 

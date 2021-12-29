@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AuthService } from 'src/app/shared/auth.service';
+import { AuthService } from 'src/app/components/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +9,17 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   userIsAuthenticated = false;
+  userRole!:string;
   private authListenrSubs!: Subscription;
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
      this.userIsAuthenticated = this.authService.getIsAuth();
-     this.authListenrSubs = this.authService.getAuthStatusListener()
-     .subscribe(isAuthenticated => {
-        this.userIsAuthenticated = isAuthenticated;
+     this.userRole = this.authService.getUserRole();
+     this.authListenrSubs = this.authService
+     .getAuthStatusListener()
+     .subscribe((userRole) => {
+        this.userRole = userRole;
      });
   }
 

@@ -37,54 +37,22 @@ exports.creatPost = (req, res, next) => {
       title: req.body.title,
       content: req.body.content,
       imagePath: imagePath,
-      creator: req.userData.userId
+      creator: req.userData.userId,
     });
-    // console.log(req.userData.userId);
-    if (req.userData.userId === "61c2af1b2642ff2c8970ab12") {
-      // console.log(request.userData.userId);
-      Post.updateOne(
-        { _id: req.params.id},
-        post
-       ).then(result => {
-        
-        // console.log(result.nModifie);
-        // {
-        //   acknowledged: true,
-        //   modifiedCount: 0,
-        //   upsertedId: null,
-        //   upsertedCount: 0,
-        //   matchedCount: 1
-        // }
-        if (result.matchedCount > 0) {
-          res.status(200).json({ message: "Update successful!" });
-        } 
-        else {
-          res.status(401).json({ message: "Not authorized!" });
-        }
-       })
-       .catch(error => {
-        res.status(500).json({
-          message:"couldn't update"
-        });
-      });
-    } else {
-      Post.updateOne(
-        { _id: req.params.id, creator: req.userData.userId },
-        post
-       ).then(result => {
+    Post.updateOne({ _id: req.params.id, creator: req.userData.userId }, post)
+      .then((result) => {
         if (result.matchedCount > 0) {
           res.status(200).json({ message: "Update successful!" });
         } else {
-          res.status(401).json({ message: "Not authorized!" });
+          res.status(401).json({ message: "Not Authorized!" });
         }
-       })
-       .catch(error => {
+      })
+      .catch((error) => {
         res.status(500).json({
-          message:"couldn't update"
+          message: "Couldn't update post!",
         });
       });
-    }
-  }
+  };
 
   exports.getPosts = (req, res, next) => {
     const pageSize = +req.query.pagesize;
@@ -123,43 +91,23 @@ exports.creatPost = (req, res, next) => {
     })
     .catch(error => {
       res.status(500).json({
-        mmessage: "Fetching post failed"
+        message: "Fetching post failed"
       });
     });
   }
 
   exports.deletePost = (req, res, next) => {
-    if (req.userData.userId === "61c2af1b2642ff2c8970ab12") {
-      Post.deleteOne({ _id: req.params.id}).then(
-        result => {
-          // console.log(result);
-          if (result.deletedCount > 0) {
-            res.status(200).json({ message: "Deletion successful!" });
-          } else {
-            res.status(401).json({ message: "Not authorized!" });
-          }
+    Post.deleteOne({ _id: req.params.id })
+      .then((result) => {
+        if (result.deletedCount > 0) {
+          res.status(200).json({ message: "Deletion successful!" });
+        } else {
+          res.status(401).json({ message: "Not Authorized!" });
         }
-      )
-      .catch(error => {
+      })
+      .catch((error) => {
         res.status(500).json({
-          mmessage: "Fetching post failed"
+          message: "Deleting posts failed!",
         });
       });
-    } else {
-      Post.deleteOne({ _id: req.params.id, creator: req.userData.userId }).then(
-        result => {
-          // console.log(result);
-          if (result.deletedCount > 0) {
-            res.status(200).json({ message: "Deletion successful!" });
-          } else {
-            res.status(401).json({ message: "Not authorized!" });
-          }
-        }
-      )
-      .catch(error => {
-        res.status(500).json({
-          mmessage: "Fetching post failed"
-        });
-      });
-    }
-  }
+  };

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './shared/auth.service';
+import { AuthService } from './components/auth/auth.service';
 import { Post } from './shared/post.interface'
 
 

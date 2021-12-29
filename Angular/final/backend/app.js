@@ -9,7 +9,7 @@ const userRoutes = require("./routes/user");
 const app = express();
 
 //3009881769Final
-mongoose.connect("mongodb+srv://final-database:3009881769Final@cluster0.uahtd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://final2-database:3009881769Final@cluster0.uahtd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 .then(() =>{
    console.log('connect to the database');
 })
