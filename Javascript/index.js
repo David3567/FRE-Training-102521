@@ -1095,12 +1095,37 @@
  * 'aBc'        // false
  */
 
-function checkStr(str) {
+// function checkStr(str) {
 
-    if (str[0].toUpperCase() + str.substring(1).toLowerCase() === str || str === str.toUpperCase() || str === str.toLowerCase()) {
-        return true;
-    }
-    return false;
-}
+//     if (str[0].toUpperCase() + str.substring(1).toLowerCase() === str || str === str.toUpperCase() || str === str.toLowerCase()) {
+//         return true;
+//     }
+//     return false;
+// }
 
-console.log(checkStr('abC'));
+// console.log(checkStr('abC'));
+
+
+// console.log(a);
+
+
+// const obj = {
+//     data: new Date()
+// }
+// console.log(JSON.stringify(obj));
+
+// // ~~~~~~~~~~~~~~~~~~~~ promise ~~~~~~~~~~~~~~~~~~~~
+/**
+ * For this coding challenge please implement your own promise class classed "MyPromise".
+ * It should take a callback function as input and support .then and .catch methods.
+ */
+// start your code here:
+
+// test case:
+const getFromApi = () => new MyPromise((resolve, reject) => {
+    // make api call and get results
+    const results = 'Hello from api side';
+});
+
+getFromApi().then(console.log); // 'Hello from api side'
+getFromApi().then(console.log).catch(console.log); // 'error'
