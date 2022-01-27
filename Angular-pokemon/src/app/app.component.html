@@ -1,0 +1,16 @@
+
+<div class="outter-wrap" 
+[ngStyle]="{'justify-content': 
+isSelected ?
+'center'
+:
+'space-between'
+}">
+    <app-pokemon-card 
+        *ngFor="let p of pokemonObsArr$ | async; let i = index " 
+        [pokemon]="p" 
+        [index]="i"
+        (selectedEventEmitter)="select($event)"
+    >
+    </app-pokemon-card>
+</div>

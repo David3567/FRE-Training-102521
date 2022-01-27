@@ -1,0 +1,15 @@
+<div class="article">
+  <header>{{ title }}</header>
+  <br />
+  <main>
+    {{content}}
+  </main>
+
+  <button
+    [style.background-color]="bgColor"
+    [style.color]="'#fff'"
+    (click)="changeTitleColor()"
+  >
+    Set Color
+  </button>
+</div>

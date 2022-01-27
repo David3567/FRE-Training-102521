@@ -1,0 +1,14 @@
+<div class="card" (click)="selectCard()" [class.color]="card.isSelected" >
+    <!-- <img [src]="card.isSelected? card.name:pokercard">{{card.id}} -->
+    <div class="flip-box" [ngClass]="{'flip-box-inner' : card.isSelected===true}" >
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img [src]="card.isSelected? card.name: pokercard">
+          </div>
+          <div class="flip-box-back">
+            <img [src]="pokercard">
+          </div>
+        </div>
+      </div>
+</div>
+<!-- <div class="card">{{card.isSelected? 1: 0}}</div> -->

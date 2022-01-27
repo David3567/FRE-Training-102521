@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+form {
+  width: 620px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+input {
+  height: 40px;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 5px;
+  margin: 5px auto;
+}
+.firstName,
+.password {
+  float: left;
+  width: 290px;
+}
+.lastName,
+.confirm {
+  float: right;
+  width: 290px;
+}
+.mobile,
+.email {
+  width: 100%;
+}
+.agreement {
+  clear: left;
+  width: 100%;
+  height: 40px;
+}
+.checknox {
+  width: auto;
+  height: auto;
+}
+.register,
+.signIn {
+  width: 290px;
+  height: 40px;
+  color: #ffffff;
+  font-size: 16px;
+}
+.register {
+  float: left;
+  background-color: #336699;
+  border: 1px solid #336699;
+  border-radius: 5px;
+}
+.signIn {
+  float: right;
+  background-color: #339933;
+  border: 1px solid #339933;
+  border-radius: 5px;
+}
+span.desc {
+  width: 65%;
+  float: right;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 100;
+}
+span.innerTextReg {
+  background-color: #336699;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 2px;
+  border-radius: 2px;
+}
+a {
+  text-decoration: none;
+}
