@@ -113,11 +113,11 @@ export class OperatorsComponent implements OnInit {
   //   });
   // }
 
-  // start() {
-  //   this.obs$.subscribe((val) => console.log(val));
-  // }
-  // stop() {
-  //   this.notifier.next();
-  //   this.notifier.complete();
-  // }
+  start() {
+    this.obs$.subscribe((val) => console.log(val));
+  }
+  stop() {
+    this.notifier.next();
+    this.notifier.complete();
+  }
 }

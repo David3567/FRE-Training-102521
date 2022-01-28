@@ -25,12 +25,12 @@
 
 // // function
 
-type Fntype = (num: number, str: string) => string;
-type PersonType = { name: string; age: number };
+// type Fntype = (num: number, str: string) => string;
+// type PersonType = { name: string; age: number };
 
-interface FnInterface {
-    (num: number, str: string): string;
-}
+// interface FnInterface {
+//     (num: number, str: string): string;
+// }
 
 // let foo: (num: number, str: string) => string = function (num, str) {
 //     console.log(str);
@@ -103,10 +103,10 @@ interface FnInterface {
 //     return num;
 // }
 
-// // function foo(cb: myFn): never {
-// //     // throw Error;
-// //     while(true) {}
-// // }
+// function foo(cb: myFn): never {
+//     // throw Error;
+//     while(true) {}
+// }
 // function foo(num1: number, cb: myType): number {
 //     return cb(num1);
 // }
@@ -123,6 +123,23 @@ interface FnInterface {
 //     S = "summer",
 // }
 // console.log(Role);
+
+// enum PrintMedia {
+//     Newspaper = 6,
+//     Newsletter,
+//     Magazine,
+//     Book,
+// }
+// // console.log(PrintMedia[6]);
+
+// function getMedia(mediaName: string): PrintMedia {
+//     if (mediaName === "Forbes" || mediaName === "Outlook") {
+//         return PrintMedia.Newspaper;
+//     }
+// }
+
+// let mediaType: PrintMedia = getMedia("Forbes"); // returns Magazine
+// console.log(mediaType);
 
 // // oop
 // class Animal {
@@ -221,22 +238,31 @@ interface FnInterface {
 // const e = new Emplyee();
 // e.printid("print the id: ");
 
-function course(name: string) {
-    return function (target: Function) {
-        target.prototype.name = name;
-    };
-}
-@course("Jojo")
-class Person {
-    name: string;
+// function course(name: string) {
+//     return function (target: Function) {
+//         target.prototype.name = name;
+//     };
+// }
+// @course("Jojo")
+// class Person {
+//     name: string;
 
-    // constructor(name: string) {
-    //     this.name = name;
-    // }
+//     // constructor(name: string) {
+//     //     this.name = name;
+//     // }
 
-    printcourse() {
-        console.log("Angular: ", this.name);
-    }
-}
-const p = new Person();
-p.printcourse();
+//     printcourse() {
+//         console.log("Angular: ", this.name);
+//     }
+// }
+// const p = new Person();
+// p.printcourse();
+
+// interface Person {
+//     name: string;
+//     age: number;
+// }
+// function foo(): Person {
+//     return { name: "David" } as Person;
+// }
+// console.log(foo());
