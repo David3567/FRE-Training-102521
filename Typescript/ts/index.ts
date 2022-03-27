@@ -47,6 +47,8 @@
 //     return num + str;
 // };
 
+// let arr: [boolean, string] = [true, "test"];
+
 // function foo(num?: number, str: string = "test"): string {
 //     console.log(str);
 //     return num + str;
@@ -130,7 +132,7 @@
 //     Magazine,
 //     Book,
 // }
-// // console.log(PrintMedia[6]);
+// console.log(PrintMedia[6]);
 
 // function getMedia(mediaName: string): PrintMedia {
 //     if (mediaName === "Forbes" || mediaName === "Outlook") {

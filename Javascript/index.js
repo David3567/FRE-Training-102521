@@ -704,24 +704,24 @@
 
 // // XHR: 
 
-// const getTodoFormJsonPlaceHolder = (id) => {
+// const getTodoFormJsonPlaceHolder = (id, callback) => {
 
-//     return new Promise((resolve, reject) => {
+
 //         const xhttp = new XMLHttpRequest();
 //         xhttp.onreadystatechange = function () {
 //             if (this.readyState == 4 && this.status == 200) {
 //                 // Typical action to be performed when the document is ready:
-//                 resolve(JSON.parse(xhttp.response));
+//                 callback(JSON.parse(xhttp.response));
 //             }
 //         };
 //         xhttp.open("GET", `https://jsonplaceholder.typicode.com/todos/${id}`, true);
 //         xhttp.send();
-//     });
+
 // }
 
-// // const print = (ele) => {
-// //     console.log(ele);
-// // }
+// const print = (ele) => {
+//     console.log(ele);
+// }
 
 // getTodoFormJsonPlaceHolder(4)
 //     .then(data => {
@@ -873,6 +873,23 @@
 //         });
 //     }
 // }
+
+// new MyPromise((resolve, reject) => {
+//     throw new Error("Whoops!");
+//   }).catch(function(error) { // (*)
+//     if (error instanceof URIError) {
+//       // handle it
+//     } else {
+//       alert("Can't handle such error");
+//       throw error; // throwing this or another error jumps to the next catch
+//     }
+//   }).then(function() {
+//     /* never runs here */
+//   }).catch(error => { // (**)
+//     alert(`The unknown error has occurred: ${error}`);
+//     // don't return anything => execution goes the normal way
+  
+//   });
 
 // const promise1 = new MyPromise((resolve, reject) => {
 //     setTimeout(resolve, 500, 'one');
@@ -1121,11 +1138,22 @@
  */
 // start your code here:
 
-// test case:
-const getFromApi = () => new MyPromise((resolve, reject) => {
-    // make api call and get results
-    const results = 'Hello from api side';
-});
+// // test case:
+// const getFromApi = () => new MyPromise((resolve, reject) => {
+//     // make api call and get results
+//     const results = 'Hello from api side';
+// });
 
-getFromApi().then(console.log); // 'Hello from api side'
-getFromApi().then(console.log).catch(console.log); // 'error'
+// getFromApi().then(console.log); // 'Hello from api side'
+// getFromApi().then(console.log).catch(console.log); // 'error'
+
+const nums = [1, 2, 3].filter(
+    function(item) {return item > this.limit},
+    {limit: 1}
+);
+const args = [1, 2, 3].filter(
+    (item) => item > this.limit,
+    {limit: 1}
+);
+console.log(nums);
+console.log(args);

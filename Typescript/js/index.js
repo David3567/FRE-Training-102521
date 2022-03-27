@@ -1,7 +1,5 @@
-function foo() {
-    return { name: "David", hi: 12 };
-}
-console.log(foo());
+var arr = [true, "test"];
+arr.push(true);
 var Subscriber = (function () {
     function Subscriber(obs, sbp) {
         var _this = this;
