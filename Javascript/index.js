@@ -1147,13 +1147,15 @@
 // getFromApi().then(console.log); // 'Hello from api side'
 // getFromApi().then(console.log).catch(console.log); // 'error'
 
-const nums = [1, 2, 3].filter(
-    function(item) {return item > this.limit},
-    {limit: 1}
-);
-const args = [1, 2, 3].filter(
-    (item) => item > this.limit,
-    {limit: 1}
-);
-console.log(nums);
-console.log(args);
+// const nums = [1, 2, 3].filter(
+//     function(item) {return item > this.limit},
+//     {limit: 1}
+// );
+// const args = [1, 2, 3].filter(
+//     (item) => item > this.limit,
+//     {limit: 1}
+// );
+// console.log(nums);
+// console.log(args);
+
+console.log(fs)
