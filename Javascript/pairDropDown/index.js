@@ -28,32 +28,25 @@ const Model = (() => {
 })();
 
 const Controler = ((view, model) => {
-    const createKeyList = () => {
-        let tmp = '';
+    const createList = () => {
+        let keystmp = '';
+        let valuestmp = '';
         Object.keys(model.state).forEach(key => {
-            tmp += `<option value="${key}">${key}</option>`;
+            keystmp += `<option value="${key}">${key}</option>`;
+            valuestmp += `<option value="${key}">${model.state[key]}</option>`;
         });
-        view.render(keys, tmp);
-    }
-    const createValueList = () => {
-        let tmp = '';
-        Object.keys(model.state).forEach(key => {
-            tmp += `<option value="${key}">${model.state[key]}</option>`;
-        });
-        view.render(values, tmp);
+        view.render(view.domElements.keys, keystmp);
+        view.render(view.domElements.values, valuestmp);
     }
     const setUpEvent = () => {
-        view.domElements.keys.addEventListener('change', event => {
+        document.addEventListener('change', event => {
             view.domElements.values.value = event.target.value;
-        });
-        view.domElements.values.addEventListener('change', event => {
             view.domElements.keys.value = event.target.value;
         });
     }
 
     const init = () => {
-        createKeyList();
-        createValueList();
+        createList();
         setUpEvent();
     }
     return { init };
