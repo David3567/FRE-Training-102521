@@ -7,7 +7,7 @@
 
 //     while (target > 0) {
 //         res *= 10;
-//         res +=  target % 10; 
+//         res +=  target % 10;
 //         target = Math.floor(target / 10);
 //     }
 //     return num % 10 === 0 ? res * 10 : res;
@@ -263,15 +263,15 @@
 // console.log("thequickbrownfxjmpsvlazydg");
 
 // // 17. Write a JavaScript function to get the number of occurrences of each letter in specified string.
-const getOccurrences = str => {
-    const map = new Map();
-    let arr = str.match(/\b\w+\b/g);
-    console.log(arr);
-    arr.forEach(ele => {
-        if (!map.has(ele)) map.set(ele, 0);
-        map.set(ele, map.get(ele) + 1);
-    });
-    return map;
+const getOccurrences = (str) => {
+	const map = new Map();
+	let arr = str.match(/\b\w+\b/g);
+	console.log(arr);
+	arr.forEach((ele) => {
+		if (!map.has(ele)) map.set(ele, 0);
+		map.set(ele, map.get(ele) + 1);
+	});
+	return map;
 };
 // ~test~
 const str = "show me the money again, show them again, and again";
@@ -343,7 +343,7 @@ console.log(getOccurrences(str));
 //     if (!arr.length || len < 1) return null;
 //     arr.sort((a, b) => a - b);
 //     helper(subArr, 0, res);
-    
+
 //     const helper = (subArr, start, res) => {
 //         if (subArr.length === len) {
 //             res.push([...subArr]);
@@ -363,7 +363,12 @@ console.log(getOccurrences(str));
 // const len = 2;
 // console.log(subset(arr, len));
 function subSet(arr, length) {
-    return arr.reduce((acc, curr) => acc.concat(acc.map(ele => [...ele, curr])), [[]]).filter((ele) => ele.length === length);
+	return arr
+		.reduce(
+            (acc, curr) => [...acc, ...(acc.map((ele) => [...ele, curr]))],
+			[[]]
+		)
+		.filter((ele) => ele.length === length);
 }
 console.log(subSet([1, 2, 3, 4, 5], 3));
 
@@ -548,4 +553,3 @@ console.log(subSet([1, 2, 3, 4, 5], 3));
 //     return target === num1;
 // }
 // console.log(checkFibonacci(9));
-

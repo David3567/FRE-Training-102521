@@ -5,10 +5,11 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BasicExampleComponent } from './basic/basic.component';
+import { DynamicNgForComponent } from './dynamic-ng-for/dynamic-ng-for.component';
 // import { BasicComponent } from './basic/basic.component';
 
 @NgModule({
-  declarations: [AppComponent, BasicExampleComponent],
+  declarations: [AppComponent, BasicExampleComponent, DynamicNgForComponent],
   imports: [BrowserModule, AppRoutingModule, AngularFullpageModule],
   providers: [],
   bootstrap: [AppComponent],
