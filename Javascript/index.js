@@ -165,7 +165,7 @@
 //     PersonFn.apply(this, [name, age]);
 //     this.company = company;
 // }
-// EmployeeFn.prototype = PersonFn.prototype;
+// EmployeeFn.prototype = Object.create(PersonFn.prototype);
 // EmployeeFn.prototype.constructor = EmployeeFn;
 // // Object
 // const e = new EmployeeFn('Dio', 200, 'Jump');

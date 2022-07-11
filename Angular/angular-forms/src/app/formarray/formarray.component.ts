@@ -19,17 +19,8 @@ export class FormarrayComponent implements OnInit {
     this.skillsForm = this.fb.group({
       name: '',
       skills: this.createfbarray(),
-      // newgroup: this.foo()
     });
   }
-
-  // foo() {
-  //   return this.fb.group(
-  //     ['test', 'test1'].reduce((acc, cur) => {
-  //       return {...acc, [cur]: ''};
-  //     }, {})
-  //   );
-  // }
 
   ngOnInit(): void {}
 
@@ -58,11 +49,5 @@ export class FormarrayComponent implements OnInit {
 }
 
 export class country {
-  id: string;
-  name: string;
-
-  constructor(id: string, name: string) {
-    this.id = id;
-    this.name = name;
-  }
+  constructor(public id: string, public name: string) {}
 }

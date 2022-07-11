@@ -1,7 +1,7 @@
 <h1>Angular Nested FormArray / Dynamic FormArray</h1>
 
 <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
-  <div formArrayName="employees">
+  <main formArrayName="employees">
     <div *ngFor="let employee of employees.controls; let empIndex = index">
       <div
         [formGroupName]="empIndex"
@@ -39,7 +39,7 @@
       </div>
     </div>
     <button type="button" (click)="addEmployee()">Add Employee</button>
-  </div>
+  </main>
   <p>
     <button type="submit">Submit</button>
   </p>
