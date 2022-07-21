@@ -460,11 +460,11 @@
 // const bar = foo();
 // bar(5); // sum
 
-// /**
-//  * 
-//  * @param {number} num 
-//  * @param {function} cb 
-//  */
+/**
+ * 
+ * @param {number} num 
+ * @param {function} cb 
+ */
 
 // const target = (a, b) => console.log(a + b);
 // const fn = limitedFunction(2, target);
