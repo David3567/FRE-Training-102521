@@ -7,16 +7,17 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./setvalueformarray.component.scss'],
 })
 export class SetvalueformarrayComponent implements OnInit {
-  teachersForm: FormGroup;
+  teachersForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
     this.teachersForm = this.fb.group({
       teachers: this.fb.array([]),
     });
   }
-  ngOnInit(): void {}
 
-  /** Teachers */
+  //** Teachers */
   teachers(): FormArray {
     return this.teachersForm.get('teachers') as FormArray;
   }
@@ -32,13 +33,13 @@ export class SetvalueformarrayComponent implements OnInit {
     this.teachers().push(this.newTeacher());
   }
 
-  removeTeacher(ti: any) {
+  removeTeacher(ti: number) {
     this.teachers().removeAt(ti);
   }
 
-  /** batches */
+  //** batches */
 
-  batches(ti: any): FormArray {
+  batches(ti: number): FormArray {
     return this.teachers().at(ti).get('batches') as FormArray;
   }
 
@@ -57,9 +58,9 @@ export class SetvalueformarrayComponent implements OnInit {
     this.batches(ti).removeAt(ti);
   }
 
-  /** students */
+  //** students */
 
-  students(ti: any, bi: any): FormArray {
+  students(ti: number, bi: number): FormArray {
     return this.batches(ti).at(bi).get('students') as FormArray;
   }
 

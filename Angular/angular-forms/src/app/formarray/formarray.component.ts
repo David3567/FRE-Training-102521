@@ -9,23 +9,19 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 export class FormarrayComponent implements OnInit {
   title = 'FormArray Example in Angular Reactive forms';
 
-  skillsForm: FormGroup;
+  skillsForm!: FormGroup;
 
   get skills(): FormArray {
     return this.skillsForm.get('skills') as FormArray;
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
     this.skillsForm = this.fb.group({
       name: '',
-      skills: this.createfbarray(),
+      skills: this.fb.array([]),
     });
-  }
-
-  ngOnInit(): void {}
-
-  createfbarray() {
-    return this.fb.array([]);
   }
 
   newSkill(): FormGroup {
