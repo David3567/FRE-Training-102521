@@ -7,27 +7,28 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ProductComponent implements OnInit {
   pageNo = '';
   snapshotPageNo = '';
+
   name = '';
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.snapshotPageNo =
-      this.route.snapshot.queryParamMap.get('pageNum') || '0';
-
-    const name = this.route.snapshot.queryParamMap.get('name');
+      this.activatedRoute.snapshot.queryParamMap.get('page') || '0';
     console.log('snapshotPageNo: ', this.snapshotPageNo);
 
-    this.route.queryParamMap.subscribe((params) => {
-      this.pageNo = params.get('pageNum') || '0';
+    const name = this.activatedRoute.snapshot.queryParamMap.get('name');
+
+    this.activatedRoute.queryParamMap.subscribe((params) => {
+      this.pageNo = params.get('page') || '0';
       this.name = params.get('name') || '';
-      console.log('Query params ', this.pageNo, name);
+      console.log('Query params ', this.pageNo, this.name);
     });
   }
 
   nextPage() {
     this.router.navigate(['product'], {
-      queryParams: { pageNum: +this.pageNo + 1 },
+      queryParams: { page: +this.pageNo + 1, name: this.name + 'T' },
     });
   }
 }
