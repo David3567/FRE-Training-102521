@@ -7,7 +7,11 @@ const routes: Routes = [{ path: 'product', component: ProductComponent }];
 
 @NgModule({
   declarations: [ProductComponent],
-  imports: [RouterModule.forChild(routes), CommonModule],
+  imports: [
+    // RouterModule.forChild(routes),
+    CommonModule,
+  ],
+  exports: [ProductComponent],
 })
 export class ChildModule {}
 

@@ -6,11 +6,12 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  {
-    path: 'lazyloadproduct',
-    loadChildren: () =>
-      import('./child/child.module').then((m) => m.ChildModule),
-  },
+  { path: 'product', component: ProductComponent },
+  // {
+  //   path: 'lazyloadproduct',
+  //   loadChildren: () =>
+  //     import('./child/child.module').then((m) => m.ChildModule),
+  // },
   {
     path: 'user',
     component: UserComponent,
