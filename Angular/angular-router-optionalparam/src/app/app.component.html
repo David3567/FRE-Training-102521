@@ -1,20 +1,26 @@
-<div class="navbar-form">
-  <div class="form-group">
-    <input placeholder="Page No" [(ngModel)]="pageNum" />
-  </div>
-  <div class="form-group">
-    <input placeholder="Name" [(ngModel)]="name" />
-  </div>
-</div>
-
-<ul class="navbar-nav" id="row">
-  <li><a [routerLink]="['home']">Home</a></li>
-  <li class="nav">
-    <a [routerLink]="['product']" [queryParams]="{ pageNum, name }">Product</a>
+<ul style="text-align: center">
+  <li><a [routerLink]="['home']" routerLinkActive="active">Home</a></li>
+  <li>
+    <a [routerLink]="['contact']" routerLinkActive="active">Contact us</a>
   </li>
-  <li><a [routerLink]="['contact']">Contact us</a></li>
+  <li class="nav">
+    <a
+      [routerLink]="['product']"
+      [queryParams]="{ page: pageNum, name }"
+      routerLinkActive="active"
+    >
+      Product
+    </a>
+  </li>
 </ul>
 
-<div class="outlet">
+<hr />
+<div style="text-align: center">
+  <input placeholder="Page No" [(ngModel)]="pageNum" />
+  <input placeholder="Name" [(ngModel)]="name" />
+</div>
+
+<hr />
+<div class="outlet" style="text-align: center">
   <router-outlet></router-outlet>
 </div>

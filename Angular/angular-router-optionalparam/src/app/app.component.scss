@@ -1,18 +1,7 @@
-#row {
+.nav {
   display: flex;
+  justify-content: center;
 }
-
-.navbar-nav,
-.navbar-form {
-  display: flex;
-  flex-direction: row;
-}
-.form-control {
-  width: 80%;
-}
-.navbar-nav,
-.navbar-form,
-.outlet,
-li {
-  margin-left: 10px;
+.active {
+  background-color: yellow;
 }
